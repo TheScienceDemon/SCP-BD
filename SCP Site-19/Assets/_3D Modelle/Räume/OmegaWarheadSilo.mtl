@@ -1,0 +1,156 @@
+# Blender MTL File: 'OmegaWarheadSilo.blend'
+# Material Count: 14
+
+newmtl ContDoors
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\containment_doors.jpg
+
+newmtl ControlPanel
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\controlpanel.jpg
+
+newmtl DirtyMetal
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\dirtymetal.jpg
+
+newmtl Floor
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\metal3.jpg
+
+newmtl Keyboard
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\Props\\keyboard.jpg
+
+newmtl Metal
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\metal.jpg
+
+newmtl MetalPanels
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\metalpanels.jpg
+
+newmtl Misc
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\misc.jpg
+
+newmtl MiscSigns
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\miscsigns.jpg
+
+newmtl MiscSigns2
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\miscsigns2.jpg
+
+newmtl Vent
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\vent.jpg
+
+newmtl Wall
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\concretewall.jpg
+
+newmtl WarheadStripe
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\concretefloor.jpg
+
+newmtl metalpanels2
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\metalpanels2.jpg

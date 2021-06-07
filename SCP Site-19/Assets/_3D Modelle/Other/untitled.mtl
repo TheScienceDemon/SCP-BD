@@ -1,0 +1,80 @@
+# Blender MTL File: 'None'
+# Material Count: 6
+
+newmtl Body
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Bump C:\\Users\\LR_0111\\Documents\\Fuse\\SCP Site-19\\Wissenschaftler1\\Wissenschaftler1_Body_normal.png
+map_Kd C:\\Users\\LR_0111\\Documents\\Fuse\\SCP Site-19\\Wissenschaftler1\\Wissenschaftler1_Body_diffuse.png
+map_Ks C:\\Users\\LR_0111\\Documents\\Fuse\\SCP Site-19\\Wissenschaftler1\\Wissenschaftler1_Body_specular.png
+
+newmtl Bottom
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Bump C:\\Users\\LR_0111\\Documents\\Fuse\\SCP Site-19\\Wissenschaftler1\\Wissenschaftler1_Bottom_normal.png
+map_Kd C:\\Users\\LR_0111\\Documents\\Fuse\\SCP Site-19\\Wissenschaftler1\\Wissenschaftler1_Bottom_diffuse.png
+map_Ks C:\\Users\\LR_0111\\Documents\\Fuse\\SCP Site-19\\Wissenschaftler1\\Wissenschaftler1_Bottom_specular.png
+
+newmtl Eyewear
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Bump C:\\Users\\LR_0111\\Documents\\Fuse\\SCP Site-19\\Wissenschaftler1\\Wissenschaftler1_Eyewear_normal.png
+map_Kd C:\\Users\\LR_0111\\Documents\\Fuse\\SCP Site-19\\Wissenschaftler1\\Wissenschaftler1_Eyewear_diffuse.png
+map_Ks C:\\Users\\LR_0111\\Documents\\Fuse\\SCP Site-19\\Wissenschaftler1\\Wissenschaftler1_Eyewear_specular.png
+
+newmtl Hair
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Bump C:\\Users\\LR_0111\\Documents\\Fuse\\SCP Site-19\\Wissenschaftler1\\Wissenschaftler1_Hair_normal.png
+map_Kd C:\\Users\\LR_0111\\Documents\\Fuse\\SCP Site-19\\Wissenschaftler1\\Wissenschaftler1_Hair_diffuse.png
+map_Ks C:\\Users\\LR_0111\\Documents\\Fuse\\SCP Site-19\\Wissenschaftler1\\Wissenschaftler1_Hair_specular.png
+
+newmtl Shoes
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Bump C:\\Users\\LR_0111\\Documents\\Fuse\\SCP Site-19\\Wissenschaftler1\\Wissenschaftler1_Shoes_normal.png
+map_Kd C:\\Users\\LR_0111\\Documents\\Fuse\\SCP Site-19\\Wissenschaftler1\\Wissenschaftler1_Shoes_diffuse.png
+map_Ks C:\\Users\\LR_0111\\Documents\\Fuse\\SCP Site-19\\Wissenschaftler1\\Wissenschaftler1_Shoes_specular.png
+
+newmtl Top
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Bump C:\\Users\\LR_0111\\Documents\\Fuse\\SCP Site-19\\Wissenschaftler1\\Wissenschaftler1_Top_normal.png
+map_Kd C:\\Users\\LR_0111\\Documents\\Fuse\\SCP Site-19\\Wissenschaftler1\\Wissenschaftler1_Top_diffuse.png
+map_Ks C:\\Users\\LR_0111\\Documents\\Fuse\\SCP Site-19\\Wissenschaftler1\\Wissenschaftler1_Top_specular.png

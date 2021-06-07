@@ -1,0 +1,14 @@
+# Blender MTL File: 'SCP_173.blend'
+# Material Count: 1
+
+newmtl 173
+Ns 10.000002
+Ka 1.000000 1.000000 1.000000
+Kd 0.584314 0.584314 0.584314
+Ks 0.078125 0.078125 0.078125
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\npcs\\173texture.jpg
+map_Ks C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\npcs\\173_Spec.jpg

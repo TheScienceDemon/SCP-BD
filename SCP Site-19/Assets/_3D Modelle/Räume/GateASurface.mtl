@@ -1,0 +1,321 @@
+# Blender MTL File: 'GateASurface.blend'
+# Material Count: 29
+
+newmtl concreteFloor
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\concretefloor.jpg
+
+newmtl concreteFloor.001
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\concretefloor.jpg
+
+newmtl concreteFloor.002
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\concretefloor.jpg
+
+newmtl contGate
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\containment_doors.jpg
+
+newmtl contGate.001
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\containment_doors.jpg
+
+newmtl dirtyMetal
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\dirtymetal.jpg
+
+newmtl dirtyMetal.001
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\dirtymetal.jpg
+
+newmtl dirtyMetal.002
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\dirtymetal.jpg
+
+newmtl drawnmesh30
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\gatea_lm3.png
+
+newmtl metal
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\metal.jpg
+
+newmtl metal.001
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\metal.jpg
+
+newmtl metal3
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\metal3.jpg
+
+newmtl metalPanels
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\metalpanels.jpg
+
+newmtl metalPanels2
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\metalpanels2.jpg
+
+newmtl metalPanels2.001
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\metalpanels2.jpg
+
+newmtl misc
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\misc.jpg
+
+newmtl miscSigns2
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\miscsigns2.jpg
+
+newmtl officeLamps
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\2_office_lamps_dif.jpg
+
+newmtl scpLogo
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\scplogo.jpg
+
+newmtl tileFloor
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\tilefloor.jpg
+
+newmtl tileFloor.001
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\tilefloor.jpg
+
+newmtl tileFloor.002
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\tilefloor.jpg
+
+newmtl white
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\white.jpg
+
+newmtl white.001
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\white.jpg
+
+newmtl white.002
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\white.jpg
+
+newmtl white.003
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\white.jpg
+
+newmtl whiteWall
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\whitewall.jpg
+
+newmtl whiteWall.001
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\whitewall.jpg
+
+newmtl whiteWall.002
+Ns 40.000007
+Ka 1.000000 1.000000 1.000000
+Kd 0.752941 0.752941 0.752941
+Ks 0.312500 0.312500 0.312500
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\whitewall.jpg
