@@ -73,12 +73,14 @@ MonoBehaviour:
   isInteractable: 1
   hasPower: 1
   isRandomOpen: 0
+  shouldDisableAnAudiosource: 0
   text: 1
   randomOpenChance: 0
   unInteractableTime: 2
   anim: {fileID: 0}
   Button1Text: {fileID: 4796463121467981503}
   Button2Text: {fileID: 1298512655526159260}
+  AudiosourceToDisable: {fileID: 0}
   "T\xFCrZu": Zu
   "T\xFCrOffen": Offen
   "T\xFCrGesperrt": Sperre
@@ -961,7 +963,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3418479775542771952, guid: cab53fb15c25ab941be109c70981bcaa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.1
+      value: 0.085
       objectReference: {fileID: 0}
     - target: {fileID: 3418479775542771952, guid: cab53fb15c25ab941be109c70981bcaa, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1287,7 +1289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3418479775542771952, guid: cab53fb15c25ab941be109c70981bcaa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.1
+      value: -0.085
       objectReference: {fileID: 0}
     - target: {fileID: 3418479775542771952, guid: cab53fb15c25ab941be109c70981bcaa, type: 3}
       propertyPath: m_LocalRotation.w
