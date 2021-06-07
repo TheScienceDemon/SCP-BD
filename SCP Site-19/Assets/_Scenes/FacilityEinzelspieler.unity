@@ -1637,6 +1637,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2106156045436022123, guid: 1b73019a813be7d409e8fadc05432dd0, type: 3}
   m_PrefabInstance: {fileID: 5395372310955213393}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &884866549 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3882121723070373812, guid: 1b73019a813be7d409e8fadc05432dd0, type: 3}
+  m_PrefabInstance: {fileID: 5395372310955213393}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1016753568 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4967138746754615467, guid: 522d2d5be23cfa445aba56ad449b5591, type: 3}
@@ -3160,6 +3165,10 @@ PrefabInstance:
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 1985308836}
+    - target: {fileID: 1760511528728806546, guid: 42c3b9b74792e2640b7ceb5f9b9d94bd, type: 3}
+      propertyPath: blinkAnim
+      value: 
+      objectReference: {fileID: 884866549}
     - target: {fileID: 1760511528728806546, guid: 42c3b9b74792e2640b7ceb5f9b9d94bd, type: 3}
       propertyPath: blinkScreen
       value: 
