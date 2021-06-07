@@ -9,6 +9,7 @@ public class PlayerLook : MonoBehaviour
     private float xRotation = 0f;
 
     public Transform body;
+    public Animator blinkAnim;
 
     [Header("Blink")]
     public Slider blinkSlider;
@@ -35,19 +36,31 @@ public class PlayerLook : MonoBehaviour
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         body.Rotate(Vector3.up, mouseX);
 
+        //Blinzel Funktionen
+        if (Input.GetButton("Jump") && !GetComponentInParent<PlayerMovement>().canJump)
+        {
+            blinkAnim.SetBool("areEyesOpen", false);
+            currentTimeUntilBlink = maxTimeUntilBlink;
+        }
+        
+        if (Input.GetButtonUp("Jump") && !GetComponentInParent<PlayerMovement>().canJump)
+        {
+            blinkAnim.SetBool("areEyesOpen", true);
+        }
+
         blinkSlider.value = currentTimeUntilBlink;
         currentTimeUntilBlink -= timeUntilBlinkFallRate * Time.deltaTime;
         if (currentTimeUntilBlink <= 0f)
         {
-            StartCoroutine(Blink());
+            StartCoroutine(Blinzeln());
         }
     }
 
-    IEnumerator Blink()
+    IEnumerator Blinzeln()
     {
-        blinkScreen.SetActive(true);
-        yield return new WaitForSeconds(0.3f);
+        blinkAnim.SetBool("areEyesOpen", false);
         currentTimeUntilBlink = maxTimeUntilBlink;
-        blinkScreen.SetActive(false);
+        yield return new WaitForSeconds(.1f);
+        blinkAnim.SetBool("areEyesOpen", true);
     }
 }
