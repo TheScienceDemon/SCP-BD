@@ -1,7 +1,7 @@
 # Blender MTL File: 'ContainmentGateDoorRight.blend'
-# Material Count: 1
+# Material Count: 2
 
-newmtl ContDoor.003
+newmtl contGate.001
 Ns 0.000000
 Ka 1.000000 1.000000 1.000000
 Kd 0.800000 0.800000 0.800000
@@ -10,4 +10,15 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 1
-map_Kd C:\\Users\\LR_0111\\Desktop\\SCP - Containment Breach v1.3.11\\GFX\\map\\Props\\containment_doors.jpg
+map_Kd K:\\Downloads\\SCP_-_Terror_Hunt_v2.0\\SCP - Terror Hunt\\GFX\\map\\containment_doors.jpg
+
+newmtl door
+Ns 11.313703
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd K:\\Downloads\\SCP_-_Terror_Hunt_v2.0\\SCP - Terror Hunt\\GFX\\map\\door.jpg
