@@ -106,17 +106,22 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (isGrounded && !isRunning && x != 0 || isGrounded && !isRunning && z != 0)
+        if (isGrounded && !isRunning && x != 0f || isGrounded && !isRunning && z != 0f)
             StartCoroutine(Walking());
 
-        if (isGrounded && isRunning && x != 0 || isGrounded && isRunning && z != 0)
+        if (isGrounded && isRunning && x != 0f || isGrounded && isRunning && z != 0f)
             StartCoroutine(Running());
 
-        if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0f && x != 0 || Input.GetKey(KeyCode.LeftShift) && currentStamina > 0f && z != 0)
+        if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0f && x != 0f || Input.GetKey(KeyCode.LeftShift) && currentStamina > 0f && z != 0f)
         {
             isRunning = true;
         }
         else if(Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            isRunning = false;
+        }
+
+        if (isRunning && x <= 0.1f && z <= 0.1f)
         {
             isRunning = false;
         }

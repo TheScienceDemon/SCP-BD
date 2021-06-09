@@ -453,6 +453,7 @@ MonoBehaviour:
   groundDistance: 0.2
   jumpHeight: 0.75
   staminaSlider: {fileID: 0}
+  staminaText: {fileID: 0}
   maxStamina: 100
   staminaFallRate: 12
   staminaRegRate: 5
@@ -506,7 +507,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760511528583520190}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.935, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1760511528238444362}
@@ -614,6 +615,7 @@ MonoBehaviour:
   body: {fileID: 1760511528238444362}
   blinkAnim: {fileID: 0}
   blinkSlider: {fileID: 0}
+  blinkText: {fileID: 0}
   blinkScreen: {fileID: 0}
   maxTimeUntilBlink: 100
   timeUntilBlinkFallRate: 10
