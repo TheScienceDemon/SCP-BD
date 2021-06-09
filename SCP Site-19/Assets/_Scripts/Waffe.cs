@@ -68,7 +68,7 @@ public class Waffe : MonoBehaviour
     IEnumerator Reload()
     {
         isReloading = true;
-        anim.Play("KubussReloduss");
+        anim.Play("GunReload");
 
         yield return new WaitForSeconds(reloadTime);
 
@@ -80,7 +80,7 @@ public class Waffe : MonoBehaviour
     {
         //muzzleFlash.Play();
         currentAmmo--;
-        anim.Play("KubussSchuss");
+        anim.Play("GunShot");
 
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out RaycastHit hit, Mathf.Infinity))
         {
