@@ -6,8 +6,8 @@ using TMPro;
 
 public class PlayerLook : MonoBehaviour
 {
-    public float mouseSensitivity = 100f;
-    private float xRotation = 0f;
+    public float mouseSensitivity;
+    private float xRotation;
 
     public Transform body;
     public Animator blinkAnim;
