@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerLook : MonoBehaviour
 {
-    public float mouseSensitivity = 100f;
-    private float xRotation = 0f;
+    public float mouseSensitivity;
+    private float xRotation;
 
     public Transform body;
     public Animator blinkAnim;
 
     [Header("Blink")]
     public Slider blinkSlider;
+    public TMP_Text blinkText;
     public GameObject blinkScreen;
     public float maxTimeUntilBlink;
     private float currentTimeUntilBlink;
@@ -49,6 +51,7 @@ public class PlayerLook : MonoBehaviour
         }
 
         blinkSlider.value = currentTimeUntilBlink;
+        blinkText.text = currentTimeUntilBlink.ToString("F0") + "%";
         currentTimeUntilBlink -= timeUntilBlinkFallRate * Time.deltaTime;
         if (currentTimeUntilBlink <= 0f)
         {

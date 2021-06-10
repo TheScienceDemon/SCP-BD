@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Ausdauer")]
     public Slider staminaSlider;
+    public TMP_Text staminaText;
     public float maxStamina;
     private float currentStamina;
     public float staminaFallRate;
@@ -66,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         staminaSlider.value = currentStamina;
+        staminaText.text = currentStamina.ToString("F0") + "%";
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && velocity.y < 0)
@@ -103,17 +106,22 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (isGrounded && !isRunning && x != 0 || isGrounded && !isRunning && z != 0)
+        if (isGrounded && !isRunning && x != 0f || isGrounded && !isRunning && z != 0f)
             StartCoroutine(Walking());
 
-        if (isGrounded && isRunning && x != 0 || isGrounded && isRunning && z != 0)
+        if (isGrounded && isRunning && x != 0f || isGrounded && isRunning && z != 0f)
             StartCoroutine(Running());
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && currentStamina > 0f)
+        if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0f && x != 0f || Input.GetKey(KeyCode.LeftShift) && currentStamina > 0f && z != 0f)
         {
             isRunning = true;
         }
         else if(Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            isRunning = false;
+        }
+
+        if (isRunning && x <= 0.1f && z <= 0.1f)
         {
             isRunning = false;
         }
