@@ -2545,6 +2545,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5385951505057014730, guid: 8895fe34c83b61d478d171abf73ef1bf, type: 3}
+      propertyPath: isOpen
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5512295511365324120, guid: 8895fe34c83b61d478d171abf73ef1bf, type: 3}
       propertyPath: m_Name
       value: 173_CC
@@ -2800,7 +2804,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 398449209367556661, guid: c27eea9c430865549bbf01301feea808, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058199748715337875, guid: c27eea9c430865549bbf01301feea808, type: 3}
+      propertyPath: m_Speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058199748715337875, guid: c27eea9c430865549bbf01301feea808, type: 3}
+      propertyPath: m_Acceleration
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058199748715337875, guid: c27eea9c430865549bbf01301feea808, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 1000000
       objectReference: {fileID: 0}
     - target: {fileID: 8305068984264314966, guid: c27eea9c430865549bbf01301feea808, type: 3}
       propertyPath: m_RootOrder
@@ -2846,6 +2862,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8406761578702415816, guid: c27eea9c430865549bbf01301feea808, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 15378619}
     - target: {fileID: 8649823416938924780, guid: c27eea9c430865549bbf01301feea808, type: 3}
       propertyPath: m_Name
       value: SCP_173
@@ -2899,7 +2919,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.083333336
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 23800000, guid: f7eac9c1f602d59408cd21ee873f69a6, type: 2}
 --- !u!4 &1867602201
@@ -3206,15 +3226,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1760511528238444362, guid: 42c3b9b74792e2640b7ceb5f9b9d94bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.25
+      value: 24.75
       objectReference: {fileID: 0}
     - target: {fileID: 1760511528238444362, guid: 42c3b9b74792e2640b7ceb5f9b9d94bd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.6
+      value: 2.6999998
       objectReference: {fileID: 0}
     - target: {fileID: 1760511528238444362, guid: 42c3b9b74792e2640b7ceb5f9b9d94bd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -18.25
+      value: 20.25
       objectReference: {fileID: 0}
     - target: {fileID: 1760511528238444362, guid: 42c3b9b74792e2640b7ceb5f9b9d94bd, type: 3}
       propertyPath: m_LocalRotation.w
