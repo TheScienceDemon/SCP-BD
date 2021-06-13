@@ -4,6 +4,6 @@ Content relating to the SCP Foundation, including the SCP Foundation logo, is li
 **Based on SCP: Containment Breach**
 
 
-Most of the models are from SCP: Containment Breach
+Most of the models are from SCP: Containment Breach : https://www.scpcbgame.com/
 
-Most of the textures are from SCP: Terror Hunt
+Most of the textures are from SCP: Terror Hunt : https://www.moddb.com/mods/scp-terror-hunt-mod
