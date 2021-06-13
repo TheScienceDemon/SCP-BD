@@ -7,7 +7,7 @@ public class Loader : EditorWindow
     [MenuItem("Window/Site19Custom/SQL")]
     public static void ShowWindow()
     {
-        GetWindow<Loader>("Scene Quick Loder");
+        GetWindow<Loader>("Scene Quick Loader");
     }
 
     void OnGUI()
