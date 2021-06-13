@@ -120,11 +120,6 @@ public class PlayerMovement : MonoBehaviour
         {
             isRunning = false;
         }
-
-        if (isRunning && x <= 0.1f && z <= 0.1f)
-        {
-            isRunning = false;
-        }
     }
 
     IEnumerator Walking()
