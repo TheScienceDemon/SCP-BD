@@ -18,7 +18,7 @@ public class PauseMenuButtons : MonoBehaviour
     {
         Time.timeScale = 1f;
         AudioListener.pause = false;
-        SceneManager.LoadScene(0, LoadSceneMode.Single);
+        SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
 
     IEnumerator FortfahrenIEnumarator()

@@ -6,10 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_Scenes/DiscordLoader.unity
+    guid: afe6264c832ad4f4985b532419cd639f
+  - enabled: 1
     path: Assets/_Scenes/MainMenu.unity
     guid: 68ca8470754f89e4a82d24917e45cea4
   - enabled: 1
-    path: Assets/_Scenes/FacilityEinzelspieler.unity
+    path: Assets/_Scenes/Einzelspieler.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/_Scenes/MehrspielerError.unity

@@ -13,6 +13,7 @@ TagManager:
   - Aufzug
   - Button
   - DiscordManagement
+  - SCP173
   layers:
   - Default
   - TransparentFX

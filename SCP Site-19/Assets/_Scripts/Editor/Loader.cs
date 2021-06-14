@@ -14,6 +14,11 @@ public class Loader : EditorWindow
     {
         GUILayout.BeginHorizontal();
 
+        if (GUILayout.Button("Discord Loader"))
+        {
+            EditorSceneManager.OpenScene("Assets/_Scenes/DiscordLoader.unity");
+        }
+
         if (GUILayout.Button("Hauptmenü"))
         {
             EditorSceneManager.OpenScene("Assets/_Scenes/MainMenu.unity");
@@ -21,7 +26,7 @@ public class Loader : EditorWindow
 
         if (GUILayout.Button("Einzelspieler"))
         {
-            EditorSceneManager.OpenScene("Assets/_Scenes/FacilityEinzelspieler.unity");
+            EditorSceneManager.OpenScene("Assets/_Scenes/Einzelspieler.unity");
         }
 
         if (GUILayout.Button("Mehrspieler"))
