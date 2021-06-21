@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6846583660281712856}
   - component: {fileID: 7542447478719307645}
   - component: {fileID: 5713061648454527927}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: keycard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,11 +27,11 @@ Transform:
   m_GameObject: {fileID: 6073142842117950050}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.09375, y: 0.09375, z: 0.09375}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 67.5, z: 180}
 --- !u!33 &7542447478719307645
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 7258343418837397324, guid: cade6744b3dc03141bf95a6f28136515, type: 3}
+  - {fileID: 2100000, guid: d3c7495fb635af248a4b8ef3d893eea1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
