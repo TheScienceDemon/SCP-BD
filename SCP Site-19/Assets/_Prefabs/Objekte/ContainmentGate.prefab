@@ -1235,7 +1235,7 @@ Transform:
   m_GameObject: {fileID: 5369562552950073736}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7375, y: 0.7375, z: 0.7375}
   m_Children:
   - {fileID: 5552443339068794826}
   - {fileID: 5552443338930542250}
@@ -1287,9 +1287,9 @@ MonoBehaviour:
   Button1Text: {fileID: 0}
   Button2Text: {fileID: 0}
   AudiosourceToDisable: {fileID: 0}
-  "T\xFCrZu": Zu
-  "T\xFCrOffen": Offen
-  "T\xFCrGesperrt": Sperre
+  "T\xFCrZu": Geschlossen
+  "T\xFCrOffen": "Ge\xF6ffnet"
+  "T\xFCrGesperrt": Verschlossen
   DoorOpen1: {fileID: 419488859070858736}
   DoorOpen2: {fileID: 4832616379621344048}
   DoorOpen3: {fileID: 8159209521481645791}

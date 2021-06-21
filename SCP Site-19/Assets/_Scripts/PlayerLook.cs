@@ -42,14 +42,14 @@ public class PlayerLook : MonoBehaviour
         if (Input.GetButton("Jump") && !GetComponentInParent<PlayerMovement>().canJump)
         {
             blinkAnim.SetBool("areEyesOpen", false);
-            GameObject.FindGameObjectWithTag("SCP173").GetComponent<SCP_173>().shouldMove = true;
+            //GameObject.FindGameObjectWithTag("SCP173").GetComponent<SCP_173>().shouldMove = true;
             currentTimeUntilBlink = maxTimeUntilBlink;
         }
         
         if (Input.GetButtonUp("Jump") && !GetComponentInParent<PlayerMovement>().canJump)
         {
             blinkAnim.SetBool("areEyesOpen", true);
-            GameObject.FindGameObjectWithTag("SCP173").GetComponent<SCP_173>().shouldMove = false;
+            //GameObject.FindGameObjectWithTag("SCP173").GetComponent<SCP_173>().shouldMove = false;
         }
 
         blinkSlider.value = currentTimeUntilBlink;
@@ -64,10 +64,10 @@ public class PlayerLook : MonoBehaviour
     IEnumerator Blinzeln()
     {
         blinkAnim.SetBool("areEyesOpen", false);
-        GameObject.FindGameObjectWithTag("SCP173").GetComponent<SCP_173>().shouldMove = true;
+        //GameObject.FindGameObjectWithTag("SCP173").GetComponent<SCP_173>().shouldMove = true;
         currentTimeUntilBlink = maxTimeUntilBlink;
         yield return new WaitForSeconds(.1f);
-        GameObject.FindGameObjectWithTag("SCP173").GetComponent<SCP_173>().shouldMove = false;
+        //GameObject.FindGameObjectWithTag("SCP173").GetComponent<SCP_173>().shouldMove = false;
         blinkAnim.SetBool("areEyesOpen", true);
     }
 }

@@ -81,9 +81,9 @@ MonoBehaviour:
   Button1Text: {fileID: 4796463121467981503}
   Button2Text: {fileID: 1298512655526159260}
   AudiosourceToDisable: {fileID: 0}
-  "T\xFCrZu": Zu
-  "T\xFCrOffen": Offen
-  "T\xFCrGesperrt": Sperre
+  "T\xFCrZu": Geschlossen
+  "T\xFCrOffen": "Ge\xF6ffnet"
+  "T\xFCrGesperrt": Verschlossen
   DoorOpen1: {fileID: 75948424176946639}
   DoorOpen2: {fileID: 810323037525379107}
   DoorOpen3: {fileID: 8684833445017849757}

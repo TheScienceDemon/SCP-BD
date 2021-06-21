@@ -11,24 +11,26 @@ public class PlayerMovement : MonoBehaviour
     public float gravity = -9.81f;
     public float groundDistance = 0.4f;
     public float jumpHeight;
+    [SerializeField] private float x;
+    [SerializeField] private float z;
 
     [Header("Ausdauer")]
     public Slider staminaSlider;
     public TMP_Text staminaText;
     public float maxStamina;
-    private float currentStamina;
+    [SerializeField]private float currentStamina;
     public float staminaFallRate;
     public float staminaRegRate;
 
     public bool canJump;
     public bool isRunning;
     public bool isMakingSteps;
-    private bool isGrounded;
+    [SerializeField]private bool isGrounded;
 
     public CharacterController controller;
     public Transform groundCheck;
     public LayerMask groundMask;
-    private Vector3 velocity;
+    [SerializeField]private Vector3 velocity;
 
     [Header("Sprung und Lande Sounds")]
     public AudioSource Sprung;
@@ -74,11 +76,8 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded && velocity.y < 0)
             velocity.y = -2f;
 
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
-        Vector3 move = transform.right * x + transform.forward * z;
-        move = move.normalized;
+        x = Input.GetAxis("Horizontal");
+        z = Input.GetAxis("Vertical");
 
         if (Input.GetButtonDown("Jump") && isGrounded && canJump)
         {
@@ -87,24 +86,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
         velocity.y += gravity * Time.deltaTime;
-
-        controller.Move(velocity * Time.deltaTime);
-
-        if (!isRunning)
-        {
-            controller.Move(move * speed * Time.deltaTime);
-            if (currentStamina <= maxStamina)
-                currentStamina += staminaRegRate * Time.deltaTime;
-        }
-        else
-        {
-            controller.Move(move * runSpeed * Time.deltaTime);
-            currentStamina -= staminaFallRate * Time.deltaTime;
-            if (currentStamina <= 0f)
-            {
-                isRunning = false;
-            }
-        }
 
         if (isGrounded && !isRunning && x != 0f || isGrounded && !isRunning && z != 0f)
             StartCoroutine(Walking());
@@ -119,6 +100,30 @@ public class PlayerMovement : MonoBehaviour
         else if(Input.GetKeyUp(KeyCode.LeftShift))
         {
             isRunning = false;
+        }
+    }
+
+     void FixedUpdate()
+    {
+        Vector3 move = transform.right * x + transform.forward * z;
+        move = move.normalized;
+
+        controller.Move(velocity * Time.fixedDeltaTime);
+
+        if (!isRunning)
+        {
+            controller.Move(move * speed * Time.fixedDeltaTime);
+            if (currentStamina <= maxStamina)
+                currentStamina += staminaRegRate * Time.fixedDeltaTime;
+        }
+        else
+        {
+            controller.Move(move * runSpeed * Time.fixedDeltaTime);
+            currentStamina -= staminaFallRate * Time.fixedDeltaTime;
+            if (currentStamina <= 0f)
+            {
+                isRunning = false;
+            }
         }
     }
 

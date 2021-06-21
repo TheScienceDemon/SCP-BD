@@ -19,9 +19,9 @@ public class TürTest : MonoBehaviour
     public GameObject AudiosourceToDisable;
 
     [Header("Button Texte")]
-    public string TürZu;
-    public string TürOffen;
-    public string TürGesperrt;
+    [TextArea]public string TürZu;
+    [TextArea]public string TürOffen;
+    [TextArea]public string TürGesperrt;
 
     [Header("Tür Öffnen Sounds")]
     public AudioSource DoorOpen1;
@@ -66,12 +66,14 @@ public class TürTest : MonoBehaviour
         }
     }
 
-    private void Update()
+    void Update()
     {
         if (text)
         {
             if (!hasPower)
             {
+                Button1Text.fontSize = .014f;
+                Button2Text.fontSize = .014f;
                 Button1Text.text = "<color=red>" + TürGesperrt + "</color>";
                 Button2Text.text = "<color=red>" + TürGesperrt + "</color>";
             }
@@ -79,11 +81,15 @@ public class TürTest : MonoBehaviour
             {
                 if (isOpen)
                 {
+                    Button1Text.fontSize = .02f;
+                    Button2Text.fontSize = .02f;
                     Button1Text.text = "<color=green>" + TürOffen + "</color>";
                     Button2Text.text = "<color=green>" + TürOffen + "</color>";
                 }
                 else
                 {
+                    Button1Text.fontSize = .015f;
+                    Button2Text.fontSize = .015f;
                     Button1Text.text = "<color=#07A2FF>" + TürZu + "</color>";
                     Button2Text.text = "<color=#07A2FF>" + TürZu + "</color>";
                 }

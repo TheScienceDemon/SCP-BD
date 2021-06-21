@@ -8,21 +8,22 @@ public class SCP_173 : MonoBehaviour
     public GameObject Player;
     public GameObject SCP173;
     public NavMeshAgent agent;
-    public bool shouldMove;
+    public bool isVisible;
 
     // Update is called once per frame
     void Update()
     {
-        if (!GetComponent<Renderer>().isVisible)
+        isVisible = GetComponent<Renderer>().isVisible;
+
+        if (!isVisible)
         {
-            if (shouldMove)
-            {
-                Debug.Log("Le epic nut mufs");
-            }
+            Debug.Log("SCP-173 bewegt sich");
+            agent.SetDestination(Player.transform.position);
         }
         else
         {
-            Debug.Log("Le spic no mos :(");
+            Debug.Log("SCP-173 bewegt sich <b>nicht</b>");
+            agent.SetDestination(SCP173.transform.position);
         }
     }
 }
