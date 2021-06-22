@@ -8,6 +8,7 @@ public class HauptMenuOptions : MonoBehaviour
 {
     public AudioMixer mainAudioMix;
     public TMP_Dropdown resDropdown;
+    public TMP_Dropdown gfxDropdown;
     public TMP_Text volumeText;
     private Resolution[] resolutionArray;
 
@@ -34,6 +35,11 @@ public class HauptMenuOptions : MonoBehaviour
         resDropdown.value = currentResIndex;
         resDropdown.RefreshShownValue();
         #endregion
+
+        #region Grafik Dropdown
+        gfxDropdown.value = QualitySettings.GetQualityLevel();
+        gfxDropdown.RefreshShownValue();
+        #endregion
     }
 
     public void SetResolution(int resIndex)
@@ -44,8 +50,8 @@ public class HauptMenuOptions : MonoBehaviour
 
     public void SetVolume(float volume)
     {
-        mainAudioMix.SetFloat("volume", volume);
-        volumeText.text = volume.ToString("F2") + " db";
+        mainAudioMix.SetFloat("volume", Mathf.Log10(volume) * 20);
+        volumeText.text = "Lautstärke - " + volume.ToString("F2") + "%";
     }
 
     public void SetQuality(int qualityIndex)

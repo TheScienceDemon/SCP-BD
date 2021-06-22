@@ -13,7 +13,7 @@ public class FpsLimiter : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
         if (Application.targetFrameRate != limit)
             Application.targetFrameRate = limit;

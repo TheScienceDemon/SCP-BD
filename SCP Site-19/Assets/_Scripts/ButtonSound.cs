@@ -13,17 +13,17 @@ public class ButtonSound : MonoBehaviour
     {
         if (useForChkpt)
         {
-            ButtonNormal.Play();
+            ButtonNormal.PlayOneShot(ButtonNormal.clip);
         }
         else if (useForDoor)
         {
             if (gameObject.transform.GetComponentInParent<TürTest>().hasPower)
             {
-                ButtonNormal.Play();
+                ButtonNormal.PlayOneShot(ButtonNormal.clip);
             }
             else
             {
-                ButtonError.Play();
+                ButtonError.PlayOneShot(ButtonError.clip);
             }
         }
     }
