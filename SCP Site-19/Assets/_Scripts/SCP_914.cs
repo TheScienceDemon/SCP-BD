@@ -18,13 +18,13 @@ public class SCP_914 : MonoBehaviour
     public IEnumerator SCP_914Controller()
     {
         isRefining = true;
-        Refining.Play();
+        Refining.PlayOneShot(Refining.clip);
         yield return new WaitForSeconds(1f);
-        DoorsClose.Play();
+        DoorsClose.PlayOneShot(DoorsClose.clip);
         anim.SetBool("IsRefining", true);
         yield return new WaitForSeconds(refiningTime - 1f);
         anim.SetBool("IsRefining", false);
-        DoorsOpen.Play();
+        DoorsOpen.PlayOneShot(DoorsOpen.clip);
         yield return new WaitForSeconds(cooldown);
         isRefining = false;
     }

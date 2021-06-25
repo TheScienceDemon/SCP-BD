@@ -27,7 +27,7 @@ public class Lever : MonoBehaviour
     IEnumerator UpdateLeverMode()
     {
         isInteractable = false;
-        LeverFlip.Play();
+        LeverFlip.PlayOneShot(LeverFlip.clip);
         leverMode++;
         if (leverMode > 1)
         {

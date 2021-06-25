@@ -125,7 +125,7 @@ public class PlayerMovement : MonoBehaviour
             isMakingSteps = true;
             int index = Random.Range(0, walk.Length);
             clip = walk[index];
-            audioSource.PlayOneShot(clip);
+            audioSource.PlayOneShot(clip, Random.Range(.25f, 1f));
             yield return new WaitForSeconds(0.8f);
             isMakingSteps = false;
         }
@@ -138,7 +138,7 @@ public class PlayerMovement : MonoBehaviour
             isMakingSteps = true;
             int index = Random.Range(0, sprint.Length);
             clip = sprint[index];
-            audioSource.PlayOneShot(clip);
+            audioSource.PlayOneShot(clip, Random.Range(.75f, 1f));
             yield return new WaitForSeconds(0.6f);
             isMakingSteps = false;
         }
