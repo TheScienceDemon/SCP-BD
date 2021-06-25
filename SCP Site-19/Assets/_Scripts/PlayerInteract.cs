@@ -50,9 +50,9 @@ public class PlayerInteract : MonoBehaviour
                 else if (hit.transform.CompareTag("Tür"))
                 {
                     if (!hit.transform.parent.GetComponentInParent<TürTest>().isOpen && hit.transform.parent.GetComponentInParent<TürTest>().isInteractable && hit.transform.parent.GetComponentInParent<TürTest>().hasPower)
-                        hit.transform.parent.GetComponentInParent<TürTest>().TürÖffnen();
+                        StartCoroutine(hit.transform.parent.GetComponentInParent<TürTest>().TürÖffnen());
                     else if (hit.transform.parent.GetComponentInParent<TürTest>().isOpen && hit.transform.parent.GetComponentInParent<TürTest>().isInteractable && hit.transform.parent.GetComponentInParent<TürTest>().hasPower)
-                        hit.transform.parent.GetComponentInParent<TürTest>().TürSchließen();
+                        StartCoroutine(hit.transform.parent.GetComponentInParent<TürTest>().TürSchließen());
                 }
                 else if (hit.transform.CompareTag("914Knob"))
                 {

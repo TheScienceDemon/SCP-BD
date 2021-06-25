@@ -19,19 +19,15 @@ public class TürTest : MonoBehaviour
     public GameObject AudiosourceToDisable;
 
     [Header("Button Texte")]
-    [TextArea]public string TürZu;
-    [TextArea]public string TürOffen;
-    [TextArea]public string TürGesperrt;
+    [TextArea(1, 1)] public string TürZu;
+    [TextArea(1, 1)]public string TürOffen;
+    [TextArea(1, 1)] public string TürGesperrt;
 
-    [Header("Tür Öffnen Sounds")]
-    public AudioSource DoorOpen1;
-    public AudioSource DoorOpen2;
-    public AudioSource DoorOpen3;
-
-    [Header("Tür Schließen Sounds")]
-    public AudioSource DoorClose1;
-    public AudioSource DoorClose2;
-    public AudioSource DoorClose3;
+    [Header("Sounds")]
+    public AudioSource audioSource;
+    public AudioClip[] open;
+    public AudioClip[] close;
+    [SerializeField] private AudioClip clip;
 
     private void Start()
     {
@@ -46,27 +42,13 @@ public class TürTest : MonoBehaviour
             }
         }
 
-        if (text)
-        {
-            if (isOpen)
-            {
-                Button1Text.text = "<color=green>" + TürOffen + "</color>";
-                Button2Text.text = "<color=green>" + TürOffen + "</color>";
-            }
-            else
-            {
-                Button1Text.text = "<color=#07A2FF>" + TürZu + "</color>";
-                Button2Text.text = "<color=#07A2FF>" + TürZu + "</color>";
-            }
-        }
-
         if (isOpen)
         {
             anim.SetBool("IsOpen", true);
         }
     }
 
-    void Update()
+    void LateUpdate()
     {
         if (text)
         {
@@ -74,8 +56,8 @@ public class TürTest : MonoBehaviour
             {
                 Button1Text.fontSize = .014f;
                 Button2Text.fontSize = .014f;
-                Button1Text.text = "<color=red>" + TürGesperrt + "</color>";
-                Button2Text.text = "<color=red>" + TürGesperrt + "</color>";
+                Button1Text.text = TürGesperrt;
+                Button2Text.text = TürGesperrt;
             }
             else
             {
@@ -83,101 +65,51 @@ public class TürTest : MonoBehaviour
                 {
                     Button1Text.fontSize = .02f;
                     Button2Text.fontSize = .02f;
-                    Button1Text.text = "<color=green>" + TürOffen + "</color>";
-                    Button2Text.text = "<color=green>" + TürOffen + "</color>";
+                    Button1Text.text = TürOffen;
+                    Button2Text.text = TürOffen;
                 }
                 else
                 {
                     Button1Text.fontSize = .015f;
                     Button2Text.fontSize = .015f;
-                    Button1Text.text = "<color=#07A2FF>" + TürZu + "</color>";
-                    Button2Text.text = "<color=#07A2FF>" + TürZu + "</color>";
+                    Button1Text.text = TürZu;
+                    Button2Text.text = TürZu;
                 }
             }
         }
     }
 
-    public void TürÖffnen()
-    {
-        StartCoroutine(TürÖffnenIEnumerator());
-    }
-
-    public void TürSchließen()
-    {
-        StartCoroutine(TürSchließenIEnumerator());
-    }
-
-    IEnumerator TürÖffnenIEnumerator()
+    public IEnumerator TürÖffnen()
     {
         isInteractable = false;
-        TürÖffnerSoundRandomizer();
+        TürÖffnenSfx();
         anim.SetBool("IsOpen", true);
         isOpen = true;
-        if (text)
-        {
-            Button1Text.text = "<color=green>" + TürOffen + "</color>";
-            Button2Text.text = "<color=green>" + TürOffen + "</color>";
-        }
         yield return new WaitForSeconds(unInteractableTime);
         isInteractable = true;
     }
 
-    IEnumerator TürSchließenIEnumerator()
+    public IEnumerator TürSchließen()
     {
         isInteractable = false;
-        TürSchließerSoundRandomizer();
+        TürSchließenSfx();
         anim.SetBool("IsOpen", false);
         isOpen = false;
-        if (text)
-        {
-            Button1Text.text = "<color=#07A2FF>" + TürZu + "</color>";
-            Button2Text.text = "<color=#07A2FF>" + TürZu + "</color>";
-        }
         yield return new WaitForSeconds(unInteractableTime);
         isInteractable = true;
     }
 
-    void TürÖffnerSoundRandomizer()
+    void TürÖffnenSfx()
     {
-        if (Random.value <= 0.4f)
-        {
-            DoorOpen1.Play();
-        }
-        else
-        {
-            if (Random.value <= 0.4f)
-            {
-                DoorOpen2.Play();
-            }
-            else
-            {
-                if (Random.value <= 1f)
-                {
-                    DoorOpen3.Play();
-                }
-            }
-        }
+        int index = Random.Range(0, open.Length);
+        clip = open[index];
+        audioSource.PlayOneShot(clip, Random.Range(0f, 1f));
     }
 
-    void TürSchließerSoundRandomizer()
+    void TürSchließenSfx()
     {
-        if (Random.value <= 0.4f)
-        {
-            DoorClose1.Play();
-        }
-        else
-        {
-            if (Random.value <= 0.4f)
-            {
-                DoorClose2.Play();
-            }
-            else
-            {
-                if (Random.value <= 1f)
-                {
-                    DoorClose3.Play();
-                }
-            }
-        }
+        int index = Random.Range(0, close.Length);
+        clip = close[index];
+        audioSource.PlayOneShot(clip, Random.Range(0f, 1f));
     }
 }

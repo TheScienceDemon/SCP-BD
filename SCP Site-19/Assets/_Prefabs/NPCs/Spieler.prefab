@@ -1679,37 +1679,30 @@ MonoBehaviour:
   gravity: -14.715
   groundDistance: 0.1
   jumpHeight: 0.75
+  x: 0
+  z: 0
   staminaSlider: {fileID: 3041201043972993169}
   staminaText: {fileID: 2608624111916489512}
   maxStamina: 100
+  currentStamina: 0
   staminaFallRate: 12
   staminaRegRate: 5
   canJump: 0
   isRunning: 0
   isMakingSteps: 0
+  isGrounded: 0
   controller: {fileID: 0}
   groundCheck: {fileID: 1863765948712382913}
   groundMask:
     serializedVersion: 2
     m_Bits: 8
+  velocity: {x: 0, y: 0, z: 0}
   Sprung: {fileID: 8413214941516216662}
   Landung: {fileID: 1533529636943243269}
-  Step1: {fileID: 1339046771882653135}
-  Step2: {fileID: 8128063831189340259}
-  Step3: {fileID: 6629173425366500365}
-  Step4: {fileID: 8286025378039750860}
-  Step5: {fileID: 3002080937058063056}
-  Step6: {fileID: 4270516927594760250}
-  Step7: {fileID: 3517489906527408298}
-  Step8: {fileID: 3115111983459151709}
-  Run1: {fileID: 5503013899477952898}
-  Run2: {fileID: 6454319231538461819}
-  Run3: {fileID: 3711348175266076991}
-  Run4: {fileID: 4112786369112531123}
-  Run5: {fileID: 5022224845348964631}
-  Run6: {fileID: 5672643770847697777}
-  Run7: {fileID: 4374978070392882134}
-  Run8: {fileID: 2254834356934047088}
+  audioSource: {fileID: 0}
+  walk: []
+  sprint: []
+  clip: {fileID: 0}
 --- !u!114 &4116188990296962645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5852,6 +5845,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: keycard
       objectReference: {fileID: 0}
+    - target: {fileID: 6073142842117950050, guid: 4366707a64d74b74183640382805d07b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6846583660281712856, guid: 4366707a64d74b74183640382805d07b, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -5934,10 +5931,6 @@ PrefabInstance:
     - target: {fileID: 1671029925390012, guid: 119551172e2002344983c075ab97ef79, type: 3}
       propertyPath: m_Layer
       value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1671029925390012, guid: 119551172e2002344983c075ab97ef79, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1684980402559122, guid: 119551172e2002344983c075ab97ef79, type: 3}
       propertyPath: m_Layer

@@ -36,27 +36,12 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource Sprung;
     public AudioSource Landung;
 
-    #region Lauf Sounds
     [Header("Lauf Sounds")]
-    public AudioSource Step1;
-    public AudioSource Step2;
-    public AudioSource Step3;
-    public AudioSource Step4;
-    public AudioSource Step5;
-    public AudioSource Step6;
-    public AudioSource Step7;
-    public AudioSource Step8;
+    public AudioSource audioSource;
+    public AudioClip[] walk;
+    public AudioClip[] sprint;
+    [SerializeField] AudioClip clip;
 
-    [Header("Renn Sounds")]
-    public AudioSource Run1;
-    public AudioSource Run2;
-    public AudioSource Run3;
-    public AudioSource Run4;
-    public AudioSource Run5;
-    public AudioSource Run6;
-    public AudioSource Run7;
-    public AudioSource Run8;
-    #endregion
 
     // Start is called before the first frame update
     void Start()
@@ -129,163 +114,27 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Walking()
     {
-        if (Random.value <= 0.1f && !isMakingSteps)
+        if (!isMakingSteps)
         {
             isMakingSteps = true;
-            Step1.Play();
+            int index = Random.Range(0, walk.Length);
+            clip = walk[index];
+            audioSource.PlayOneShot(clip);
             yield return new WaitForSeconds(0.8f);
             isMakingSteps = false;
-        }
-        else
-        {
-            if (Random.value <= 0.2f && !isMakingSteps)
-            {
-                isMakingSteps = true;
-                Step2.Play();
-                yield return new WaitForSeconds(0.8f);
-                isMakingSteps = false;
-            }
-            else
-            {
-                if (Random.value <= 0.3f && !isMakingSteps)
-                {
-                    isMakingSteps = true;
-                    Step3.Play();
-                    yield return new WaitForSeconds(0.8f);
-                    isMakingSteps = false;
-                }
-                else
-                {
-                    if (Random.value <= 0.4f && !isMakingSteps)
-                    {
-                        isMakingSteps = true;
-                        Step4.Play();
-                        yield return new WaitForSeconds(0.8f);
-                        isMakingSteps = false;
-                    }
-                    else
-                    {
-                        if (Random.value <= 0.4f && !isMakingSteps)
-                        {
-                            isMakingSteps = true;
-                            Step5.Play();
-                            yield return new WaitForSeconds(0.8f);
-                            isMakingSteps = false;
-                        }
-                        else
-                        {
-                            if (Random.value <= 0.5f && !isMakingSteps)
-                            {
-                                isMakingSteps = true;
-                                Step6.Play();
-                                yield return new WaitForSeconds(0.8f);
-                                isMakingSteps = false;
-                            }
-                            else
-                            {
-                                if (Random.value <= 0.6f && !isMakingSteps)
-                                {
-                                    isMakingSteps = true;
-                                    Step7.Play();
-                                    yield return new WaitForSeconds(0.8f);
-                                    isMakingSteps = false;
-                                }
-                                else
-                                {
-                                    if (Random.value <= 1f && !isMakingSteps)
-                                    {
-                                        isMakingSteps = true;
-                                        Step8.Play();
-                                        yield return new WaitForSeconds(0.8f);
-                                        isMakingSteps = false;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
         }
     }
 
     IEnumerator Running()
     {
-        if (Random.value <= 0.1f && !isMakingSteps)
+        if (!isMakingSteps)
         {
             isMakingSteps = true;
-            Run1.Play();
+            int index = Random.Range(0, sprint.Length);
+            clip = sprint[index];
+            audioSource.PlayOneShot(clip);
             yield return new WaitForSeconds(0.6f);
             isMakingSteps = false;
-        }
-        else
-        {
-            if (Random.value <= 0.2f && !isMakingSteps)
-            {
-                isMakingSteps = true;
-                Run2.Play();
-                yield return new WaitForSeconds(0.6f);
-                isMakingSteps = false;
-            }
-            else
-            {
-                if (Random.value <= 0.3f && !isMakingSteps)
-                {
-                    isMakingSteps = true;
-                    Run3.Play();
-                    yield return new WaitForSeconds(0.6f);
-                    isMakingSteps = false;
-                }
-                else
-                {
-                    if (Random.value <= 0.4f && !isMakingSteps)
-                    {
-                        isMakingSteps = true;
-                        Run4.Play();
-                        yield return new WaitForSeconds(0.6f);
-                        isMakingSteps = false;
-                    }
-                    else
-                    {
-                        if (Random.value <= 0.4f && !isMakingSteps)
-                        {
-                            isMakingSteps = true;
-                            Run5.Play();
-                            yield return new WaitForSeconds(0.6f);
-                            isMakingSteps = false;
-                        }
-                        else
-                        {
-                            if (Random.value <= 0.5f && !isMakingSteps)
-                            {
-                                isMakingSteps = true;
-                                Run6.Play();
-                                yield return new WaitForSeconds(0.6f);
-                                isMakingSteps = false;
-                            }
-                            else
-                            {
-                                if (Random.value <= 0.6f && !isMakingSteps)
-                                {
-                                    isMakingSteps = true;
-                                    Run7.Play();
-                                    yield return new WaitForSeconds(0.6f);
-                                    isMakingSteps = false;
-                                }
-                                else
-                                {
-                                    if (Random.value <= 1f && !isMakingSteps)
-                                    {
-                                        isMakingSteps = true;
-                                        Run8.Play();
-                                        yield return new WaitForSeconds(0.6f);
-                                        isMakingSteps = false;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
         }
     }
 }
