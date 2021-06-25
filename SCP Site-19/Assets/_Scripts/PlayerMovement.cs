@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Ausdauer")]
     public Slider staminaSlider;
     public TMP_Text staminaText;
+    public GameObject walkIcon;
+    public GameObject sprintIcon;
     public float maxStamina;
     [SerializeField]private float currentStamina;
     public float staminaFallRate;
@@ -97,12 +99,16 @@ public class PlayerMovement : MonoBehaviour
 
         if (!isRunning)
         {
+            sprintIcon.SetActive(false);
+            walkIcon.SetActive(true);
             controller.Move(move * speed * Time.fixedDeltaTime);
             if (currentStamina <= maxStamina)
                 currentStamina += staminaRegRate * Time.fixedDeltaTime;
         }
         else
         {
+            sprintIcon.SetActive(true);
+            walkIcon.SetActive(false);
             controller.Move(move * runSpeed * Time.fixedDeltaTime);
             currentStamina -= staminaFallRate * Time.fixedDeltaTime;
             if (currentStamina <= 0f)
