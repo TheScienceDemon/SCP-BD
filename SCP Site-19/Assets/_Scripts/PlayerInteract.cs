@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerInteract : MonoBehaviour
 {
     public Camera cam;
-    public GameObject interactCrosshair;
+    public GameObject interactCrosshair1, interactCrosshair2;
     public float maxInteractDist;
 
     // Start is called before the first frame update
@@ -19,18 +19,28 @@ public class PlayerInteract : MonoBehaviour
     {
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit interactHit, maxInteractDist))
         {
-            if (!interactHit.transform.CompareTag("Untagged") && !interactHit.transform.CompareTag("Player"))
+            if (interactHit.transform.CompareTag("Tür") || interactHit.transform.CompareTag("Checkpoint") || interactHit.transform.CompareTag("914Knob") ||interactHit.transform.CompareTag("Aufzug"))
             {
-                interactCrosshair.SetActive(true);
+                interactCrosshair1.SetActive(true);
             }
             else
             {
-                interactCrosshair.SetActive(false);
+                interactCrosshair1.SetActive(false);
+            }
+
+            if (interactHit.transform.CompareTag("914Key") || interactHit.transform.CompareTag("Lever"))
+            {
+                interactCrosshair2.SetActive(true);
+            }
+            else
+            {
+                interactCrosshair2.SetActive(false);
             }
         }
         else
         {
-            interactCrosshair.SetActive(false);
+            interactCrosshair1.SetActive(false);
+            interactCrosshair2.SetActive(false);
         }
 
 

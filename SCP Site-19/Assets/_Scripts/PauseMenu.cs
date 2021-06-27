@@ -19,12 +19,14 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab) && !isPaused)
+        if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
         {
+            isPaused = !isPaused;
             MenuOpen();
         }
-        else if (Input.GetKeyDown(KeyCode.Tab) && isPaused)
+        else if (Input.GetKeyDown(KeyCode.Escape) && isPaused)
         {
+            isPaused = !isPaused;
             StartCoroutine(MenuClose());
         }
     }
@@ -38,7 +40,6 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(true);
         Gui.SetActive(false);
         anim.SetBool("IsOpen", true);
-        isPaused = true;
         GetComponent<PlayerLook>().enabled = false;
         GetComponent<PlayerInteract>().enabled = false;
     }
@@ -53,7 +54,6 @@ public class PauseMenu : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         pauseMenu.SetActive(false);
         Gui.SetActive(true);
-        isPaused = false;
         GetComponent<PlayerLook>().enabled = true;
         GetComponent<PlayerInteract>().enabled = true;
     }
