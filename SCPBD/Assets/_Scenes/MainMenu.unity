@@ -933,8 +933,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1490,10 +1490,8 @@ MonoBehaviour:
   menuAudioSource: {fileID: 1846903473}
   menuAudio:
   - {fileID: 8300000, guid: f85f174dc6d7df841b51af7c3e78ef43, type: 3}
-  - {fileID: 8300000, guid: 686699bd945cd14488b38e38e570a01a, type: 3}
-  - {fileID: 8300000, guid: cff3aa4c5c1d2a24b892bec0c6a9297a, type: 3}
+  - {fileID: 8300000, guid: f56b9a6f4c21a65478a07c94856420d9, type: 3}
   - {fileID: 8300000, guid: 9f2d10305e1ddf34b8179c99404d79f7, type: 3}
-  - {fileID: 8300000, guid: 52089a4fa20cec940b04e244ef7212a4, type: 3}
   audioMixer: {fileID: 24100000, guid: 409ab91540a37d744ba3dad16fb7ab99, type: 2}
   volumeText: {fileID: 2027996583}
 --- !u!1 &531725329
@@ -2940,8 +2938,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 13
-  m_fontSizeBase: 13
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
