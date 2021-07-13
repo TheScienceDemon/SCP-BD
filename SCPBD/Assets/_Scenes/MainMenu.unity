@@ -3839,6 +3839,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1031953056}
+  - component: {fileID: 1031953057}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -3866,6 +3867,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1031953057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031953055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ba861e171e85d845b2dac07a3189d60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenu: {fileID: 891341613}
+  creditsScreen: {fileID: 1031953055}
 --- !u!1 &1039129725
 GameObject:
   m_ObjectHideFlags: 0
