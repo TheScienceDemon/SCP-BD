@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class OnVisibleTest : MonoBehaviour
 {
-    private void OnBecameVisible()
+    public void OnBecameVisible()
     {
         Debug.Log(gameObject.name + " Ist sichtbar geworden");
     }
 
-    private void OnBecameInvisible()
+    public void OnBecameInvisible()
     {
         Debug.Log(gameObject.name + " wurde unsichtbar");
     }
