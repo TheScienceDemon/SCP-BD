@@ -6,16 +6,15 @@ using TMPro;
 public class testTimer : MonoBehaviour
 {
     [SerializeField] float startTime;
-    float time;
     [SerializeField] TMP_Text text;
     [SerializeField] AudioSource source;
     [SerializeField] TMP_Text amountText;
+    [SerializeField] AudioClip[] ambience;
 
-    int amount;
+    float time;
     bool playedAudioSource;
     int minutes;
     int seconds;
-    int milliseconds;
 
     private void Start()
     {
@@ -31,18 +30,31 @@ public class testTimer : MonoBehaviour
 
             minutes = (int)(time / 60f) % 60;
             seconds = (int)(time % 60f);
-            milliseconds = (int)(time * 1000f) % 1000;
-            text.text = minutes.ToString("F0") + ":" + seconds.ToString("F0") + ":" + milliseconds.ToString("F0");
+            float fraction = time * 1000;
+            fraction %= 1000;
+            text.text = string.Format("{0:00} : {1:00} : {2:000}", minutes, seconds, fraction);
+            amountText.text = "Audio spielt: " + playedAudioSource;
         }
-        else if (time <= 0f && !playedAudioSource)
+        else if (time <= 0f)
         {
-            playedAudioSource = !playedAudioSource;
-            source.PlayOneShot(source.clip);
-            text.text = "0:0:000";
+            playedAudioSource = false;
+            LoopMusic();
+
+            if (!playedAudioSource)
+            {
+                playedAudioSource = !playedAudioSource;
+                text.text = "00 : 00 : 000";
+            }
         }
+    }
 
-        amountText.text = amount.ToString("F0");
-
-
+    void LoopMusic()
+    {
+        if (!source.isPlaying)
+        {
+            int i = Random.Range(0, ambience.Length);
+            amountText.text = "Audio spielt: " + ambience[i].name;
+            source.PlayOneShot(ambience[i]);
+        }
     }
 }
