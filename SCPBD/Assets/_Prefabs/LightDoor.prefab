@@ -35,6 +35,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2445629900849532013}
+  - component: {fileID: 3374387896177978118}
+  - component: {fileID: 1892985954314840713}
+  - component: {fileID: 3737368251191459874}
   m_Layer: 0
   m_Name: LightDoor
   m_TagString: Untagged
@@ -59,6 +62,161 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &3374387896177978118
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5572380782286104263}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 3.25
+  MaxDistance: 15
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!95 &1892985954314840713
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5572380782286104263}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3737368251191459874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5572380782286104263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec56121c9d1fbf42948ba8fbe7a5909, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clearance: 0
+  uninteractableTime: 2
+  isInteractable: 0
+  doorOpenSounds:
+  - {fileID: 8300000, guid: 28a70ec814d254949ad0e43bc42d6caf, type: 3}
+  - {fileID: 8300000, guid: f8fa6f7d7a3cfe440959a1b1d60a403d, type: 3}
+  - {fileID: 8300000, guid: 0f5061d30d78106468a23b90b05c5e73, type: 3}
+  - {fileID: 8300000, guid: 0272016ed19608a43b09dfc8d42ddf24, type: 3}
+  - {fileID: 8300000, guid: 7b1264776a602c14e957741dbea9844a, type: 3}
+  - {fileID: 8300000, guid: 9574a7c410b5d444e9d2ea366a4ecd92, type: 3}
+  - {fileID: 8300000, guid: 9bf4f027920513e4d80dc62612e355e8, type: 3}
+  - {fileID: 8300000, guid: 47c668eb9e470ea43a85466c3120f3d1, type: 3}
+  - {fileID: 8300000, guid: d07543888680e3e41a87744d330ed2de, type: 3}
+  doorCloseSounds:
+  - {fileID: 8300000, guid: 04af899d2bdd0564ebb14b1578b03944, type: 3}
+  - {fileID: 8300000, guid: 78f3e64e629749647827b2de1504f0f2, type: 3}
+  - {fileID: 8300000, guid: c2e44ac344bb80746af824202cf8a1d7, type: 3}
+  - {fileID: 8300000, guid: 84b925c9aacaa0f4b99678d5fc405458, type: 3}
+  - {fileID: 8300000, guid: f260bc6e283557b43b5c1207b4bd4f3c, type: 3}
+  - {fileID: 8300000, guid: af3e289fd42f6bb40a07fe574d0c6ae4, type: 3}
+  - {fileID: 8300000, guid: daae4688f7a62614aac8de634b1820f2, type: 3}
+  - {fileID: 8300000, guid: 4f2f41fc46320394fb0eaecab15403d4, type: 3}
+  - {fileID: 8300000, guid: a239155aec0db3742885521587eaf66d, type: 3}
+  doorButtons: []
+  doorMaterials:
+  - {fileID: 2100000, guid: 776a1adaf9f4baa45aca25d9f537d3cf, type: 2}
+  - {fileID: 2100000, guid: d5becbc49843e514baba268fa6f70640, type: 2}
+  - {fileID: 2100000, guid: e5bb57e3d30facb49ba2cd554c8dd93b, type: 2}
 --- !u!1001 &1264289923600449365
 PrefabInstance:
   m_ObjectHideFlags: 0
