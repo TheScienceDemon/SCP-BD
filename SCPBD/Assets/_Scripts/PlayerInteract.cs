@@ -7,6 +7,7 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] Transform playerCam;
     [SerializeField] float maxDistance;
     PlayerKeycardLevel playerKeycard;
+    RaycastHit hit;
 
     void Start()
     {
@@ -18,16 +19,9 @@ public class PlayerInteract : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out RaycastHit hit, maxDistance))
+            if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, maxDistance))
             {
-                if (hit.transform.CompareTag("Tür"))
-                {
-                    Tür tür = hit.transform.GetComponentInParent<Tür>();
-                    if (tür.clearance <= playerKeycard.keycardLevel)
-                        if (tür.isInteractable)
-                            StartCoroutine(tür.ChangeDoorState());
-                }
-                else if (hit.transform.CompareTag("TürButton"))
+                if (hit.transform.CompareTag("TürButton"))
                 {
                     TürButton türButton = hit.transform.GetComponent<TürButton>();
                     Tür tür = hit.transform.GetComponentInParent<Tür>();

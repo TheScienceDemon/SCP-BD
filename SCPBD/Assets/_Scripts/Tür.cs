@@ -13,8 +13,8 @@ public class Tür : MonoBehaviour
     [SerializeField] AudioClip[] doorOpenSounds;
     [SerializeField] AudioClip[] doorCloseSounds;
     Animator anim;
-    [SerializeField] GameObject[] doorButtons;
-    [SerializeField] Material[] doorMaterials;
+    public GameObject[] doorButtons;
+    public Material[] doorMaterials;
 
     // Start is called before the first frame update
     void Start()
