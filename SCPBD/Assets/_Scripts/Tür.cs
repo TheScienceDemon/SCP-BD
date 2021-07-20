@@ -35,7 +35,7 @@ public class Tür : MonoBehaviour
             {
                 button.GetComponent<Renderer>().material = doorMaterials[1];
             }
-            // TODO: Tür öffnen animation
+            anim.SetBool("isOpen", isDoorOpen);
             yield return new WaitForSeconds(doorOpenSounds[i].length);
             isInteractable = true;
         }
@@ -49,7 +49,7 @@ public class Tür : MonoBehaviour
             {
                 button.GetComponent<Renderer>().material = doorMaterials[0];
             }
-            // TODO: Tür schließen animation
+            anim.SetBool("isOpen", isDoorOpen);
             yield return new WaitForSeconds(doorCloseSounds[i].length);
             isInteractable = true;
         }

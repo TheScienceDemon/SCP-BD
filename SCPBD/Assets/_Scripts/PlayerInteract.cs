@@ -16,7 +16,7 @@ public class PlayerInteract : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out RaycastHit hit, maxDistance))
             {
@@ -26,6 +26,23 @@ public class PlayerInteract : MonoBehaviour
                     if (tür.clearance <= playerKeycard.keycardLevel)
                         if (tür.isInteractable)
                             StartCoroutine(tür.ChangeDoorState());
+                }
+                else if (hit.transform.CompareTag("TürButton"))
+                {
+                    TürButton türButton = hit.transform.GetComponent<TürButton>();
+                    Tür tür = hit.transform.GetComponentInParent<Tür>();
+                    if (tür.isInteractable)
+                    {
+                        if (tür.clearance <= playerKeycard.keycardLevel)
+                        {
+                            türButton.ChangeDoorState();
+                            türButton.source.PlayOneShot(türButton.buttonSounds[0]);
+                        }
+                        else
+                        {
+                            türButton.source.PlayOneShot(türButton.buttonSounds[1]);
+                        }
+                    }
                 }
             }
         }

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - "T\xFCr"
+  - "T\xFCrButton"
   layers:
   - Default
   - TransparentFX
