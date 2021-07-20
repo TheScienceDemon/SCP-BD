@@ -6,6 +6,12 @@ public class PlayerInteract : MonoBehaviour
 {
     [SerializeField] Transform playerCam;
     [SerializeField] float maxDistance;
+    PlayerKeycardLevel playerKeycard;
+
+    void Start()
+    {
+        playerKeycard = GetComponent<PlayerKeycardLevel>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -17,7 +23,7 @@ public class PlayerInteract : MonoBehaviour
                 if (hit.transform.CompareTag("Tür"))
                 {
                     Tür tür = hit.transform.GetComponentInParent<Tür>();
-                    if (tür.clearance <= GetComponent<PlayerKeycardLevel>().keycardLevel)
+                    if (tür.clearance <= playerKeycard.keycardLevel)
                         if (tür.isInteractable)
                             StartCoroutine(tür.ChangeDoorState());
                 }
