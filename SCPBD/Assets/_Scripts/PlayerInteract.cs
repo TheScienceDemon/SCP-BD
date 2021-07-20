@@ -25,17 +25,15 @@ public class PlayerInteract : MonoBehaviour
                 {
                     TürButton türButton = hit.transform.GetComponent<TürButton>();
                     Tür tür = hit.transform.GetComponentInParent<Tür>();
-                    if (tür.isInteractable)
+                    if (tür.clearance <= playerKeycard.keycardLevel)
                     {
-                        if (tür.clearance <= playerKeycard.keycardLevel)
-                        {
+                        türButton.source.PlayOneShot(türButton.buttonSounds[0]);
+                        if (tür.isInteractable)
                             türButton.ChangeDoorState();
-                            türButton.source.PlayOneShot(türButton.buttonSounds[0]);
-                        }
-                        else
-                        {
-                            türButton.source.PlayOneShot(türButton.buttonSounds[1]);
-                        }
+                    }
+                    else
+                    {
+                        türButton.source.PlayOneShot(türButton.buttonSounds[1]);
                     }
                 }
             }
