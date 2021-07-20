@@ -7,7 +7,6 @@ using UnityEngine;
 public class Tür : MonoBehaviour
 {
     public int clearance;
-    [SerializeField] float uninteractableTime;
     bool isDoorOpen;
     public bool isInteractable;
     AudioSource source;
@@ -28,6 +27,7 @@ public class Tür : MonoBehaviour
     {
         if (!isDoorOpen)
         {
+            isDoorOpen = true;
             isInteractable = false;
             int i = Random.Range(0, doorOpenSounds.Length);
             source.PlayOneShot(doorOpenSounds[i]);
@@ -36,11 +36,12 @@ public class Tür : MonoBehaviour
                 button.GetComponent<Renderer>().material = doorMaterials[1];
             }
             // TODO: Tür öffnen animation
-            yield return new WaitForSeconds(uninteractableTime);
+            yield return new WaitForSeconds(doorOpenSounds[i].length);
             isInteractable = true;
         }
         else
         {
+            isDoorOpen = false;
             isInteractable = false;
             int i = Random.Range(0, doorCloseSounds.Length);
             source.PlayOneShot(doorCloseSounds[i]);
@@ -49,7 +50,7 @@ public class Tür : MonoBehaviour
                 button.GetComponent<Renderer>().material = doorMaterials[0];
             }
             // TODO: Tür schließen animation
-            yield return new WaitForSeconds(uninteractableTime);
+            yield return new WaitForSeconds(doorCloseSounds[i].length);
             isInteractable = true;
         }
     }
