@@ -10,7 +10,6 @@ public class Ambience : MonoBehaviour
     float timeUntilSound;
     [SerializeField] AudioClip[] ambienceClips;
     AudioSource source;
-    [SerializeField] TMP_Text text;
 
     void Start()
     {
@@ -21,13 +20,6 @@ public class Ambience : MonoBehaviour
     void FixedUpdate()
     {
         timeUntilSound -= Time.fixedDeltaTime;
-
-        int minutes = (int)(timeUntilSound / 60f) % 60;
-        int seconds = (int)(timeUntilSound % 60f);
-        float fraction = timeUntilSound * 1000;
-        fraction %= 1000;
-        text.text = string.Format("{0:00} : {1:00} : {2:000}", minutes, seconds, fraction);
-
         if (timeUntilSound <= 0f)
         {
             float f = Random.Range(timeUntilSound, maxTimeUntilSound);
