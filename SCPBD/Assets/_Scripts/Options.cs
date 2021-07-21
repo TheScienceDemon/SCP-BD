@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Options : MonoBehaviour
@@ -83,5 +84,10 @@ public class Options : MonoBehaviour
     {
         Screen.fullScreen = isFullscreen;
         Debug.Log("Vollbildmodus ist jetzt auf : " + isFullscreen);
+    }
+
+    public void PlayGameMode(int i)
+    {
+        SceneManager.LoadScene(i);
     }
 }
