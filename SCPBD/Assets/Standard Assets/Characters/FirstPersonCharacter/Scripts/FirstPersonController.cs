@@ -40,7 +40,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private Vector3 m_OriginalCameraPosition;
         private float m_StepCycle;
         private float m_NextStep;
-        [SerializeField]private bool m_Jumping;
+        private bool m_Jumping;
         private AudioSource m_AudioSource;
 
         // Use this for initialization

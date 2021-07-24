@@ -715,6 +715,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.275
       objectReference: {fileID: 0}
+    - target: {fileID: 1432568425686802287, guid: bec13e5b0e2a5b04ca6df9acfbd398ed, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.275
+      objectReference: {fileID: 0}
     - target: {fileID: 2433197791609502557, guid: bec13e5b0e2a5b04ca6df9acfbd398ed, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.275
@@ -783,6 +787,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightDoorAlt2
       objectReference: {fileID: 0}
+    - target: {fileID: 5762473203534107594, guid: bec13e5b0e2a5b04ca6df9acfbd398ed, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.275
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bec13e5b0e2a5b04ca6df9acfbd398ed, type: 3}
 --- !u!4 &6290312315354712340 stripped
@@ -800,6 +808,10 @@ PrefabInstance:
     - target: {fileID: 5353589483364997, guid: bec13e5b0e2a5b04ca6df9acfbd398ed, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.275
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432568425686802287, guid: bec13e5b0e2a5b04ca6df9acfbd398ed, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.275
       objectReference: {fileID: 0}
     - target: {fileID: 2433197791609502557, guid: bec13e5b0e2a5b04ca6df9acfbd398ed, type: 3}
       propertyPath: m_LocalPosition.z
@@ -868,6 +880,10 @@ PrefabInstance:
     - target: {fileID: 5572380782286104263, guid: bec13e5b0e2a5b04ca6df9acfbd398ed, type: 3}
       propertyPath: m_Name
       value: LightDoorAlt2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762473203534107594, guid: bec13e5b0e2a5b04ca6df9acfbd398ed, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.275
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bec13e5b0e2a5b04ca6df9acfbd398ed, type: 3}

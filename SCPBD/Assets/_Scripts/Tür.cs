@@ -31,12 +31,13 @@ public class Tür : MonoBehaviour
             isInteractable = false;
             int i = Random.Range(0, doorOpenSounds.Length);
             source.PlayOneShot(doorOpenSounds[i]);
-            foreach (GameObject button in doorButtons)
-            {
-                button.GetComponent<Renderer>().material = doorMaterials[1];
-            }
+            if (doorButtons.Length > 0)
+                foreach (GameObject button in doorButtons)
+                {
+                    button.GetComponent<Renderer>().material = doorMaterials[1];
+                }
             anim.SetBool("isOpen", isDoorOpen);
-            yield return new WaitForSeconds(doorOpenSounds[i].length);
+            yield return new WaitForSeconds(1.65f);
             isInteractable = true;
         }
         else
@@ -45,12 +46,13 @@ public class Tür : MonoBehaviour
             isInteractable = false;
             int i = Random.Range(0, doorCloseSounds.Length);
             source.PlayOneShot(doorCloseSounds[i]);
-            foreach (GameObject button in doorButtons)
-            {
-                button.GetComponent<Renderer>().material = doorMaterials[0];
-            }
+            if (doorButtons.Length > 0)
+                foreach (GameObject button in doorButtons)
+                {
+                    button.GetComponent<Renderer>().material = doorMaterials[0];
+                }
             anim.SetBool("isOpen", isDoorOpen);
-            yield return new WaitForSeconds(doorCloseSounds[i].length);
+            yield return new WaitForSeconds(1.7f);
             isInteractable = true;
         }
     }

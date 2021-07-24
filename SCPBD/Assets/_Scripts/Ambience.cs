@@ -6,25 +6,24 @@ using TMPro;
 [RequireComponent(typeof(AudioSource))]
 public class Ambience : MonoBehaviour
 {
-    [SerializeField] float maxTimeUntilSound;
-    float timeUntilSound;
+    [SerializeField] float maxTimeBetweenSound;
+    float time;
     [SerializeField] AudioClip[] ambienceClips;
     AudioSource source;
 
     void Start()
     {
         source = GetComponent<AudioSource>();
-        timeUntilSound = maxTimeUntilSound;
+        time = maxTimeBetweenSound;
     }
 
     void FixedUpdate()
     {
-        timeUntilSound -= Time.fixedDeltaTime;
-        if (timeUntilSound <= 0f)
+        time -= Time.fixedDeltaTime;
+
+        if (time <= 0f)
         {
-            float f = Random.Range(timeUntilSound, maxTimeUntilSound);
-            maxTimeUntilSound +=  Random.Range(f, maxTimeUntilSound);
-            timeUntilSound = maxTimeUntilSound;
+            time = maxTimeBetweenSound;
             int i = Random.Range(0, ambienceClips.Length);
             source.PlayOneShot(ambienceClips[i]);
         }

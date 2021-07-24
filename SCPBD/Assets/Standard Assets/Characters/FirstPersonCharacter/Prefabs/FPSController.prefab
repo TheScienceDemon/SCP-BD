@@ -80,7 +80,7 @@ AudioSource:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -6725654571936621804, guid: 409ab91540a37d744ba3dad16fb7ab99, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -195,7 +195,7 @@ MonoBehaviour:
     smooth: 0
     smoothTime: 5
     lockCursor: 1
-  m_UseFovKick: 1
+  m_UseFovKick: 0
   m_FovKick:
     Camera: {fileID: 0}
     originalFov: 0
@@ -288,7 +288,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7a8c4662b9ee6234e9b67a06abba0383, type: 3}
   m_JumpSound: {fileID: 0}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
-  m_Jumping: 0
 --- !u!114 &5609535079675588961
 MonoBehaviour:
   m_ObjectHideFlags: 0
