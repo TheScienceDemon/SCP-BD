@@ -8,6 +8,7 @@ TagManager:
   - "T\xFCrButton"
   - 914key
   - 914knob
+  - Pickup
   layers:
   - Default
   - TransparentFX
