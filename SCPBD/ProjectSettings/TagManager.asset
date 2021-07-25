@@ -6,6 +6,8 @@ TagManager:
   tags:
   - "T\xFCr"
   - "T\xFCrButton"
+  - 914key
+  - 914knob
   layers:
   - Default
   - TransparentFX

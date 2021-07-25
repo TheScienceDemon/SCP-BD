@@ -7,7 +7,6 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] Transform playerCam;
     [SerializeField] float maxDistance;
     PlayerKeycardLevel playerKeycard;
-    RaycastHit hit;
 
     void Start()
     {
@@ -19,7 +18,7 @@ public class PlayerInteract : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, maxDistance))
+            if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out RaycastHit hit, maxDistance))
             {
                 if (hit.transform.CompareTag("TürButton"))
                 {
@@ -35,6 +34,15 @@ public class PlayerInteract : MonoBehaviour
                     {
                         türButton.source.PlayOneShot(türButton.buttonSounds[1]);
                     }
+                }
+                else if (hit.transform.CompareTag("914key"))
+                {
+
+                }
+                else if (hit.transform.CompareTag("914knob"))
+                {
+                    Scp914knob knob = hit.transform.GetComponent<Scp914knob>();
+                    StartCoroutine(knob.Change914mode());
                 }
             }
         }
