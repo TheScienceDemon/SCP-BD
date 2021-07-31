@@ -9,6 +9,7 @@ TagManager:
   - 914key
   - 914knob
   - Pickup
+  - DiscordManagement
   layers:
   - Default
   - TransparentFX
