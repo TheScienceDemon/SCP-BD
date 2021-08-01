@@ -2299,21 +2299,33 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\n<u>Developer</u>\n\nThe Science Demon\nColdfox321\n\n<u>Musik</u>\nAstowo
-    - Infiltration\nFragik - Final Flash Of Existance Menu Intense\n\n<b><u>SCP:
-    Containment Breach Credits</u></b>\n<u>3D Modelle</u>\n\nJoonas Rikkonen (\"Regalis\")\r\nApocryphos\r\nAtomicsneak\r\nBrandon
-    Smith\r\nEternalError\r\nGamerEntitlement\r\nHakkla\r\nIvan Mikhailov (\"Redbull.Ivan\")\r\nJames
-    Bear (\"Moonsaber\")\r\nKenneth Crooker\r\nLionel Ruskin (\"Cridone\")\r\nMicro\r\nNight\r\nProsth\r\nTheKMan\r\nReilly
-    Grindle (\"Mirocaine\")\r\nSaitoFox\r\nSam Lynch (\"InnocentSam\")\r\nShaun Gaylard
-    (\"ENDSHN\")\r\nTom Malinowski\r\nVladislav Borisevich (\"Vane Brain\")\n\n<u>SFX
-    und Musik</u>\n\nJoonas Rikkonen (\"Regalis\")\r\nCaleb Yu (\"Omniary\")\r\nClass401\r\nFireFox\r\ngmodfan11\r\nKevin
-    MacLeod\r\nphlip45\r\nrevo794\r\nShaun Gaylard (\"ENDSHN\")\r\nSlagar\r\nTim
-    Morrison\r\nVladislav Borisevich (\"Vane Brain\")\r\nWalach\n\n<u>Texturen</u>\n\nJoonas
-    Rikkonen (\"Regalis\")\r\nAnon4743\r\nBalzac\r\nBrokami\r\nCaleb Yu (\"Omniary\")\r\nKyoteeWilliams\r\nOrgil
-    Pount (\"Destructoid\")\r\nPavel Lvovich Gorfunkel (\"-Mark-\")\r\nShadowscale48\r\nShaun
-    Gaylard (\"ENDSHN\")\r\nVladislav Borisevich (\"Vane Brain\")\n\n<b><u>SCP: Containment
-    Breach Ultimate Edition Credits</u></b>\n\n\n\n\n\n\n\n<size=90><color=#0D0E9D><b>Danke
-    f\xFCrs Spielen!</b></size></size>"
+  m_text: "Das Spiel enth\xE4lt Musik die von Fragik gemacht wurde, die zu SCP: Secret
+    Laboratory geh\xF6rt!\r\n\r\n<u>Developer</u>\r\n\r\nThe Science Demon\r\n\r\n<u>Musik</u>\r\n\r\nAstowo
+    - Infiltration\r\nFragik - The Final Flash Of Existance Menu Intense\r\n\r\n<b><u>SCP:
+    Containment Breach + Mods</u></b>\r\n|\r\nRegalis | Undertow Games\r\nVane Brain
+    | Third Subdivision\r\nApocryphos | Modelling Contributor\nAtomicsneak | Modelling
+    Contributor\nBrandon Smith | Modelling Contributor\r\nEternalError | Modelling
+    Contributor\nGamerEntitlement | Modelling Contributor\r\nHakkla | Modelling Contributor\r\nRedbull.Ivan
+    | Modelling Contributor\r\nMoonsaber | Modelling Contributor\r\nKenneth Crooker
+    | Modelling Contributor\r\nCridone | Modelling Contributor\r\nMicro | Modelling
+    Contributor\r\nNight | Modelling Contributor\r\nProsth | Modelling Contributor\r\nTheKMan
+    | Modelling Contributor\r\nMirocaine | Modelling Contributor\r\nSaitoFox | Modelling
+    Contributor\r\nInnocentSam | Modelling Contributor\r\nENDSHN | Modelling Contributor\r\nTom
+    Malinowski | Modelling Contributor\r\nOmniary | SFX / Music Contributor\r\nClass401
+    | SFX / Music Contributor\r\nFireFox | SFX / Music Contributor\r\ngmodfan11 |
+    SFX / Music Contributor\r\nKevin MacLeod | SFX / Music Contributor\r\nphlip45
+    | SFX / Music Contributor\r\nrevo794 | SFX / Music Contributor\r\nENDSHN | SFX
+    / Music Contributor\r\nSlagar | SFX / Music Contributor\r\nTim Morrison | SFX
+    / Music Contributor\r\nWalach | SFX / Music Contributor\r\nTheVolgun | Voicer
+    Acting Contributor\r\nDukeLovesYou | Voicer Acting Contributor\r\nCDWinters |
+    Voicer Acting Contributor\r\nStealthy Zoroark | Voicer Acting Contributor\r\nHunter
+    | Voicer Acting Contributor\r\nItsDuke | Voicer Acting Contributor\r\nJoshofsouls
+    | Voicer Acting Contributor\r\nMoonstiee | Voicer Acting Contributor\r\nSolidBaker
+    | Voicer Acting Contributor\r\nTallfellow | Voicer Acting Contributor\r\nAnon4743
+    | Texturing Contributor\r\nBalzac | Texturing Contributor\r\nBrokami | Texturing
+    Contributor\r\nOmniary | Texturing Contributor\r\nKyoteeWilliams | Texturing
+    Contributor\r\nDestructoid | Texturing Contributor\r\n-Mark- | Texturing Contributor\r\nShadowscale48
+    | Texturing Contributor\r\nENDSHN | Texturing Contributor"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5473,7 +5485,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1031953056}
-  - component: {fileID: 1031953057}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -5501,20 +5512,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1031953057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1031953055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ba861e171e85d845b2dac07a3189d60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainMenu: {fileID: 891341613}
-  creditsScreen: {fileID: 1031953055}
 --- !u!1 &1059094626
 GameObject:
   m_ObjectHideFlags: 0
@@ -5797,7 +5794,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ButtonHoverSound: {fileID: 8300000, guid: a7b19b50fea731646bfa64f461a86f6b, type: 3}
-  ButtonClickSound: {fileID: 8300000, guid: 500e88a46af28fc4298004033371dbe8, type: 3}
+  ButtonClickSound: {fileID: 8300000, guid: 92a596f49ec85c34ea5674245609057f, type: 3}
 --- !u!82 &1103501658
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5818,8 +5815,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0
+  MaxDistance: 0.01
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -9856,8 +9853,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Das Spiel enth\xE4lt Musik die von Fragik gemacht wurde, die zu SCP: Secret
-    Laboratory geh\xF6rt!"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
