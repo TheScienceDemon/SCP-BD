@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInteract : MonoBehaviour
 {
@@ -20,15 +21,17 @@ public class PlayerInteract : MonoBehaviour
         {
             if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out RaycastHit hit, maxDistance))
             {
-                if (hit.transform.CompareTag("TürButton"))
+                if (hit.transform.CompareTag("TürButton") || hit.transform.CompareTag("TürButtonKeycard"))
                 {
                     TürButton türButton = hit.transform.GetComponent<TürButton>();
                     Tür tür = hit.transform.GetComponentInParent<Tür>();
                     if (tür.clearance <= playerKeycard.keycardLevel)
                     {
-                        türButton.source.PlayOneShot(türButton.buttonSounds[0]);
                         if (tür.isInteractable)
+                        {
                             türButton.ChangeDoorState();
+                            türButton.source.PlayOneShot(türButton.buttonSounds[0]);
+                        }
                     }
                     else
                     {

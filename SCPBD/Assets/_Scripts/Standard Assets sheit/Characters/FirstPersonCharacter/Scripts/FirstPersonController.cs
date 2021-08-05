@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
@@ -42,6 +41,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+        PlayerStats playerStats;
 
         // Use this for initialization
         private void Start()
@@ -56,6 +56,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+            playerStats = GetComponent<PlayerStats>();
         }
 
 
@@ -108,6 +109,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MoveDir.x = desiredMove.x*speed;
             m_MoveDir.z = desiredMove.z*speed;
 
+            if (!m_IsWalking && playerStats.Stamina > 0)
+            {
+                playerStats.Stamina -= Time.fixedDeltaTime * 5;
+            }
+            else if(m_IsWalking && playerStats.Stamina < 100)
+            {
+                playerStats.Stamina += Time.fixedDeltaTime;
+            }
 
             if (m_CharacterController.isGrounded)
             {
@@ -215,7 +224,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
 #endif
             // set the desired speed to be walking or running
-            speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
+            speed = (!m_IsWalking && playerStats.Stamina > 0 ? m_RunSpeed : m_WalkSpeed);
             m_Input = new Vector2(horizontal, vertical);
 
             // normalize input if it exceeds 1 in combined length:

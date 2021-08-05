@@ -10,6 +10,8 @@ TagManager:
   - 914knob
   - Pickup
   - DiscordManagement
+  - Fire
+  - "T\xFCrButtonKeycard"
   layers:
   - Default
   - TransparentFX

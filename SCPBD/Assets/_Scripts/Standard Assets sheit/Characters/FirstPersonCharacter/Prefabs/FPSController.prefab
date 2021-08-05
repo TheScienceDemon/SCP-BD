@@ -302,6 +302,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCam: {fileID: 400002}
   maxDistance: 4
+  interactImage: {fileID: 0}
+  interactImages:
+  - {fileID: 21300000, guid: 707a93e2af3777c43ad65bd078a3308b, type: 3}
+  - {fileID: 21300000, guid: 61164340ec7be0b4e8a95c0bfa6845f3, type: 3}
 --- !u!114 &7099297348986828190
 MonoBehaviour:
   m_ObjectHideFlags: 0

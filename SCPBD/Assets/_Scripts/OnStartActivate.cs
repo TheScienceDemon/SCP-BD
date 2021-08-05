@@ -11,7 +11,7 @@ public class OnStartActivate : MonoBehaviour
     {
         foreach (GameObject itemToActivate in itemsToActivate)
         {
-            if(itemToActivate.activeSelf)
+            if(!itemToActivate.activeSelf)
             {
                 itemToActivate.SetActive(true);
                 Debug.Log(itemToActivate.name + " wurde aktiviert");
