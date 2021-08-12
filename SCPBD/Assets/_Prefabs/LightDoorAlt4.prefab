@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &7223614351921161609
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4714349669862693828}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.08136, y: 24.287518, z: 1.0575918}
+  m_Center: {x: -0.0051498413, y: 12.147139, z: -0.028795986}
 --- !u!1 &5572380782286104263
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,6 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clearance: 0
+  idleTime: 1.675
   isInteractable: 1
   doorOpenSounds:
   - {fileID: 8300000, guid: 9bf4f027920513e4d80dc62612e355e8, type: 3}
@@ -182,19 +196,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 776a1adaf9f4baa45aca25d9f537d3cf, type: 2}
   - {fileID: 2100000, guid: d5becbc49843e514baba268fa6f70640, type: 2}
   - {fileID: 2100000, guid: e5bb57e3d30facb49ba2cd554c8dd93b, type: 2}
---- !u!65 &7223614351921161609
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4714349669862693828}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 11.08136, y: 24.287518, z: 1.0575918}
-  m_Center: {x: -0.0051498413, y: 12.147139, z: -0.028795986}
 --- !u!65 &882425424930190409
 BoxCollider:
   m_ObjectHideFlags: 0

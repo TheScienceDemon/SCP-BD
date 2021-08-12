@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clearance: 0
+  idleTime: 1.675
   isInteractable: 1
   doorOpenSounds:
   - {fileID: 8300000, guid: 28a70ec814d254949ad0e43bc42d6caf, type: 3}

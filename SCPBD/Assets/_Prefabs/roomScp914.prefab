@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2690213939369421968}
   - component: {fileID: 4311426612411101650}
   m_Layer: 0
-  m_Name: room914
+  m_Name: roomScp914
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,8 +27,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 549917928541750152}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 60.75, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 2350810308543429816}
@@ -40,7 +40,7 @@ Transform:
   - {fileID: 5178763737473268135}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4271022443673867927
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -48,7 +48,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 549917928541750152}
-  m_Mesh: {fileID: 6446764538218147218, guid: 2ce14f1a5fdb1874a9fb74cd750bda97, type: 3}
+  m_Mesh: {fileID: 2866125182338699742, guid: 2ce14f1a5fdb1874a9fb74cd750bda97, type: 3}
 --- !u!23 &2063016971988247133
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -151,7 +151,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 6446764538218147218, guid: 2ce14f1a5fdb1874a9fb74cd750bda97, type: 3}
+  m_Mesh: {fileID: -623322608931428443, guid: 997dc14673f42994ba44f02bb561e616, type: 3}
 --- !u!114 &4311426612411101650
 MonoBehaviour:
   m_ObjectHideFlags: 0
