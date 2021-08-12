@@ -38,6 +38,12 @@ public class PlayerInteract : MonoBehaviour
                         türButton.source.PlayOneShot(türButton.buttonSounds[1]);
                     }
                 }
+                else if (hit.transform.CompareTag("Checkpoint"))
+                {
+                    Checkpoint checkpoint = hit.transform.GetComponentInParent<Checkpoint>();
+                    if (checkpoint.isInteractable)
+                        StartCoroutine(checkpoint.OpenCheckpoint());
+                }
                 else if (hit.transform.CompareTag("914key"))
                 {
 

@@ -14,13 +14,16 @@ public class Tür : MonoBehaviour
     [SerializeField] AudioClip[] doorCloseSounds;
     Animator anim;
     public GameObject[] doorButtons;
-    public Material[] doorMaterials;
+    [SerializeField] Material[] doorMaterials;
 
     // Start is called before the first frame update
     void Start()
     {
         source = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
+        if (clearance == 69)
+            foreach (GameObject button in doorButtons)
+                button.GetComponent<Renderer>().material = doorMaterials[2];
     }
 
     public IEnumerator ChangeDoorState()

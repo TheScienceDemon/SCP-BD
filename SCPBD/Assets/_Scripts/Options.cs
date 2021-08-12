@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using UnityEngine.Localization.Settings;
 using TMPro;
 
 public class Options : MonoBehaviour
@@ -10,15 +11,24 @@ public class Options : MonoBehaviour
     [SerializeField] TMP_Dropdown graphicsDropdown;
     [SerializeField] TMP_Dropdown resolutionDropdown;
     [SerializeField] TMP_Dropdown musicDropdown;
+    [SerializeField] TMP_Dropdown languageDropdown;
     [SerializeField] AudioSource menuAudioSource;
     [SerializeField] AudioClip[] menuAudio;
     [SerializeField] AudioMixer audioMixer;
     [SerializeField] TMP_Text volumeText;
     Resolution[] resolutionArray;
 
+    void Awake()
+    {
+        LocalizationSettings.SelectedLocale = LocalizationSettings.SelectedLocale;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        // Sprach Einstellungen
+        StartCoroutine(GenerateLocaleDropdownOptions());
+
         // Grafik Einstellungen
         graphicsDropdown.value = QualitySettings.GetQualityLevel();
         graphicsDropdown.RefreshShownValue();
@@ -53,17 +63,38 @@ public class Options : MonoBehaviour
         resolutionDropdown.RefreshShownValue();
     }
 
+    IEnumerator GenerateLocaleDropdownOptions()
+    {
+        // Wait for the localization system to initialize, loading Locales, preloading etc.
+        yield return LocalizationSettings.InitializationOperation;
+
+        // Generate list of available Locales
+        var options = new List<TMP_Dropdown.OptionData>();
+        int selected = 0;
+        for (int i = 0; i < LocalizationSettings.AvailableLocales.Locales.Count; ++i)
+        {
+            var locale = LocalizationSettings.AvailableLocales.Locales[i];
+            if (LocalizationSettings.SelectedLocale == locale)
+                selected = i;
+            options.Add(new TMP_Dropdown.OptionData(locale.name));
+        }
+        languageDropdown.options = options;
+
+        languageDropdown.value = selected;
+        //languageDropdown.onValueChanged.AddListener(SetLanguage);
+    }
+
     public void SetQualityLevel(int qualityLevel)
     {
         QualitySettings.SetQualityLevel(qualityLevel);
         Debug.Log("Qualitätsstufe ist jetzt auf : " + QualitySettings.GetQualityLevel());
     }
 
-    public void SetMenuMusic(int musicIndex)
+    public void SetResolution(int resolutionIndex)
     {
-        menuAudioSource.clip = menuAudio[musicIndex];
-        menuAudioSource.Play();
-        Debug.Log("Hauptmenumusik ist jetzt : " + menuAudioSource.clip.name);
+        Resolution resolution = resolutionArray[resolutionIndex];
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+        Debug.Log("Auflösung ist jetzt auf : " + resolution);
     }
 
     public void SetVolume(float volume)
@@ -73,11 +104,16 @@ public class Options : MonoBehaviour
         Debug.Log("Volume ist jetzt auf : " + (volume * 100).ToString("F0"));
     }
 
-    public void SetResolution(int resolutionIndex)
+    public void SetMenuMusic(int musicIndex)
     {
-        Resolution resolution = resolutionArray[resolutionIndex];
-        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
-        Debug.Log("Auflösung ist jetzt auf : " + resolution);
+        menuAudioSource.clip = menuAudio[musicIndex];
+        menuAudioSource.Play();
+        Debug.Log("Hauptmenumusik ist jetzt : " + menuAudioSource.clip.name);
+    }
+
+    public void SetLanguage(int languageIndex)
+    {
+        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[languageIndex];
     }
 
     public void SetFullscreen(bool isFullscreen)

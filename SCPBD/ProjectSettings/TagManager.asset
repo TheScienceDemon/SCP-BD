@@ -12,6 +12,7 @@ TagManager:
   - DiscordManagement
   - Fire
   - "T\xFCrButtonKeycard"
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - dontCull
   - Water
   - UI
-  - 
+  - Post Proccesing
   - 
   - 
   - 
