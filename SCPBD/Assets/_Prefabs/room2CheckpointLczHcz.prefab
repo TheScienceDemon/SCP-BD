@@ -76,7 +76,7 @@ Light:
     m_UseCullingMatrixOverride: 0
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
-  m_Flare: {fileID: 0}
+  m_Flare: {fileID: 12100000, guid: dedc346d41ea6dc46bda0d7d74232930, type: 2}
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
@@ -485,7 +485,7 @@ Light:
     m_UseCullingMatrixOverride: 0
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
-  m_Flare: {fileID: 0}
+  m_Flare: {fileID: 12100000, guid: dedc346d41ea6dc46bda0d7d74232930, type: 2}
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
@@ -555,7 +555,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5198734570328344121}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -708,7 +708,7 @@ Light:
     m_UseCullingMatrixOverride: 0
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
-  m_Flare: {fileID: 0}
+  m_Flare: {fileID: 12100000, guid: dedc346d41ea6dc46bda0d7d74232930, type: 2}
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
@@ -988,7 +988,7 @@ Light:
     m_UseCullingMatrixOverride: 0
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
-  m_Flare: {fileID: 0}
+  m_Flare: {fileID: 12100000, guid: dedc346d41ea6dc46bda0d7d74232930, type: 2}
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
