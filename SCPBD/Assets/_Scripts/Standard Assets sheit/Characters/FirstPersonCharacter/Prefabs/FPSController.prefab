@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 11400000}
   - component: {fileID: 5609535079675588961}
   - component: {fileID: 7099297348986828190}
+  - component: {fileID: 1993959890728771084}
   m_Layer: 0
   m_Name: FPSController
   m_TagString: Player
@@ -315,6 +316,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keycardLevel: 5
+--- !u!114 &1993959890728771084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12be42c5334a2b344b25bca974bed67f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 0
+  Stamina: 100
 --- !u!1 &4226993838365545734
 GameObject:
   m_ObjectHideFlags: 0
