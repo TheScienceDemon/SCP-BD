@@ -21,28 +21,59 @@ public class PlayerInteract : MonoBehaviour
         {
             if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out RaycastHit hit, maxDistance))
             {
-                if (hit.transform.CompareTag("TürButton") || hit.transform.CompareTag("TürButtonKeycard"))
+                if (hit.transform.CompareTag("TürButton"))
                 {
-                    TürButton türButton = hit.transform.GetComponent<TürButton>();
-                    Tür tür = hit.transform.GetComponentInParent<Tür>();
-                    if (tür.clearance <= playerKeycard.keycardLevel)
+                    Tür tür1 = hit.transform.GetComponentInParent<Tür>();
+                    TürButton türButton1 = hit.transform.GetComponent<TürButton>();
+
+                    if (tür1.isInteractable)
                     {
-                        if (tür.isInteractable)
+                        if (tür1.clearance != 69)
                         {
-                            türButton.ChangeDoorState();
-                            türButton.source.PlayOneShot(türButton.buttonSounds[0]);
+                            türButton1.ChangeDoorState();
+                            türButton1.source.PlayOneShot(türButton1.buttonSounds[0]);
+                        }
+                        else
+                        {
+                            türButton1.source.PlayOneShot(türButton1.buttonSounds[1]);
+                        }
+                    }
+                }
+                else if (hit.transform.CompareTag("TürButtonKeycard"))
+                {
+                    Tür tür2 = hit.transform.GetComponentInParent<Tür>();
+                    TürButton türButton2 = hit.transform.GetComponent<TürButton>();
+
+                    if (tür2.clearance <= playerKeycard.keycardLevel)
+                    {
+                        if (tür2.isInteractable)
+                        {
+                            türButton2.ChangeDoorState();
+                            türButton2.source.PlayOneShot(türButton2.buttonSounds[0]);
                         }
                     }
                     else
                     {
-                        türButton.source.PlayOneShot(türButton.buttonSounds[1]);
+                        türButton2.source.PlayOneShot(türButton2.buttonSounds[1]);
                     }
                 }
                 else if (hit.transform.CompareTag("Checkpoint"))
                 {
                     Checkpoint checkpoint = hit.transform.GetComponentInParent<Checkpoint>();
-                    if (checkpoint.isInteractable)
-                        StartCoroutine(checkpoint.OpenCheckpoint());
+                    TürButton türButton3 = hit.transform.GetComponent<TürButton>();
+
+                    if (checkpoint.clearance <= playerKeycard.keycardLevel)
+                    {
+                        if (checkpoint.isInteractable)
+                        {
+                            StartCoroutine(checkpoint.OpenCheckpoint());
+                            türButton3.source.PlayOneShot(türButton3.buttonSounds[0]);
+                        }
+                    }
+                    else
+                    {
+                        türButton3.source.PlayOneShot(türButton3.buttonSounds[1]);
+                    }
                 }
                 else if (hit.transform.CompareTag("914key"))
                 {
@@ -51,6 +82,7 @@ public class PlayerInteract : MonoBehaviour
                 else if (hit.transform.CompareTag("914knob"))
                 {
                     Scp914knob knob = hit.transform.GetComponent<Scp914knob>();
+
                     StartCoroutine(knob.Change914mode());
                 }
             }
