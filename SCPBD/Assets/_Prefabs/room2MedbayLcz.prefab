@@ -1002,6 +1002,10 @@ PrefabInstance:
       value: 69
       objectReference: {fileID: 0}
     - target: {fileID: 3737368251191459874, guid: 6e24c7adff0cfe749a6d60ebe7180221, type: 3}
+      propertyPath: isInteractable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737368251191459874, guid: 6e24c7adff0cfe749a6d60ebe7180221, type: 3}
       propertyPath: doorButtons.Array.size
       value: 2
       objectReference: {fileID: 0}

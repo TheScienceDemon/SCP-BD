@@ -7,11 +7,11 @@ public class PlayerInteract : MonoBehaviour
 {
     [SerializeField] Transform playerCam;
     [SerializeField] float maxDistance;
-    PlayerKeycardLevel playerKeycard;
+    PlayerStats playerStats;
 
     void Start()
     {
-        playerKeycard = GetComponent<PlayerKeycardLevel>();
+        playerStats = GetComponent<PlayerStats>();
     }
 
     // Update is called once per frame
@@ -26,17 +26,17 @@ public class PlayerInteract : MonoBehaviour
                     Tür tür1 = hit.transform.GetComponentInParent<Tür>();
                     TürButton türButton1 = hit.transform.GetComponent<TürButton>();
 
-                    if (tür1.isInteractable)
+                    if (tür1.clearance != 69)
                     {
-                        if (tür1.clearance != 69)
+                        if (tür1.isInteractable)
                         {
                             türButton1.ChangeDoorState();
                             türButton1.source.PlayOneShot(türButton1.buttonSounds[0]);
                         }
-                        else
-                        {
-                            türButton1.source.PlayOneShot(türButton1.buttonSounds[1]);
-                        }
+                    }
+                    else
+                    {
+                        türButton1.source.PlayOneShot(türButton1.buttonSounds[1]);
                     }
                 }
                 else if (hit.transform.CompareTag("TürButtonKeycard"))
@@ -44,7 +44,7 @@ public class PlayerInteract : MonoBehaviour
                     Tür tür2 = hit.transform.GetComponentInParent<Tür>();
                     TürButton türButton2 = hit.transform.GetComponent<TürButton>();
 
-                    if (tür2.clearance <= playerKeycard.keycardLevel)
+                    if (tür2.clearance <= playerStats.keycardLevel)
                     {
                         if (tür2.isInteractable)
                         {
@@ -62,7 +62,7 @@ public class PlayerInteract : MonoBehaviour
                     Checkpoint checkpoint = hit.transform.GetComponentInParent<Checkpoint>();
                     TürButton türButton3 = hit.transform.GetComponent<TürButton>();
 
-                    if (checkpoint.clearance <= playerKeycard.keycardLevel)
+                    if (checkpoint.clearance <= playerStats.keycardLevel)
                     {
                         if (checkpoint.isInteractable)
                         {

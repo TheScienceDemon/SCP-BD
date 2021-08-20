@@ -6,10 +6,16 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class PlayerStats : MonoBehaviour
 {
-    FirstPersonController fpsController;
+    [Header("Keycard")]
+    public int keycardLevel;
+
+    [Header("Health & Stamina")]
     [SerializeField] float Health;
     [Range(0f, 100f)] public float Stamina;
+
+
     UserInterface ui;
+    FirstPersonController fpsController;
 
     // Start is called before the first frame update
     void Start()
