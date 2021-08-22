@@ -10,6 +10,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (AudioSource))]
     public class FirstPersonController : MonoBehaviour
     {
+        public bool pauseMovement;
+        public Vector2 m_Input;
+        public Vector3 m_MoveDir = Vector3.zero;
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
@@ -29,10 +32,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
 
         private Camera m_Camera;
+        private PlayerStats playerStats;
         private bool m_Jump;
         private float m_YRotation;
-        private Vector2 m_Input;
-        private Vector3 m_MoveDir = Vector3.zero;
         private CharacterController m_CharacterController;
         private CollisionFlags m_CollisionFlags;
         private bool m_PreviouslyGrounded;
@@ -41,13 +43,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
-        PlayerStats playerStats;
+        private float speed;
 
         // Use this for initialization
         private void Start()
         {
             m_CharacterController = GetComponent<CharacterController>();
-            m_Camera = Camera.main;
+            m_Camera = GetComponentInChildren<Camera>();
             m_OriginalCameraPosition = m_Camera.transform.localPosition;
             m_FovKick.Setup(m_Camera);
             m_HeadBob.Setup(m_Camera, m_StepInterval);
@@ -63,7 +65,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Update is called once per frame
         private void Update()
         {
-            RotateView();
+            if (!pauseMovement)
+                RotateView();
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump && !m_Jumping)
             {
@@ -95,19 +98,21 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void FixedUpdate()
         {
-            float speed;
-            GetInput(out speed);
-            // always move along the camera forward as it is the direction that it being aimed at
-            Vector3 desiredMove = transform.forward*m_Input.y + transform.right*m_Input.x;
+            Vector3 desiredMove = transform.forward * m_Input.y + transform.right * m_Input.x;
+            if (!pauseMovement)
+            {
+                GetInput(out speed);
+                // always move along the camera forward as it is the direction that it being aimed at
 
-            // get a normal for the surface that is being touched to move along it
-            RaycastHit hitInfo;
-            Physics.SphereCast(transform.position, m_CharacterController.radius, Vector3.down, out hitInfo,
-                               m_CharacterController.height/2f, Physics.AllLayers, QueryTriggerInteraction.Ignore);
-            desiredMove = Vector3.ProjectOnPlane(desiredMove, hitInfo.normal).normalized;
+                // get a normal for the surface that is being touched to move along it
+                RaycastHit hitInfo;
+                Physics.SphereCast(transform.position, m_CharacterController.radius, Vector3.down, out hitInfo,
+                                   m_CharacterController.height / 2f, Physics.AllLayers, QueryTriggerInteraction.Ignore);
+                desiredMove = Vector3.ProjectOnPlane(desiredMove, hitInfo.normal).normalized;
 
-            m_MoveDir.x = desiredMove.x*speed;
-            m_MoveDir.z = desiredMove.z*speed;
+                m_MoveDir.x = desiredMove.x * speed;
+                m_MoveDir.z = desiredMove.z * speed;
+            }
 
             if (!m_IsWalking && playerStats.Stamina > 0)
             {
@@ -115,7 +120,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             else if(m_IsWalking && playerStats.Stamina < 100)
             {
-                playerStats.Stamina += Time.fixedDeltaTime;
+                playerStats.Stamina += Time.fixedDeltaTime * 2;
             }
 
             if (m_CharacterController.isGrounded)

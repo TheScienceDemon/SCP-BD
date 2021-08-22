@@ -8,10 +8,12 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] Transform playerCam;
     [SerializeField] float maxDistance;
     PlayerStats playerStats;
+    UserInterface ui;
 
     void Start()
     {
         playerStats = GetComponent<PlayerStats>();
+        ui = FindObjectOfType<UserInterface>();
     }
 
     // Update is called once per frame
@@ -84,6 +86,12 @@ public class PlayerInteract : MonoBehaviour
                     Scp914knob knob = hit.transform.GetComponent<Scp914knob>();
 
                     StartCoroutine(knob.Change914mode());
+                }
+                else if (hit.transform.CompareTag("ClickableScreen"))
+                {
+                    ClickableScreen clickableScreen = hit.transform.GetComponent<ClickableScreen>();
+
+                    clickableScreen.ChangeScreenState();
                 }
             }
         }
