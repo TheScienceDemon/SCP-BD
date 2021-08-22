@@ -13,6 +13,8 @@ TagManager:
   - Fire
   - "T\xFCrButtonKeycard"
   - Checkpoint
+  - ClickableScreen
+  - ElevButton
   layers:
   - Default
   - TransparentFX
