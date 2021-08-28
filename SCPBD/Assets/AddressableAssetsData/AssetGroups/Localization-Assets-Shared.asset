@@ -25,6 +25,10 @@ MonoBehaviour:
     m_Address: "Assets/\xDCbersetzung/EinstellungenSubmenuTable Shared Data.asset"
     m_ReadOnly: 1
     m_SerializedLabels: []
+  - m_GUID: fb9144980d8aa8a4aa4e77cde6bfd19e
+    m_Address: Assets/Translations/Tables/ExitSubmenuTable Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: aa293587e74196d4d9d9f9177b4155ae, type: 2}
   m_SchemaSet:

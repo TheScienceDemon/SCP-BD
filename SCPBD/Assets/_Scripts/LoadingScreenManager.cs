@@ -23,7 +23,7 @@ public class LoadingScreenManager : MonoBehaviour
         {
             float progress = Mathf.Clamp01(asyncOperation.progress / .9f);
             loadingBar.value = progress;
-            loadingbarText.text = (progress * 100).ToString("F0") + "% geladen";
+            loadingbarText.text = (progress * 100).ToString("F0") + "%";
 
             yield return null;
         }
