@@ -10,33 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: "Hauptmen\xFC Shared Data"
+  m_Name: MehrspielerSubmenuTable Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: "Hauptmen\xFCTable"
-  m_TableCollectionNameGuidString: 9ebe218385ec22e439d1c7c24215cbee
+  m_TableCollectionName: MehrspielerSubmenuTable
+  m_TableCollectionNameGuidString: feee6cd9dc30f764c85774658ff2e278
   m_Entries:
-  - m_Id: 7481687725334528
-    m_Key: EinzelspielerButtonText
+  - m_Id: 11794453127168
+    m_Key: Titel
     m_Metadata:
       m_Items: []
-  - m_Id: 7481817278996480
-    m_Key: MehrspielerButtonText
+  - m_Id: 11929216114688
+    m_Key: IpInputFieldPlaceholderText
     m_Metadata:
       m_Items: []
-  - m_Id: 7482277670969344
-    m_Key: EinstellugenButtonText
+  - m_Id: 12074993344512
+    m_Key: ConnectButtonText
     m_Metadata:
       m_Items: []
-  - m_Id: 7482330045243392
-    m_Key: CreditsButtonText
+  - m_Id: 12099324502016
+    m_Key: HostServerButtonText
     m_Metadata:
       m_Items: []
-  - m_Id: 7482377570902016
-    m_Key: ExitButtonText
-    m_Metadata:
-      m_Items: []
-  - m_Id: 7482421808226304
-    m_Key: BasedOnTitel
+  - m_Id: 12133558411264
+    m_Key: BackButtonText
     m_Metadata:
       m_Items: []
   m_Metadata:
@@ -48,4 +44,4 @@ MonoBehaviour:
     00000000:
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1628373713687
+        m_CustomEpoch: 1630157965542

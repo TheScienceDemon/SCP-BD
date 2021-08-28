@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MapGenerator : MonoBehaviour
 {
-    int seed = 6969;
+    public int seed;
 
     [System.Serializable]
     public struct Offset
@@ -42,7 +42,8 @@ public class MapGenerator : MonoBehaviour
         {
             rooms[i].roomId = i;
         }
-        GenerateMap();
+        seed = Random.Range(-999999999, 99999999);
+        GenerateMap(seed);
     }
 
     void IncrementRoomInstanceCount(int roomPositionID)
@@ -50,8 +51,9 @@ public class MapGenerator : MonoBehaviour
         rooms[roomPositionID].currentInstances++;
     }
 
-    void GenerateMap()
+    void GenerateMap(int mapSeed)
     {
+        Random.InitState(mapSeed);
         foreach (RoomPosition roomPosition in roomPositions)
         {
             List<Room> roomTypes = new List<Room>();

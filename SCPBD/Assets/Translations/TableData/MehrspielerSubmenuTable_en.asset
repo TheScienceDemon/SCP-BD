@@ -10,38 +10,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: "Hauptmen\xFC_en"
+  m_Name: MehrspielerSubmenuTable_en
   m_EditorClassIdentifier: 
   m_LocaleId:
     m_Code: en
-  m_SharedData: {fileID: 11400000, guid: 9ebe218385ec22e439d1c7c24215cbee, type: 2}
+  m_SharedData: {fileID: 11400000, guid: feee6cd9dc30f764c85774658ff2e278, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 7482377570902016
-    m_Localized: Quit
+  - m_Id: 11794453127168
+    m_Localized: Host / Join Game
     m_Metadata:
       m_Items: []
-  - m_Id: 7482330045243392
-    m_Localized: Credits
+  - m_Id: 12074993344512
+    m_Localized: Connect
     m_Metadata:
       m_Items: []
-  - m_Id: 7482277670969344
-    m_Localized: Settings
+  - m_Id: 12099324502016
+    m_Localized: Host Server
     m_Metadata:
       m_Items: []
-  - m_Id: 7481817278996480
-    m_Localized: 'Multiplayer
-
-'
+  - m_Id: 11929216114688
+    m_Localized: Input IP here...
     m_Metadata:
       m_Items: []
-  - m_Id: 7481687725334528
-    m_Localized: Singleplayer
-    m_Metadata:
-      m_Items: []
-  - m_Id: 7482421808226304
-    m_Localized: 'Based on:'
+  - m_Id: 12133558411264
+    m_Localized: Back
     m_Metadata:
       m_Items: []
   references:

@@ -32,6 +32,11 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
+  - m_GUID: 4d999b3303ece294db48a3f39b040f97
+    m_Address: MehrspielerSubmenuTable_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: aa293587e74196d4d9d9f9177b4155ae, type: 2}
   m_SchemaSet:

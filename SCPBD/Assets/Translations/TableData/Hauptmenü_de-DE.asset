@@ -18,24 +18,28 @@ MonoBehaviour:
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 62703820800
-    m_Localized: 'Basiert auf:'
+  - m_Id: 7482377570902016
+    m_Localized: Verlassen
     m_Metadata:
       m_Items: []
-  - m_Id: 25289366200320
-    m_Localized: Spielen
-    m_Metadata:
-      m_Items: []
-  - m_Id: 25356416344064
-    m_Localized: Einstellungen
-    m_Metadata:
-      m_Items: []
-  - m_Id: 25439107047424
+  - m_Id: 7482330045243392
     m_Localized: Credits
     m_Metadata:
       m_Items: []
-  - m_Id: 25516487761920
-    m_Localized: Verlassen
+  - m_Id: 7482277670969344
+    m_Localized: Einstellungen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7481817278996480
+    m_Localized: Mehrspieler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7481687725334528
+    m_Localized: Einzelspieler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7482421808226304
+    m_Localized: 'Basiert auf:'
     m_Metadata:
       m_Items: []
   references:
