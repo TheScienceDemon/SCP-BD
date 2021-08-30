@@ -42,8 +42,17 @@ public class MapGenerator : MonoBehaviour
         {
             rooms[i].roomId = i;
         }
-        seed = Random.Range(-999999999, 99999999);
-        GenerateMap(seed);
+
+        if (MapGeneratorSeedSetter.instance.setSeed == 0)
+        {
+            seed = Random.Range(int.MinValue, int.MaxValue);
+            GenerateMap(seed);
+        }
+        else
+        {
+            seed = MapGeneratorSeedSetter.instance.setSeed;
+            GenerateMap(seed);
+        }
     }
 
     void IncrementRoomInstanceCount(int roomPositionID)

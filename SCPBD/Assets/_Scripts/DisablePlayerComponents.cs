@@ -7,6 +7,9 @@ public class DisablePlayerComponents : NetworkBehaviour
 {
     [SerializeField] Behaviour[] componentsToDisable;
 
+    [SyncVar]
+    string label;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,8 +17,33 @@ public class DisablePlayerComponents : NetworkBehaviour
         {
             foreach (Behaviour component in componentsToDisable)
             {
-                Destroy(component);
+                component.enabled = false;
             }
         }
+
+        if (isServer)
+        {
+            name = "Server Host";
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if (isLocalPlayer)
+            TransmitName();
+        else
+            name = label;
+    }
+
+    [ClientCallback]
+    void TransmitName()
+    {
+        CmdTransmitName(name);
+    }
+
+    [Command]
+    void CmdTransmitName(string n)
+    {
+        label = n;
     }
 }
