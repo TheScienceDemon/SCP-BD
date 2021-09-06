@@ -79,13 +79,22 @@ public class PlayerInteract : MonoBehaviour
                 }
                 else if (hit.transform.CompareTag("914key"))
                 {
+                    Animator keyAnim = hit.transform.GetComponent<Animator>();
+                    Scp914 scp914 = hit.transform.GetComponentInParent<Scp914>();
 
+                    if (!scp914.isRefining)
+                    {
+                        keyAnim.Play("914keySpin");
+                        StartCoroutine(scp914.Refine());
+                    }
                 }
                 else if (hit.transform.CompareTag("914knob"))
                 {
                     Scp914knob knob = hit.transform.GetComponent<Scp914knob>();
+                    Scp914 scp914 = hit.transform.GetComponentInParent<Scp914>();
 
-                    StartCoroutine(knob.Change914mode());
+                    if (!scp914.isRefining)
+                        StartCoroutine(knob.Change914mode());
                 }
                 else if (hit.transform.CompareTag("ClickableScreen"))
                 {

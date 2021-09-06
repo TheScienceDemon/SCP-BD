@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 6817212249979191316}
   - component: {fileID: 4709074187787253624}
   - component: {fileID: 6470370452304520987}
+  - component: {fileID: 9071778328039753298}
   m_Layer: 0
   m_Name: FPSControllerMultiplayer
   m_TagString: Player
@@ -339,8 +340,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keycardLevel: 5
-  Health: 0
-  Stamina: 100
+  maxHealth: 0
+  currentHealth: 0
+  maxStamina: 0
+  currentStamina: 0
 --- !u!114 &6817212249979191316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,6 +399,9 @@ MonoBehaviour:
   syncInterval: 0.1
   playerClasses:
   - className: Scientist
+    scoreboardName: 
+    maxHp: 0
+    maxStamina: 0
     team: 1
     walkSpeed: 5
     runSpeed: 10
@@ -411,11 +417,15 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 7a8c4662b9ee6234e9b67a06abba0383, type: 3}
     jumpSound: {fileID: 0}
     landSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
-    playerModel: {fileID: 124252641613620876, guid: 71cfdd2878bed684db99d0d41093af24, type: 3}
-    playerModelPositionOffset: {x: 0, y: -1.19, z: 0}
-    playerModelRotationOffset: {x: 0, y: 0, z: 0}
-    playerModelScaleOffset: {x: 0.0131, y: 0.0131, z: 0.0131}
+    playerModel: {fileID: 993281476958923588, guid: 21715edbb8774074fb6998da8bdaae6a, type: 3}
+    playerModelOffset:
+      position: {x: 0, y: -1.19, z: 0}
+      rotation: {x: 0, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
   - className: Class-D Personnel
+    scoreboardName: 
+    maxHp: 0
+    maxStamina: 0
     team: 0
     walkSpeed: 5
     runSpeed: 10
@@ -432,11 +442,26 @@ MonoBehaviour:
     jumpSound: {fileID: 0}
     landSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
     playerModel: {fileID: 4220618837902808916, guid: 9921b48f744a14f4db99ba23e0876ca9, type: 3}
-    playerModelPositionOffset: {x: 0, y: -1.19, z: 0}
-    playerModelRotationOffset: {x: 0, y: 0, z: 0}
-    playerModelScaleOffset: {x: 0.0131, y: 0.0131, z: 0.0131}
+    playerModelOffset:
+      position: {x: 0, y: -1.19, z: 0}
+      rotation: {x: 0, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
   playerTeamSpawnQueue: 010000000000000001000000
   currentClassId: 0
+--- !u!114 &9071778328039753298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dee64bd8f0d26440a5fdb945c25ab4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
 --- !u!1 &4226993838365545734
 GameObject:
   m_ObjectHideFlags: 0

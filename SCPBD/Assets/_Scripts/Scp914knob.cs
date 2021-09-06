@@ -23,10 +23,10 @@ public class Scp914knob : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (scp914.mode > 4)
+        if (((int)scp914.Scp914mode) > 4)
         {
-            scp914.mode = 0;
-            anim.SetInteger("state", scp914.mode);
+            scp914.Scp914mode = 0;
+            anim.SetInteger("state", (int)scp914.Scp914mode);
         }
     }
 
@@ -35,9 +35,9 @@ public class Scp914knob : MonoBehaviour
         if (isInteractable)
         {
             isInteractable = false;
-            scp914.mode++;
+            scp914.Scp914mode++;
             source.PlayOneShot(source.clip);
-            anim.SetInteger("state", scp914.mode);
+            anim.SetInteger("state", (int)scp914.Scp914mode);
             yield return new WaitForSeconds(0.25f);
             isInteractable = true;
         }

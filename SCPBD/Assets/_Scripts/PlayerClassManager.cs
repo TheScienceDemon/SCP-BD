@@ -15,20 +15,10 @@ public class PlayerClassManager : NetworkBehaviour
     public int currentClassId;
 
     void Start()
-    {
-        if (isServer)
-        {
-            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-
-            foreach (GameObject player in players)
-            {
-                player.GetComponent<NetworkIdentity>().
-                    AssignClientAuthority(GetComponent<NetworkIdentity>().connectionToClient);
-            }
-        }
-            
+    {            
         Invoke(nameof(SetRandomPlayerClasses), 10f);
     }
+
     public void ApplyPlayerStats()
     {
         PlayerClass playerClass = playerClasses[currentClassId];
@@ -38,6 +28,7 @@ public class PlayerClassManager : NetworkBehaviour
         if (isLocalPlayer)
         {
             FirstPersonController fpsController = GetComponent<FirstPersonController>();
+            PlayerStats playerStats = GetComponent<PlayerStats>();
 
             fpsController.m_WalkSpeed = playerClass.walkSpeed;
             fpsController.m_RunSpeed = playerClass.runSpeed;
@@ -45,6 +36,9 @@ public class PlayerClassManager : NetworkBehaviour
             fpsController.m_FootstepSounds = playerClass.walkSounds;
             fpsController.m_JumpSound = playerClass.jumpSound;
             fpsController.m_LandSound = playerClass.landSound;
+
+            playerStats.maxStamina = playerClass.maxHp;
+            playerStats.maxStamina = playerClass.maxStamina;
         }
     }
 
@@ -57,14 +51,14 @@ public class PlayerClassManager : NetworkBehaviour
 
         GameObject newPlayerModel = Instantiate(playerClass.playerModel);
         newPlayerModel.transform.SetParent(gameObject.transform);
-        newPlayerModel.transform.localPosition = playerClass.playerModelPositionOffset;
-        newPlayerModel.transform.localRotation = Quaternion.Euler(playerClass.playerModelRotationOffset);
-        newPlayerModel.transform.localScale = playerClass.playerModelScaleOffset;
+        newPlayerModel.transform.localPosition = playerClass.playerModelOffset.position;
+        newPlayerModel.transform.localRotation = Quaternion.Euler(playerClass.playerModelOffset.rotation);
+        newPlayerModel.transform.localScale = playerClass.playerModelOffset.scale;
         myPlayerModel = newPlayerModel;
 
         if(isLocalPlayer)
-            if (myPlayerModel.GetComponent<Renderer>() != null)
-                myPlayerModel.GetComponent<Renderer>().shadowCastingMode =
+            if (myPlayerModel.GetComponentInChildren<SkinnedMeshRenderer>() != null)
+                myPlayerModel.GetComponentInChildren<SkinnedMeshRenderer>().shadowCastingMode =
                     UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
     }
 
@@ -136,17 +130,24 @@ public class PlayerClassManager : NetworkBehaviour
     }
 
     [System.Serializable]
+    public struct Offset
+    {
+        public Vector3 position, rotation, scale;
+    }
+
+    [System.Serializable]
     public class PlayerClass
     {
         public string className;
+        public string scoreboardName;
+        public int maxHp;
+        public int maxStamina;
         public PlayerTeams team;
-        public float walkSpeed;
-        public float runSpeed;
-        public float jumpSpeed;
+        public float walkSpeed, runSpeed, jumpSpeed;
         public AudioClip[] walkSounds;
         public AudioClip jumpSound, landSound;
         public GameObject playerModel;
-        public Vector3 playerModelPositionOffset, playerModelRotationOffset, playerModelScaleOffset;
+        public StructManager.Offset playerModelOffset;
     }
 
     public enum PlayerTeams { ClassD, Scientist, Guard, MTF_NTF, MTF_CN, CI, SCP }

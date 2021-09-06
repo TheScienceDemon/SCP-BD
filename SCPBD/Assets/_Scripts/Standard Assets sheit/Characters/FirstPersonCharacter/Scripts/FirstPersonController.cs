@@ -114,13 +114,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_MoveDir.z = desiredMove.z * speed;
             }
 
-            if (!m_IsWalking && playerStats.Stamina > 0)
+            if (!m_IsWalking && playerStats.currentStamina > 0)
             {
-                playerStats.Stamina -= Time.fixedDeltaTime * 5;
+                playerStats.currentStamina -= Time.fixedDeltaTime * 5;
             }
-            else if(m_IsWalking && playerStats.Stamina < 100)
+            else if(m_IsWalking && playerStats.currentStamina < 100)
             {
-                playerStats.Stamina += Time.fixedDeltaTime * 2;
+                playerStats.currentStamina += Time.fixedDeltaTime * 2;
             }
 
             if (m_CharacterController.isGrounded)
@@ -229,7 +229,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
 #endif
             // set the desired speed to be walking or running
-            speed = (!m_IsWalking && playerStats.Stamina > 0 ? m_RunSpeed : m_WalkSpeed);
+            speed = (!m_IsWalking && playerStats.currentStamina > 0 ? m_RunSpeed : m_WalkSpeed);
             m_Input = new Vector2(horizontal, vertical);
 
             // normalize input if it exceeds 1 in combined length:

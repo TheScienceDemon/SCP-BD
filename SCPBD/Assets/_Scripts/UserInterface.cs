@@ -6,13 +6,15 @@ using TMPro;
 
 public class UserInterface : MonoBehaviour
 {
+    public static UserInterface Singleton { get; private set; }
+
     [Header("Health")]
     public Slider healthSlider;
-    [SerializeField] TMP_Text healthText;
+    public TMP_Text healthText;
 
     [Header("Stamina")]
     public Slider staminaSlider;
-    [SerializeField] TMP_Text staminaText;
+    public TMP_Text staminaText;
 
     [Header("FPS")]
     [SerializeField] TMP_Text FpsText;
@@ -20,6 +22,12 @@ public class UserInterface : MonoBehaviour
 
     [Header("Clickable Screen")]
     public Image clickableScreenImage;
+
+    private void Awake()
+    {
+        if (Singleton == null)
+            Singleton = this;
+    }
 
     // Update is called once per frame
     void Update()

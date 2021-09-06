@@ -6,30 +6,44 @@ public class MapGenerator : MonoBehaviour
 {
     public int seed;
 
-    [System.Serializable]
-    public struct Offset
+    enum RoomTypes
     {
-        public Vector3 position, rotation, scale;
-    }
+        LczEndroom,
+        LczCorner,
+        LczHallway,
+        Lcz3WayIntersection,
+        Lcz4WayIntersection,
+        HczEndroom,
+        HczCorner,
+        HczHallway,
+        Hcz3WayIntersection,
+        Hcz4WayIntersection,
+        EzEndroom,
+        EzCorner,
+        EzHallway,
+        Ez3WayIntersection,
+        Ez4WayIntersection
+    };
 
     [System.Serializable]
-    public class Room
+    class Room
     {
         public string label;
-        public Offset roomOffset;
+        public StructManager.Offset roomOffset;
         public GameObject roomPrefab;
-        public string roomType;
+        public RoomTypes roomType;
         [HideInInspector] public int roomId;
-        public int minAmount;
-        public int maxAmount;
+        public int maxIntances;
+        public int minIntances;
         public int currentInstances;
     }
 
 
     [System.Serializable]
-    public struct RoomPosition
+    struct RoomPosition
     {
-        public string roomType;
+        public string label;
+        public RoomTypes roomType;
         public Transform roomPosition;
     }
 
@@ -45,8 +59,8 @@ public class MapGenerator : MonoBehaviour
 
         if (MapGeneratorSeedSetter.instance.setSeed == 0)
         {
-            seed = Random.Range(int.MinValue, int.MaxValue);
-            GenerateMap(seed);
+        seed = Random.Range(int.MinValue, int.MaxValue);
+        GenerateMap(seed);
         }
         else
         {
@@ -65,8 +79,14 @@ public class MapGenerator : MonoBehaviour
         Random.InitState(mapSeed);
         foreach (RoomPosition roomPosition in roomPositions)
         {
+            string tempString = roomPosition.roomPosition.ToString();
+            Debug.Log(tempString);
+            GameObject go = GameObject.Find(roomPosition.roomPosition.name);
+            Debug.Log(roomPosition.roomPosition.ToString());
+            Debug.Log("go : " + go + "\nRoomPositionName : " + roomPosition.roomPosition.ToString());
+            Transform point = go.transform;
             List<Room> roomTypes = new List<Room>();
-            string lookingType = roomPosition.roomType;
+            RoomTypes lookingType = roomPosition.roomType;
             foreach (Room room in rooms)
             {
                 if (room.roomType == lookingType)
@@ -74,32 +94,27 @@ public class MapGenerator : MonoBehaviour
                     roomTypes.Add(room);
                 }
             }
-            bool isAnyRoomLeft = false;
+            List<Room> tempRooms = new List<Room>();
             foreach (Room room in roomTypes)
             {
-                if (room.currentInstances < room.maxAmount)
+                if (room.currentInstances < room.maxIntances)
                 {
-                    isAnyRoomLeft = true;
-                    break;
+                    tempRooms.Add(room);
                 }
             }
-            if (isAnyRoomLeft)
+            roomTypes = tempRooms;
+            if (roomTypes.Count > 0)
             {
-                bool generated = false;
-                while (!generated)
-                {
-                    Room roomToGenerate = roomTypes[Random.Range(0, roomTypes.Count)];
-                    if (roomToGenerate.currentInstances < roomToGenerate.maxAmount)
-                    {
-                        IncrementRoomInstanceCount(roomToGenerate.roomId);
-                        GameObject go = Instantiate(roomToGenerate.roomPrefab, gameObject.transform);
-                        go.transform.localPosition = roomToGenerate.roomOffset.position + roomPosition.roomPosition.localPosition;
-                        go.transform.localRotation = Quaternion.Euler(roomToGenerate.roomOffset.rotation + roomPosition.roomPosition.localRotation.eulerAngles);
-                        go.transform.localScale = roomToGenerate.roomOffset.scale;
-                        generated = true;
-                    }
-                }
+                Room roomToGenerate = roomTypes[Random.Range(0, roomTypes.Count)];
+                IncrementRoomInstanceCount(roomToGenerate.roomId);
+                GameObject generatedRoom = Instantiate(roomToGenerate.roomPrefab, gameObject.transform);
+                generatedRoom.transform.localPosition = roomToGenerate.roomOffset.position + point.localPosition;
+                generatedRoom.transform.localRotation = Quaternion.Euler(roomToGenerate.roomOffset.rotation +
+                    point.localRotation.eulerAngles);
+                generatedRoom.transform.localScale = roomToGenerate.roomOffset.scale;
             }
+
+            point.gameObject.SetActive(false);
         }
     }
 }

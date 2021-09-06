@@ -10,8 +10,10 @@ public class PlayerStats : MonoBehaviour
     public int keycardLevel;
 
     [Header("Health & Stamina")]
-    [SerializeField] float Health;
-    [Range(0f, 100f)] public float Stamina;
+    public float maxHealth;
+    public float currentHealth;
+    public float maxStamina;
+    public float currentStamina; 
 
 
     UserInterface ui;
@@ -21,12 +23,21 @@ public class PlayerStats : MonoBehaviour
     void Start()
     {
         fpsController = GetComponent<FirstPersonController>();
-        ui = FindObjectOfType<UserInterface>();
+        ui = UserInterface.Singleton;
+
+        ui.healthSlider.maxValue = maxHealth;
+        currentHealth = maxHealth;
+
+        ui.staminaSlider.maxValue = maxStamina;
+        currentStamina = maxStamina;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        ui.staminaSlider.value = Stamina;
+        ui.staminaSlider.value = currentStamina;
+        ui.staminaText.text = currentStamina.ToString("F0") + "%";
+        ui.healthSlider.value = currentHealth;
+        ui.healthText.text = currentHealth.ToString("F0") + "%";
     }
 }
