@@ -14,6 +14,10 @@ public class DiscordManagement : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Start()

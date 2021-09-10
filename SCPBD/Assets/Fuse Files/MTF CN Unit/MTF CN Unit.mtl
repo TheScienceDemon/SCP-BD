@@ -1,0 +1,86 @@
+# Exported from Fuse 1.3.0
+
+newmtl Top
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 1.00 1.00 1.00
+map_Kd MTF CN Unit_Top_diffuse.png
+map_Ks MTF CN Unit_Top_specular.png
+bump MTF CN Unit_Top_normal.png
+map_Ns MTF CN Unit_Top_gloss.png
+
+newmtl Glove
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 1.00 1.00 1.00
+map_Kd MTF CN Unit_Glove_diffuse.png
+map_Ks MTF CN Unit_Glove_specular.png
+bump MTF CN Unit_Glove_normal.png
+map_Ns MTF CN Unit_Glove_gloss.png
+
+newmtl Hat
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 1.00 1.00 1.00
+map_Kd MTF CN Unit_Hat_diffuse.png
+map_Ks MTF CN Unit_Hat_specular.png
+bump MTF CN Unit_Hat_normal.png
+map_Ns MTF CN Unit_Hat_gloss.png
+
+newmtl Shoes
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 1.00 1.00 1.00
+map_Kd MTF CN Unit_Shoes_diffuse.png
+map_Ks MTF CN Unit_Shoes_specular.png
+bump MTF CN Unit_Shoes_normal.png
+map_Ns MTF CN Unit_Shoes_gloss.png
+
+newmtl Eyewear
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 1.00 1.00 1.00
+map_Kd MTF CN Unit_Eyewear_diffuse.png
+map_Ks MTF CN Unit_Eyewear_specular.png
+bump MTF CN Unit_Eyewear_normal.png
+map_Ns MTF CN Unit_Eyewear_gloss.png
+
+newmtl Bottom
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 1.00 1.00 1.00
+map_Kd MTF CN Unit_Bottom_diffuse.png
+map_Ks MTF CN Unit_Bottom_specular.png
+bump MTF CN Unit_Bottom_normal.png
+map_Ns MTF CN Unit_Bottom_gloss.png
+
+newmtl Body
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 1.00 1.00 1.00
+map_Kd MTF CN Unit_Body_diffuse.png
+map_Ks MTF CN Unit_Body_specular.png
+bump MTF CN Unit_Body_normal.png
+map_Ns MTF CN Unit_Body_gloss.png
+
