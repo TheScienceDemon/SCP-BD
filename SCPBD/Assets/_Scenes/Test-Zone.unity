@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 337577319}
   - component: {fileID: 337577318}
   m_Layer: 5
-  m_Name: FpsText (TMP)
+  m_Name: PingAndFpsText (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -407,8 +407,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -41.309814, y: -9.971313}
-  m_SizeDelta: {x: 145, y: 35}
+  m_AnchoredPosition: {x: -48.90497, y: -23.5068}
+  m_SizeDelta: {x: 171.6621, y: 82.5089}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &337577318
 MonoBehaviour:
@@ -430,7 +430,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: FPS HERE
+  m_text: 'FPS HERE
+
+    PING HERE'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 177ee865bd34145498e9e838c2ebee68, type: 2}
   m_sharedMaterial: {fileID: 981102064028769312, guid: 177ee865bd34145498e9e838c2ebee68, type: 2}
@@ -1120,14 +1122,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1511659347}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 274fd383652ce9e44ade1231918635f7, type: 3}
+  m_Script: {fileID: 11500000, guid: c186238533a42e14fb8b706a22e0c267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   healthSlider: {fileID: 358215835}
   healthText: {fileID: 0}
   staminaSlider: {fileID: 1763252355}
   staminaText: {fileID: 0}
-  FpsText: {fileID: 337577318}
+  PingAndFpsText: {fileID: 337577318}
   clickableScreenImage: {fileID: 0}
 --- !u!114 &1511659350
 MonoBehaviour:

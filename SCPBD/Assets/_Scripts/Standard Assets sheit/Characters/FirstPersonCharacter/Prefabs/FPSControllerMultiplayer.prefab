@@ -13,13 +13,12 @@ GameObject:
   - component: {fileID: 5400000}
   - component: {fileID: 8200000}
   - component: {fileID: -2247304789394431268}
-  - component: {fileID: 11400000}
+  - component: {fileID: 6252587684480082605}
   - component: {fileID: 5609535079675588961}
-  - component: {fileID: 1993959890728771084}
   - component: {fileID: 6817212249979191316}
+  - component: {fileID: 5501365850626922078}
   - component: {fileID: 4709074187787253624}
   - component: {fileID: 6470370452304520987}
-  - component: {fileID: 9071778328039753298}
   m_Layer: 0
   m_Name: FPSControllerMultiplayer
   m_TagString: Player
@@ -189,7 +188,7 @@ MonoBehaviour:
   visible: 0
   m_AssetId: 2e3df4be61626ef488659a4bb29bf315
   hasSpawned: 0
---- !u!114 &11400000
+--- !u!114 &6252587684480082605
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,7 +197,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05ec5cf00ca181d45a42ba1870e148c3, type: 3}
+  m_Script: {fileID: 11500000, guid: 9298e1c02070ffe43b12c24c7eb8e8a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMovement: 0
@@ -222,32 +221,14 @@ MonoBehaviour:
     lockCursor: 1
   m_UseFovKick: 0
   m_FovKick:
-    Camera: {fileID: 5768060531037194332}
+    Camera: {fileID: 0}
     originalFov: 0
     FOVIncrease: 3
     TimeToIncrease: 1
     TimeToDecrease: 1
     IncreaseCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 2
-        outSlope: 2
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -327,23 +308,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCam: {fileID: 7951525976451695012}
   maxDistance: 4
---- !u!114 &1993959890728771084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12be42c5334a2b344b25bca974bed67f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keycardLevel: 5
-  maxHealth: 0
-  currentHealth: 0
-  maxStamina: 0
-  currentStamina: 0
 --- !u!114 &6817212249979191316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,14 +323,32 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   componentsToDisable:
-  - {fileID: 1993959890728771084}
+  - {fileID: 6252587684480082605}
   - {fileID: 5609535079675588961}
-  - {fileID: 11400000}
   - {fileID: 8200000}
   - {fileID: 3919644638582352769}
   - {fileID: 2040826138885058778}
   - {fileID: 6382273839228494690}
   - {fileID: 5768060531037194332}
+--- !u!114 &5501365850626922078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d277a18b0c2167c479715cc1dd81a236, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  keycardLevel: 5
+  maxHealth: 0
+  currentHealth: 0
+  maxStamina: 0
+  currentStamina: 0
 --- !u!114 &4709074187787253624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,20 +430,6 @@ MonoBehaviour:
       scale: {x: 1, y: 1, z: 1}
   playerTeamSpawnQueue: 010000000000000001000000
   currentClassId: 0
---- !u!114 &9071778328039753298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dee64bd8f0d26440a5fdb945c25ab4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
 --- !u!1 &4226993838365545734
 GameObject:
   m_ObjectHideFlags: 0

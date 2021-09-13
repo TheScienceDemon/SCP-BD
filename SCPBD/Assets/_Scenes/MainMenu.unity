@@ -3473,7 +3473,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 4
 --- !u!222 &323560494
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4878,7 +4878,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &537878426
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5470,7 +5470,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 4
 --- !u!222 &644808326
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9227,7 +9227,6 @@ GameObject:
   - component: {fileID: 950409953}
   - component: {fileID: 950409955}
   - component: {fileID: 950409954}
-  - component: {fileID: 950409956}
   m_Layer: 5
   m_Name: LoadingScreen
   m_TagString: Untagged
@@ -9297,36 +9296,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950409952}
   m_CullTransparentMesh: 1
---- !u!114 &950409956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 950409952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71ad1faaead25624b8f0ed89f54c6457, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loadingScreenImage: {fileID: 2030713155}
-  loadingScreenSprite: {fileID: 21300000, guid: b10125c8c1656724eb848852ece37cb0, type: 3}
-  progressBarSlider: {fileID: 368553118}
-  loadingScreenText: {fileID: 1251179558}
-  loadingScreenText1: SCP-009 is approximately 3,700 liters of a substance which
-    exhibits a number of unique properties. While small amounts of the substance,
-    in all phases, are as colorless as mundane water, en masse it takes on a distinct
-    deep red hue.
-  loadingScreenText2: "Its most notable property, however, is the fact that SCP-009's
-    reaction to temperature extremes is exactly opposite that of standard H2O: the
-    subject assumes a liquid phase at temperatures between -100\xB0C and 0\xB0C,
-    and converts into a solid state above those temperatures. At temperatures below
-    -100\xB0C, SCP-009 vaporizes into a gaseous phase similar to steam, though it
-    still retains its red coloration when put under high pressure."
-  loadingScreenText3: If the subject comes in contact with any biological source
-    of heat, it begins a runaway reaction in which the living organism's bodily fluids
-    are rapidly converted to SCP-009 and promptly frozen by their own body heat (because
-    of their generally high core temperatures, mammals are particularly susceptible).
 --- !u!1 &980772658
 GameObject:
   m_ObjectHideFlags: 0
@@ -10058,7 +10027,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 4
 --- !u!222 &1080541679
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10178,9 +10147,10 @@ GameObject:
   - component: {fileID: 1103501653}
   - component: {fileID: 1103501655}
   - component: {fileID: 1103501654}
-  - component: {fileID: 1103501656}
   - component: {fileID: 1103501658}
+  - component: {fileID: 1103501656}
   - component: {fileID: 1103501657}
+  - component: {fileID: 1103501659}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -10383,6 +10353,62 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1103501659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103501652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71ad1faaead25624b8f0ed89f54c6457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progressBarSlider: {fileID: 368553118}
+  loadingScreenText: {fileID: 1251179558}
+  loadingScreenImage: {fileID: 2030713155}
+  loadingScreens:
+  - label: SCP-005
+    loadingScreenSprite: {fileID: 21300000, guid: b27a8be79e3ea1b45b0079563900ef8e, type: 3}
+    loadingScreenText1: SCP-005 resembles an ornate key, displaying the characteristics
+      of a typical mass produced key used in the 1920s.
+    loadingScreenText2: SCP-005 seems to have the unique ability to open any and
+      all forms of lock, be they mechanical or digital, with relative ease. The origin
+      of this ability has yet to be determined.
+    loadingScreenText3: While SCP-005 has been shown to be effective in removing
+      almost any form of locking device, further experiments have shown that efforts
+      to disguise the purpose or identity of a lock have proven at least somewhat
+      successful in defeating SCP-005's ability.
+  - label: SCP-008
+    loadingScreenSprite: {fileID: 21300000, guid: f7b7d055fc3df744f9e70fbf844daef7, type: 3}
+    loadingScreenText1: SCP-008 is a complex prion, samples of which are stored in
+      each of the known G2 sites. Research into SCP-008 is highly classified and
+      primarily aimed at preventing research which may lead to the synthesis of SCP-008
+      in the distant future.
+    loadingScreenText2: 'Traits of the SCP-008 prion include: 100% infectiousness.
+      100% lethality. Transmission through exposed mucous membranes and all bodily
+      fluids. Not airborne or waterborne.'
+    loadingScreenText3: 'Traits of the SCP-008 prion include: 100% infectiousness.
+      100% lethality. Transmission through exposed mucous membranes and all bodily
+      fluids. Not airborne or waterborne.'
+  - label: SCP-009
+    loadingScreenSprite: {fileID: 21300000, guid: b10125c8c1656724eb848852ece37cb0, type: 3}
+    loadingScreenText1: SCP-009 is approximately 3,700 liters of a substance which
+      exhibits a number of unique properties. While small amounts of the substance,
+      in all phases, are as colorless as mundane water, en masse it takes on a distinct
+      deep red hue.
+    loadingScreenText2: "Its most notable property, however, is the fact that SCP-009's
+      reaction to temperature extremes is exactly opposite that of standard H2O:
+      the subject assumes a liquid phase at temperatures between -100\xB0C and 0\xB0C,
+      and converts into a solid state above those temperatures. At temperatures below
+      -100\xB0C, SCP-009 vaporizes into a gaseous phase similar to steam, though
+      it still retains its red coloration when put under high pressure."
+    loadingScreenText3: If the subject comes in contact with any biological source
+      of heat, it begins a runaway reaction in which the living organism's bodily
+      fluids are rapidly converted to SCP-009 and promptly frozen by their own body
+      heat (because of their generally high core temperatures, mammals are particularly
+      susceptible).
 --- !u!1 &1128890157
 GameObject:
   m_ObjectHideFlags: 0
@@ -16493,7 +16519,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 4
 --- !u!222 &1756857634
 CanvasRenderer:
   m_ObjectHideFlags: 0
