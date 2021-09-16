@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2063016971988247133}
   - component: {fileID: 2690213939369421968}
   - component: {fileID: 4311426612411101650}
-  - component: {fileID: 3410400100506205576}
   m_Layer: 0
   m_Name: roomScp914
   m_TagString: Untagged
@@ -167,34 +166,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 335b4b59b41c1b74aba608d4e26e3849, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRefining: 0
   Scp914mode: 2
   objectsToRefine: []
+  intakeAnim: {fileID: 7998663724534233317}
+  outputAnim: {fileID: 6977417706928685482}
   normalSource: {fileID: 7781192281029898156}
   intakeSource: {fileID: 1004041152556700093}
   outputSource: {fileID: 2353929924276333332}
   refine: {fileID: 8300000, guid: d0bb1261ba0e1be44ae1dbbc7993d732, type: 3}
   doorClose: {fileID: 8300000, guid: 895b9ab978a297f4eb890bca19d7e145, type: 3}
   doorOpen: {fileID: 8300000, guid: 265681440b054a44387bc95d25e7fb40, type: 3}
-  isRefining: 0
---- !u!95 &3410400100506205576
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 549917928541750152}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &644541597500808209
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,8 +559,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1806312566374699758}
   - component: {fileID: 8134610718437826200}
+  - component: {fileID: 6977417706928685482}
   m_Layer: 0
-  m_Name: "Linke T\xFCr (1)"
+  m_Name: "Rechte T\xFCr"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -696,6 +679,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &6977417706928685482
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3275437597704563215}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 40148028dfc15104a9f884ca95830c46, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3322244791961308296
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,6 +987,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6391547488716228433}
   - component: {fileID: 6311779577070723130}
+  - component: {fileID: 7998663724534233317}
   m_Layer: 0
   m_Name: "Linke T\xFCr"
   m_TagString: Untagged
@@ -1104,6 +1107,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &7998663724534233317
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3753428340555197947}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 40148028dfc15104a9f884ca95830c46, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3994953254793228961
 GameObject:
   m_ObjectHideFlags: 0
