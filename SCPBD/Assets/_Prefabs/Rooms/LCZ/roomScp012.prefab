@@ -741,6 +741,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3737368251191459874, guid: bec13e5b0e2a5b04ca6df9acfbd398ed, type: 3}
+      propertyPath: keycardAccessLevel
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737368251191459874, guid: bec13e5b0e2a5b04ca6df9acfbd398ed, type: 3}
       propertyPath: doorButtons.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -860,6 +864,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3737368251191459874, guid: ebf807d41b45e634694903fa5cdeeb5e, type: 3}
       propertyPath: clearance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737368251191459874, guid: ebf807d41b45e634694903fa5cdeeb5e, type: 3}
+      propertyPath: keycardAccessLevel
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4979748033274289498, guid: ebf807d41b45e634694903fa5cdeeb5e, type: 3}

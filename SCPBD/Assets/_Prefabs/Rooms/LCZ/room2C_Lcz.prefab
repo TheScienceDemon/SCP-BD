@@ -509,6 +509,10 @@ PrefabInstance:
       propertyPath: isInteractable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3737368251191459874, guid: 6e24c7adff0cfe749a6d60ebe7180221, type: 3}
+      propertyPath: keycardAccessLevel
+      value: 32
+      objectReference: {fileID: 0}
     - target: {fileID: 5572380782286104263, guid: 6e24c7adff0cfe749a6d60ebe7180221, type: 3}
       propertyPath: m_Name
       value: LightDoorAlt4

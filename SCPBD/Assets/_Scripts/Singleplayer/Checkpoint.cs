@@ -6,7 +6,7 @@ public class Checkpoint : MonoBehaviour
 {
     bool isCheckpointOpen;
     public bool isInteractable;
-    public int clearance;
+    public StructManager.KeycardAccessLevel keycardAccessLevel;
     [SerializeField] float checkpointOpenTime;
     [SerializeField] GameObject[] doors;
     [SerializeField] GameObject[] checkpointButtons;

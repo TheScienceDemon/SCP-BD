@@ -28,7 +28,7 @@ public class PlayerInteract : MonoBehaviour
                     Tür tür = hit.transform.GetComponentInParent<Tür>();
                     TürButton türButton = hit.transform.GetComponent<TürButton>();
 
-                    if (tür.clearance != 69)
+                    if (tür.keycardAccessLevel != StructManager.KeycardAccessLevel.NoAccess)
                     {
                         if (tür.isInteractable)
                         {
@@ -46,7 +46,7 @@ public class PlayerInteract : MonoBehaviour
                     Tür tür = hit.transform.GetComponentInParent<Tür>();
                     TürButton türButton = hit.transform.GetComponent<TürButton>();
 
-                    if (tür.clearance <= playerStats.keycardLevel)
+                    if (tür.keycardAccessLevel == StructManager.KeycardAccessLevel.ContainmentLevel1)
                     {
                         if (tür.isInteractable)
                         {
@@ -64,7 +64,7 @@ public class PlayerInteract : MonoBehaviour
                     Checkpoint checkpoint = hit.transform.GetComponentInParent<Checkpoint>();
                     TürButton türButton = hit.transform.GetComponent<TürButton>();
 
-                    if (checkpoint.clearance <= playerStats.keycardLevel)
+                    if (checkpoint.keycardAccessLevel <= playerStats.keycardAccessLevel)
                     {
                         if (checkpoint.isInteractable)
                         {

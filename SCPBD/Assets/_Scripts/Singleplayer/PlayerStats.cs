@@ -4,7 +4,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class PlayerStats : MonoBehaviour
 {
     [Header("Keycard")]
-    public int keycardLevel;
+    public StructManager.KeycardAccessLevel keycardAccessLevel;
 
     [Header("Health & Stamina")]
     public float maxHealth;

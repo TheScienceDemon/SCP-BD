@@ -730,6 +730,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3737368251191459874, guid: 4abc63566a74ecf47853748b4a7da14c, type: 3}
+      propertyPath: keycardAccessLevel
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737368251191459874, guid: 4abc63566a74ecf47853748b4a7da14c, type: 3}
       propertyPath: doorButtons.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -798,6 +802,10 @@ PrefabInstance:
     - target: {fileID: 3737368251191459874, guid: 2ad57e8852b0916418a0667b84da1544, type: 3}
       propertyPath: clearance
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737368251191459874, guid: 2ad57e8852b0916418a0667b84da1544, type: 3}
+      propertyPath: keycardAccessLevel
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 3737368251191459874, guid: 2ad57e8852b0916418a0667b84da1544, type: 3}
       propertyPath: doorButtons.Array.size
@@ -1004,6 +1012,10 @@ PrefabInstance:
     - target: {fileID: 3737368251191459874, guid: 6e24c7adff0cfe749a6d60ebe7180221, type: 3}
       propertyPath: isInteractable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737368251191459874, guid: 6e24c7adff0cfe749a6d60ebe7180221, type: 3}
+      propertyPath: keycardAccessLevel
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 3737368251191459874, guid: 6e24c7adff0cfe749a6d60ebe7180221, type: 3}
       propertyPath: doorButtons.Array.size

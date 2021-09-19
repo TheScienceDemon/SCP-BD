@@ -1233,6 +1233,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.245
       objectReference: {fileID: 0}
+    - target: {fileID: 3737368251191459874, guid: b70d3f766dbd45047a69efb2dfc257ed, type: 3}
+      propertyPath: keycardAccessLevel
+      value: 32
+      objectReference: {fileID: 0}
     - target: {fileID: 5572380782286104263, guid: b70d3f766dbd45047a69efb2dfc257ed, type: 3}
       propertyPath: m_Name
       value: LightDoor
@@ -1358,6 +1362,10 @@ PrefabInstance:
     - target: {fileID: 3477766402526283677, guid: b70d3f766dbd45047a69efb2dfc257ed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737368251191459874, guid: b70d3f766dbd45047a69efb2dfc257ed, type: 3}
+      propertyPath: keycardAccessLevel
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 5572380782286104263, guid: b70d3f766dbd45047a69efb2dfc257ed, type: 3}
       propertyPath: m_Name

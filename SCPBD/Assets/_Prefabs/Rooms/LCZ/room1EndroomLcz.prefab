@@ -628,6 +628,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7756846074397306941, guid: e6789e21eb7145d4ba23990e2e48c288, type: 3}
+      propertyPath: keycardAccessLevel
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 7756846074397306941, guid: e6789e21eb7145d4ba23990e2e48c288, type: 3}
       propertyPath: doorButtons.Array.size
       value: 0
       objectReference: {fileID: 0}

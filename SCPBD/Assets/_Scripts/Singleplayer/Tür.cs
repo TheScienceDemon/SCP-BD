@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class Tür : MonoBehaviour
 {
-    public int clearance;
+    public StructManager.KeycardAccessLevel keycardAccessLevel;
     [SerializeField] float idleTime;
     bool isDoorOpen;
     public bool isInteractable;
@@ -22,9 +22,10 @@ public class Tür : MonoBehaviour
     {
         source = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
-        if (clearance == 69)
-            foreach (GameObject button in doorButtons)
-                button.GetComponent<Renderer>().material = doorMaterials[2];
+
+          if (keycardAccessLevel == StructManager.KeycardAccessLevel.NoAccess)
+              foreach (GameObject button in doorButtons)
+                  button.GetComponent<Renderer>().material = doorMaterials[2];
     }
 
     public IEnumerator ChangeDoorState()
