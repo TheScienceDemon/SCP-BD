@@ -29,8 +29,8 @@ public class StructManager : MonoBehaviour
         SecurityLevel4 = 24,
         SecurityLevel5 = 25,
         MedicalAccess = 31,
-        MaintenanceAccess = 32,
-        JanitorialAcess = 33,
-        NoAccess = 34
+        MaintenanceAccess = 41,
+        JanitorialAcess = 42,
+        NoAccess = 0
     }
 }
