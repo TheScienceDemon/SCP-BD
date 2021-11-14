@@ -9,16 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bb1838fe8befb0429646b938e757ff3, type: 3}
-  m_Name: German (de)
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: TestTable_de
   m_EditorClassIdentifier: 
-  m_Identifier:
+  m_LocaleId:
     m_Code: de
+  m_SharedData: {fileID: 11400000, guid: 174fce3aa466c65478c06576b3097b45, type: 2}
   m_Metadata:
     m_Items: []
-  m_LocaleName: German
-  m_CustomFormatCultureCode: 
-  m_UseCustomFormatter: 0
-  m_SortOrder: 10000
+  m_TableData:
+  - m_Id: 27761115136
+    m_Localized: Deutsch
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

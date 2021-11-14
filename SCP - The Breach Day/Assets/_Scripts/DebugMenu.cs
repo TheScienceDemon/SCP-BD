@@ -7,11 +7,12 @@ public class DebugMenu : MonoBehaviour
 {
     public static DebugMenu Singleton { get; private set; }
 
-    [SerializeField] GameObject objectToEnable;
+    [SerializeField] GameObject canvas;
     [SerializeField] TMP_Text gameVersion;
     [SerializeField] TMP_Text unityVersion;
     [SerializeField] TMP_Text frameRate;
     [SerializeField] TMP_Text date;
+    [SerializeField] TMP_Text time;
 
     float deltaTime;
 
@@ -37,12 +38,14 @@ public class DebugMenu : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F3))
-            objectToEnable.SetActive(!objectToEnable.activeInHierarchy);
+            canvas.SetActive(!canvas.activeInHierarchy);
 
         deltaTime += (Time.deltaTime - deltaTime) * 0.01f;
         float fps = 1f / deltaTime;
-        frameRate.text = "FrameRate: " + Mathf.Ceil(fps).ToString();
+        frameRate.text = "FPS: " + Mathf.Ceil(fps).ToString();
 
-        date.text = "<size=42>Date:</size> " + System.DateTime.Now.ToString("HH:mm:ss dd MMMM, yyyy");
+        date.text = "<size=42>Date:</size> " + System.DateTime.Now.ToString("dd MMMM yyyy");
+
+        time.text = "Time: " + System.DateTime.Now.ToString("HH:mm:ss");
     }
 }
