@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Rendering.PostProcessing;
 
 #pragma warning disable IDE0044
 public class Settings : MonoBehaviour
 {
+    // Graphics
     [SerializeField] TMP_Dropdown textureResolutionDropdown;
     [SerializeField] Toggle anisotropicTexturesToggle;
     [SerializeField] TMP_Dropdown antiAliasingDropdown;
@@ -15,8 +17,18 @@ public class Settings : MonoBehaviour
     [SerializeField] Slider shadowDistanceSlider;
     [SerializeField] TMP_Text shadowDistanceValueText;
     [SerializeField] Toggle vSyncToggle;
-    [SerializeField] TMP_Dropdown resolutionDropdown;
     Resolution[] resolutionArray;
+    [SerializeField] TMP_Dropdown resolutionDropdown;
+    [SerializeField] TMP_Dropdown fullscreenModeDropdown;
+    [SerializeField] PostProcessProfile postProcessProfile;
+    AmbientOcclusion ao;
+    MotionBlur mb;
+    Vignette v;
+    [SerializeField] Toggle ambientOcclusionToggle;
+    [SerializeField] Toggle motionBlurToggle;
+    [SerializeField] Toggle vignetteToggle;
+
+    // Other
     [SerializeField] TMP_Dropdown localizationDropdown;
 
     // Start is called before the first frame update
@@ -36,7 +48,7 @@ public class Settings : MonoBehaviour
                 case AnisotropicFiltering.ForceEnable:
                     return true;
                 default:
-                    Debug.Log("Anisotropic Textures Setting failed! using switch Standard");
+                    Debug.LogError("Anisotropic Textures Setting failed! using switch Standard");
                     QualitySettings.anisotropicFiltering = AnisotropicFiltering.Disable;
                     return false;
             }
@@ -56,7 +68,7 @@ public class Settings : MonoBehaviour
                 case 8:
                     return 3;
                 default:
-                    Debug.Log("Anti Aliasing Setting failed! using switch Standard");
+                    Debug.LogError("Anti Aliasing Setting failed! using switch Standard");
                     QualitySettings.antiAliasing = 0;
                     return 0;
             }
@@ -81,7 +93,7 @@ public class Settings : MonoBehaviour
                 case 2:
                     return true;
                 default:
-                    Debug.Log("VSync Setting failed! using switch Standard");
+                    Debug.LogError("VSync Setting failed! using switch Standard");
                     QualitySettings.vSyncCount = 0;
                     return false;
             }
@@ -104,6 +116,33 @@ public class Settings : MonoBehaviour
         resolutionDropdown.AddOptions(resolutionOptions);
         resolutionDropdown.value = currentIndex;
         resolutionDropdown.RefreshShownValue();
+
+        int FullscreenModeToInt(FullScreenMode fm)
+        {
+            switch (fm)
+            {
+                case FullScreenMode.ExclusiveFullScreen:
+                    return 1;
+                case FullScreenMode.FullScreenWindow:
+                    return 0;
+                case FullScreenMode.MaximizedWindow:
+                    return 2;
+                case FullScreenMode.Windowed:
+                    return 3;
+                default:
+                    Debug.LogError("Fullscreen Mode Setting failed! using switch Standard");
+                    Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
+                    return 0;
+            }
+        }
+        fullscreenModeDropdown.value = FullscreenModeToInt(Screen.fullScreenMode);
+
+        ao = postProcessProfile.GetSetting<AmbientOcclusion>();
+        mb = postProcessProfile.GetSetting<MotionBlur>();
+        v = postProcessProfile.GetSetting<Vignette>();
+        ambientOcclusionToggle.isOn = ao.active;
+        motionBlurToggle.isOn = mb.active;
+        vignetteToggle.isOn = v.active;
 
         StartCoroutine(GenerateLocaleDropdownOptions());
     }
