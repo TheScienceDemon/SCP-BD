@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +7,7 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] List<Room> rooms = new List<Room>();
     [SerializeField] List<RoomPosition> positions = new List<RoomPosition>();
 
-    void Start()
+    public void StartGeneration()
     {
         GenerateSeed(out mapSeed);
         GenerateMap(mapSeed);
@@ -17,7 +16,7 @@ public class MapGenerator : MonoBehaviour
     void GenerateSeed(out int seed)
     {
         seed = Random.Range(int.MinValue, int.MaxValue);
-        Debug.Log($"<u>MapGenerator:</u> generated new seed: {seed}");
+        Debug.Log($"MapGenerator: generated new seed: {seed}");
     }
 
     void IncrementRoomInstanceCount(int roomPositionID)
@@ -68,7 +67,7 @@ public class MapGenerator : MonoBehaviour
             }
             point.gameObject.SetActive(false);
         }
-        Debug.Log("<u>MapGenerator:</u> Map generation complete!");
+        Debug.Log("MapGenerator: Map generation complete!");
     }
 
     public enum RoomTypes
