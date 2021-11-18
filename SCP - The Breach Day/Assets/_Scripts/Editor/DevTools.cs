@@ -4,25 +4,32 @@ using UnityEngine.SceneManagement;
 
 public class DevTools
 {
-    [MenuItem("DevTools/DisposeDiscordPresence")]
+    [MenuItem("DevTools/Dispose Discord Presence")]
     public static void DisposeDiscordPresence()
     {
         Debug.Log("Method doesn't work yet");
     }
 
-    [MenuItem("DevTools/LoadScene/Intro")]
+    [MenuItem("DevTools/Clear PlayerPrefs")]
+    [ExecuteInEditMode]
+    public static void ClearPlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+
+    [MenuItem("DevTools/Load Scene/Intro")]
     public static void LoadSceneIntro()
     {
         SceneManager.LoadScene(0);
     }
 
-    [MenuItem("DevTools/LoadScene/MainMenu")]
+    [MenuItem("DevTools/Load Scene/MainMenu")]
     public static void LoadSceneMainMenu()
     {
         SceneManager.LoadScene(1);
     }
 
-    [MenuItem("DevTools/LoadScene/Facility")]
+    [MenuItem("DevTools/Load Scene/Facility")]
     public static void LoadSceneFacility()
     {
         SceneManager.LoadScene(2);

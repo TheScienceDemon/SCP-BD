@@ -5,11 +5,12 @@ using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Audio;
 
 #pragma warning disable IDE0044
 public class Settings : MonoBehaviour
 {
-    // Graphics
+    [Header("Graphics")]
     [SerializeField] TMP_Dropdown textureResolutionDropdown;
     [SerializeField] Toggle anisotropicTexturesToggle;
     [SerializeField] TMP_Dropdown antiAliasingDropdown;
@@ -28,12 +29,22 @@ public class Settings : MonoBehaviour
     [SerializeField] Toggle motionBlurToggle;
     [SerializeField] Toggle vignetteToggle;
 
-    // Other
+    [Space]
+
+    [Header("Audio")]
+    [SerializeField] AudioMixer mainMixer;
+    [SerializeField] Slider musicSlider;
+    [SerializeField] TMP_Text musicSliderValueText;
+    [SerializeField] Slider soundSlider;
+    [SerializeField] TMP_Text soundSliderValueText;
+
+    [Header("Other")]
     [SerializeField] TMP_Dropdown localizationDropdown;
 
     // Start is called before the first frame update
     void Start()
     {
+        // Graphics
         textureResolutionDropdown.value = QualitySettings.masterTextureLimit;
         textureResolutionDropdown.RefreshShownValue();
 
@@ -144,9 +155,19 @@ public class Settings : MonoBehaviour
         motionBlurToggle.isOn = mb.active;
         vignetteToggle.isOn = v.active;
 
+        // Audio
+        if (PlayerPrefs.HasKey("MusicSliderValue"))
+            musicSlider.value = PlayerPrefs.GetFloat("MusicSliderValue");
+        musicSliderValueText.text = (musicSlider.value * 100).ToString("F0") + "%";
+        if (PlayerPrefs.HasKey("SoundSliderValue"))
+            soundSlider.value = PlayerPrefs.GetFloat("SoundSliderValue");
+        soundSliderValueText.text = (soundSlider.value * 100).ToString("F0") + "%";
+
+        // Other
         StartCoroutine(GenerateLocaleDropdownOptions());
     }
 
+    #region Graphics
     public void SetTextureResolution(int textureResolutionIndex)
     {
         QualitySettings.masterTextureLimit = textureResolutionIndex;
@@ -185,7 +206,27 @@ public class Settings : MonoBehaviour
                 break;
         }
     }
+    #endregion
 
+    #region Audio
+    public void SetVolumeMusic(float music)
+    {
+        mainMixer.SetFloat("MusicGroup", Mathf.Log10(music) * 20);
+        musicSliderValueText.text = (musicSlider.value * 100).ToString("F0") + "%";
+        PlayerPrefs.SetFloat("MusicSliderValue", music);
+        PlayerPrefs.Save();
+    }
+
+    public void SetVolumeSound(float sound)
+    {
+        mainMixer.SetFloat("SoundGroup", Mathf.Log10(sound) * 20);
+        soundSliderValueText.text = (soundSlider.value * 100).ToString("F0") + "%";
+        PlayerPrefs.SetFloat("SoundSliderValue", sound);
+        PlayerPrefs.Save();
+    }
+    #endregion
+
+    #region Other
     IEnumerator GenerateLocaleDropdownOptions()
     {
         // Wait for the localization system to initialize, loading Locales, preloading etc.
@@ -210,4 +251,5 @@ public class Settings : MonoBehaviour
     {
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[languageIndex];
     }
+    #endregion
 }
