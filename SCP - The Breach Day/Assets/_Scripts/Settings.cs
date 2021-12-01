@@ -44,6 +44,11 @@ public class Settings : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        RefreshValues();
+    }
+
+    void RefreshValues()
+    {
         // Graphics
         textureResolutionDropdown.value = QualitySettings.masterTextureLimit;
         textureResolutionDropdown.RefreshShownValue();
@@ -117,9 +122,12 @@ public class Settings : MonoBehaviour
         int currentIndex = 0;
         for (int i = 0; i < resolutionArray.Length; i++)
         {
-            string resolutionOption = resolutionArray[i].width + " x " + resolutionArray[i].height;
+            string resolutionOption = resolutionArray[i].width +
+                " x " + resolutionArray[i].height +
+                " @" + resolutionArray[i].refreshRate;
             resolutionOptions.Add(resolutionOption);
-            if (resolutionArray[i].width == Screen.currentResolution.width && resolutionArray[i].height == Screen.currentResolution.height)
+            if (resolutionArray[i].width == Screen.currentResolution.width &&
+                resolutionArray[i].height == Screen.currentResolution.height)
             {
                 currentIndex = i;
             }
@@ -128,25 +136,8 @@ public class Settings : MonoBehaviour
         resolutionDropdown.value = currentIndex;
         resolutionDropdown.RefreshShownValue();
 
-        int FullscreenModeToInt(FullScreenMode fm)
-        {
-            switch (fm)
-            {
-                case FullScreenMode.ExclusiveFullScreen:
-                    return 1;
-                case FullScreenMode.FullScreenWindow:
-                    return 0;
-                case FullScreenMode.MaximizedWindow:
-                    return 2;
-                case FullScreenMode.Windowed:
-                    return 3;
-                default:
-                    Debug.LogError("Fullscreen Mode Setting failed! using switch Standard");
-                    Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
-                    return 0;
-            }
-        }
-        fullscreenModeDropdown.value = FullscreenModeToInt(Screen.fullScreenMode);
+        fullscreenModeDropdown.value = (int) Screen.fullScreenMode;
+        fullscreenModeDropdown.RefreshShownValue();
 
         ao = postProcessProfile.GetSetting<AmbientOcclusion>();
         mb = postProcessProfile.GetSetting<MotionBlur>();
@@ -158,9 +149,14 @@ public class Settings : MonoBehaviour
         // Audio
         if (PlayerPrefs.HasKey("MusicSliderValue"))
             musicSlider.value = PlayerPrefs.GetFloat("MusicSliderValue");
+
         musicSliderValueText.text = (musicSlider.value * 100).ToString("F0") + "%";
+        mainMixer.SetFloat("MusicGroup", Mathf.Log10(musicSlider.value) * 20);
+
         if (PlayerPrefs.HasKey("SoundSliderValue"))
             soundSlider.value = PlayerPrefs.GetFloat("SoundSliderValue");
+
+        mainMixer.SetFloat("SoundGroup", Mathf.Log10(soundSlider.value) * 20);
         soundSliderValueText.text = (soundSlider.value * 100).ToString("F0") + "%";
 
         // Other
@@ -175,7 +171,7 @@ public class Settings : MonoBehaviour
 
     public void SetAnisotropicTextures(bool useAnisotropicTextures)
     {
-        static AnisotropicFiltering BoolToAnisotropic(bool b)
+        AnisotropicFiltering BoolToAnisotropic(bool b)
         {
             return b ? AnisotropicFiltering.ForceEnable : AnisotropicFiltering.Disable;
         }
@@ -206,6 +202,58 @@ public class Settings : MonoBehaviour
                 break;
         }
     }
+
+    public void SetShadows(int shadowIndex)
+    {
+        QualitySettings.shadows = (ShadowQuality) shadowIndex;
+    }
+
+    public void SetShadowResolution(int shadowResolutionIndex)
+    {
+        QualitySettings.shadowResolution = (ShadowResolution) shadowResolutionIndex;
+    }
+
+    public void SetShadowDistance(float shadowDistance)
+    {
+        QualitySettings.shadowDistance = shadowDistance;
+    }
+
+    public void SetVSync(bool useVSync)
+    {
+        int boolToVSync(bool b)
+        {
+            return b ? 1 : 0;
+        }
+
+        QualitySettings.vSyncCount = boolToVSync(useVSync);
+    }
+
+    public void SetResolution(int resolutionIndex)
+    {
+        Resolution resolution = resolutionArray[resolutionIndex];
+        Screen.SetResolution(resolution.width, resolution.height,
+            Screen.fullScreenMode, resolution.refreshRate);
+    }
+
+    public void SetFullscreenMode(int fullscreenModeIndex)
+    {
+        Screen.fullScreenMode = (FullScreenMode) fullscreenModeIndex;
+    }
+
+    public void SetAmbientOcclusion(bool useAO)
+    {
+        ao.active = useAO;
+    }
+
+    public void SetMotionBlur(bool useMB)
+    {
+        mb.active = useMB;
+    }
+
+    public void SetVignette(bool useV)
+    {
+        v.active = useV;
+    }
     #endregion
 
     #region Audio
@@ -231,6 +279,9 @@ public class Settings : MonoBehaviour
     {
         // Wait for the localization system to initialize, loading Locales, preloading etc.
         yield return LocalizationSettings.InitializationOperation;
+
+        // Clear already existing options
+        localizationDropdown.ClearOptions();
 
         // Generate list of available Locales
         var options = new List<TMP_Dropdown.OptionData>();
