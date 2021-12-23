@@ -23,8 +23,5 @@ public class PlayerInterface : MonoBehaviour
     public void SetHealth(int newHealth)
     {
         playerStats.currentHealth = newHealth;
-
-        while (healthSlider.value != newHealth)
-            healthSlider.value = Mathf.Lerp(healthSlider.value, newHealth, Time.deltaTime * 3f);
     }
 }
