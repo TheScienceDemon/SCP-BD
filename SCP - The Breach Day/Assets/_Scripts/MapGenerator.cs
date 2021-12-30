@@ -3,8 +3,25 @@ using UnityEngine;
 
 public class MapGenerator : MonoBehaviour
 {
+    // Pain
+
     [SerializeField] List<Room> rooms = new List<Room>();
     [SerializeField] List<RoomPosition> positions = new List<RoomPosition>();
+    [SerializeField] Vector3 gizmoSize;
+
+    void OnDrawGizmos()
+    {
+        for (int i = 0; i < positions.Count; i++)
+        {
+            if (positions[i].roomType == RoomTypes.room1) Gizmos.color = Color.blue;
+            else if (positions[i].roomType == RoomTypes.room2) Gizmos.color = Color.cyan;
+            else if (positions[i].roomType == RoomTypes.room2C) Gizmos.color = Color.green;
+            else if (positions[i].roomType == RoomTypes.room3) Gizmos.color = Color.magenta;
+            else if (positions[i].roomType == RoomTypes.room4) Gizmos.color = Color.red;
+
+            Gizmos.DrawWireCube(positions[i].spawnPoint.position, gizmoSize);
+        }
+    }
 
     void IncrementRoomInstanceCount(int roomPositionID)
     {
@@ -70,7 +87,7 @@ public class MapGenerator : MonoBehaviour
     public class Room
     {
         public string label;
-        public StructManager.Offset roomOffset;
+        public Offset roomOffset;
         public GameObject roomPrefab;
         public RoomTypes roomType;
         [HideInInspector] public int roomId;
