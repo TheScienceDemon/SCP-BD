@@ -13,9 +13,10 @@ public class LightmapPrefabEditor : Editor
     {
         base.OnInspectorGUI();
         var prefab = target as LightmapPrefab;
+        scene = EditorGUILayout.IntField("Scene Id", scene);
         if ((PrefabUtility.IsPartOfPrefabInstance(prefab.gameObject) || PrefabUtility.IsPartOfPrefabAsset(prefab.gameObject)) && GUILayout.Button("Bake"))
         {
-            BakeScene(0);
+            BakeScene(scene);
         }
     }
 
@@ -51,16 +52,23 @@ public class LightmapPrefabEditor : Editor
             var renderer = obj.GetComponent<Renderer>();
             var data = LightmapSettings.lightmaps[renderer.lightmapIndex];
             string colorPath = $"{path}_{data.lightmapColor.name}_{scene}.exr";
-            string dirPath = $"{path}_{data.lightmapDir.name}_{scene}.exr";
-            string maskPath = $"{path}_{data.shadowMask.name}_{scene}.exr";
-            AssetDatabase.MoveAsset(AssetDatabase.GetAssetPath(data.lightmapColor), colorPath);
-            AssetDatabase.MoveAsset(AssetDatabase.GetAssetPath(data.lightmapDir), dirPath);
-            AssetDatabase.MoveAsset(AssetDatabase.GetAssetPath(data.shadowMask), maskPath);
+            string dirPath = string.Empty;
+            if (data.lightmapDir != null)
+                dirPath = $"{path}_{data.lightmapDir.name}_{scene}.exr";
+            string maskPath = string.Empty;
+            if (data.shadowMask != null)
+                maskPath = $"{path}_{data.shadowMask.name}_{scene}.exr";
+            AssetDatabase.CopyAsset(AssetDatabase.GetAssetPath(data.lightmapColor), colorPath);
+            if (data.lightmapDir != null)
+                AssetDatabase.CopyAsset(AssetDatabase.GetAssetPath(data.lightmapDir), dirPath);
+            if (data.shadowMask != null)
+                AssetDatabase.CopyAsset(AssetDatabase.GetAssetPath(data.shadowMask), maskPath);
+            AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
             var sceneData = new LightmapScene()
             {
-                color = AssetDatabase.LoadMainAssetAtPath(colorPath) as Texture2D,
-                dir = AssetDatabase.LoadMainAssetAtPath(dirPath) as Texture2D,
-                mask = AssetDatabase.LoadMainAssetAtPath(maskPath) as Texture2D,
+                color = (Texture2D)AssetDatabase.LoadAssetAtPath<Texture2D>(colorPath),
+                dir = string.IsNullOrEmpty(dirPath) ? null : (Texture2D)AssetDatabase.LoadAssetAtPath<Texture2D>(dirPath),
+                mask = string.IsNullOrEmpty(maskPath) ? null : (Texture2D)AssetDatabase.LoadAssetAtPath<Texture2D>(maskPath),
                 offset = renderer.lightmapScaleOffset
             };
             if (scene >= obj.scenes.Count)
@@ -71,7 +79,9 @@ public class LightmapPrefabEditor : Editor
             {
                 obj.scenes[scene] = sceneData;
             }
+            Undo.FlushUndoRecordObjects();
+            EditorUtility.SetDirty(obj);
+            AssetDatabase.SaveAssets();
         }
-        AssetDatabase.Refresh();
     }
 }

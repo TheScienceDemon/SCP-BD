@@ -261,21 +261,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: room3_Lcz
       objectReference: {fileID: 0}
-    - target: {fileID: 6577410988928429009, guid: 142a5714428f030449ec9e7a501e4833, type: 3}
-      propertyPath: scenes.Array.data[0].offset.w
-      value: -0.0018247594
+    - target: {fileID: 3477559392140018313, guid: 142a5714428f030449ec9e7a501e4833, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6577410988928429009, guid: 142a5714428f030449ec9e7a501e4833, type: 3}
-      propertyPath: scenes.Array.data[0].offset.x
-      value: 1.0026381
-      objectReference: {fileID: 0}
-    - target: {fileID: 6577410988928429009, guid: 142a5714428f030449ec9e7a501e4833, type: 3}
-      propertyPath: scenes.Array.data[0].offset.y
-      value: 1.0026381
-      objectReference: {fileID: 0}
-    - target: {fileID: 6577410988928429009, guid: 142a5714428f030449ec9e7a501e4833, type: 3}
-      propertyPath: scenes.Array.data[0].offset.z
-      value: -0.0018247594
+    - target: {fileID: 6810884227278500515, guid: 142a5714428f030449ec9e7a501e4833, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 142a5714428f030449ec9e7a501e4833, type: 3}

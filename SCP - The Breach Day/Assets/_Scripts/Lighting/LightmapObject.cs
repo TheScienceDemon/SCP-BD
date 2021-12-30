@@ -29,7 +29,7 @@ public class LightmapObject : MonoBehaviour
 }
 
 [System.Serializable]
-public struct LightmapScene
+public class LightmapScene
 {
     public Texture2D color;
     public Texture2D dir;
