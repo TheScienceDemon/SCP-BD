@@ -9,8 +9,8 @@ public class Door : MonoBehaviour
     Animator anim;
     AudioSource source;
 
-    public StructManager.AccessTypes[] accessTypes;
-    StructManager.AccessTypes[] accessBeforeLock;
+    public AccessTypes[] accessTypes;
+    AccessTypes[] accessBeforeLock;
     [SerializeField] bool isOpen;
     bool isLocked = false;
     public bool isInteractable = true;
@@ -28,9 +28,9 @@ public class Door : MonoBehaviour
         source = GetComponent<AudioSource>();
 
         foreach (var accessType in accessTypes)
-            if (accessType == StructManager.AccessTypes.NoEntry)
+            if (accessType == AccessTypes.NoEntry)
                 foreach (var button in doorButtons)
-                    button.material = buttonError;
+                    button.materials = new Material[2] { buttonError, buttonError};
     }
 
     public void ChangeDoorLockState()
@@ -43,7 +43,7 @@ public class Door : MonoBehaviour
     {
         isLocked = true;
         accessBeforeLock = accessTypes;
-        accessTypes = new StructManager.AccessTypes[1] { StructManager.AccessTypes.NoEntry };
+        accessTypes = new AccessTypes[1] { AccessTypes.NoEntry };
 
         foreach (var button in doorButtons)
         {
@@ -65,7 +65,7 @@ public class Door : MonoBehaviour
 
     public void ChangeDoorState()
     {
-        if (isOpen) StartCoroutine(OpenDoor());
+        if (!isOpen) StartCoroutine(OpenDoor());
         else StartCoroutine(CloseDoor());
     }
 
