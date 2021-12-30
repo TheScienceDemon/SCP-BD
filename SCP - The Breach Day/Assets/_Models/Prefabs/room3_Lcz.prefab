@@ -15,7 +15,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &8331954256491040721
 Transform:
@@ -105,12 +105,14 @@ GameObject:
   - component: {fileID: 2481550414355673823}
   - component: {fileID: 402170282874521109}
   - component: {fileID: 7405209374215724848}
+  - component: {fileID: 5885060881037254211}
+  - component: {fileID: 6577410988928429009}
   m_Layer: 0
   m_Name: room3_Lcz
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1576232800513408378
 Transform:
@@ -200,6 +202,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4118994058066111851, guid: 5f72df672295c314ebab82e84b7ba2ef, type: 3}
+--- !u!114 &5885060881037254211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2203447475180398528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3afce0656dad09c48a36bb0fea7186ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scenes:
+  - objects: []
+--- !u!114 &6577410988928429009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2203447475180398528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b01f5f6ee7a99d45b034026f640bba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scenes:
+  - color: {fileID: 0}
+    dir: {fileID: 0}
+    mask: {fileID: 0}
+    offset: {x: 0.04045242, y: 0.04045242, z: 0.18516974, w: 0.41489217}
 --- !u!1 &3003460293666380732
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +248,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &8431437285189662432
 Transform:
@@ -308,7 +341,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &3041412359395658446
 Transform:
@@ -400,7 +433,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &8485124282823828185
 Transform:
@@ -435,7 +468,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &262121118111918934
 Transform:
