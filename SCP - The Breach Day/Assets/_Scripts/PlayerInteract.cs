@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
@@ -24,10 +22,11 @@ public class PlayerInteract : MonoBehaviour
                 {
                     Door door = hit.transform.GetComponentInParent<Door>();
 
-                    foreach (var doorAccess in door.accessTypes)
-                        foreach (var playerAccess in playerStats.accessTypes)
-                            if (doorAccess == playerAccess)
-                                door.ChangeDoorState();
+                    if (door.isInteractable)
+                        foreach (var doorAccess in door.accessTypes)
+                            foreach (var playerAccess in playerStats.accessTypes)
+                                if (doorAccess == playerAccess)
+                                    door.ChangeDoorState();
                 }
     }
 }

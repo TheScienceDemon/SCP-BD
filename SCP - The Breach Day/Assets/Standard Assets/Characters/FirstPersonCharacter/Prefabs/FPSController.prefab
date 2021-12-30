@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 11400000}
   - component: {fileID: 6241088660227282955}
   - component: {fileID: 3191151903152508590}
+  - component: {fileID: 8431319982866371553}
   - component: {fileID: 5400000}
   - component: {fileID: 8200000}
   m_Layer: 0
@@ -48,7 +49,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2.4
+  m_Height: 2.75
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -198,8 +199,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 3191151903152508590}
-  interactDist: 0
-  playerCam: {fileID: 0}
+  interactDist: 4
+  playerCam: {fileID: 400002}
 --- !u!114 &3191151903152508590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,6 +216,18 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   accessTypes: 00000000
+--- !u!114 &8431319982866371553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e17191022bddd94ab261523152d888a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &5400000
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -252,9 +265,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 20
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0

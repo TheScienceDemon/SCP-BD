@@ -6,5 +6,5 @@ public class PlayerStats : MonoBehaviour
 {
     public int maxHealth;
     public int currentHealth;
-    public StructManager.AccessTypes[] accessTypes;
+    public AccessTypes[] accessTypes;
 }
