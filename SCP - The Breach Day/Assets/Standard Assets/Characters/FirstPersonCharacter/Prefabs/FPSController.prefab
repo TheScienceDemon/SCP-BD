@@ -69,10 +69,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsWalking: 0
-  m_WalkSpeed: 5
-  m_RunSpeed: 10
-  m_RunstepLenghten: 0.7
-  m_JumpSpeed: 10
+  m_WalkSpeed: 4.5
+  m_RunSpeed: 8
+  m_RunstepLenghten: 1
+  m_JumpSpeed: 7.5
   m_StickToGroundForce: 10
   m_GravityMultiplier: 2
   m_MouseLook:
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_JumpBob:
     BobDuration: 0.2
     BobAmount: 0.1
-  m_StepInterval: 7.5
+  m_StepInterval: 8
   m_FootstepSounds:
   - {fileID: 8300000, guid: 1397e1abea3232f4981cbdc242d1ebe1, type: 3}
   - {fileID: 8300000, guid: 678a960622b25a54688c9170162f1686, type: 3}
@@ -185,7 +185,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: cb420b13f1acfe04dbd05094e9f0c652, type: 3}
   - {fileID: 8300000, guid: d01ea421486a5254bbb72700b639e4ba, type: 3}
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
-  m_LandSound: {fileID: 0}
+  m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
 --- !u!114 &6241088660227282955
 MonoBehaviour:
   m_ObjectHideFlags: 0
