@@ -32,7 +32,7 @@ public class LightmapPrefab : MonoBehaviour
 }
 
 [System.Serializable]
-public struct LightmapPrefabScene
+public class LightmapPrefabScene
 {
     public List<GameObject> objects;
 }
