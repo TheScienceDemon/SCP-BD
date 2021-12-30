@@ -22,6 +22,7 @@ public class LightmapObject : MonoBehaviour
             list.Add(data);
             listindex = list.Count - 1;
         }
+        LightmapSettings.lightmaps = list.ToArray();
         var renderer = GetComponent<Renderer>();
         renderer.lightmapIndex = listindex;
         renderer.lightmapScaleOffset = scene.offset;
