@@ -12,6 +12,7 @@ public class PlayerScreenshot : MonoBehaviour
             string applicationDataPath =
                 Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
+            CheckDirectories.CheckForScreenshotDirectory();
             ScreenCapture.CaptureScreenshot(
                 $"{applicationDataPath}/SCP - The Breach Day/Screenshots/" +
                 "SCP-BD " + DateTime.Now.ToString("dd-MM-yyy HH-mm-ss") + ".png");
