@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class DevTools
 {
     [MenuItem("DevTools/Dispose Discord Presence")]
-    public static void DisposeDiscordPresence()
+    public static void ClearDiscordPresence()
     {
         Debug.Log("Method doesn't work yet");
     }
@@ -18,20 +18,20 @@ public class DevTools
     }
 
     [MenuItem("DevTools/Load Scene/Intro")]
-    public static void LoadSceneIntro()
+    public static void LoadSceneStartup()
     {
-        SceneManager.LoadScene(0);
+        LoadingScreen.Singleton.LoadScene((int)SceneIndexes.Startup);
     }
 
     [MenuItem("DevTools/Load Scene/MainMenu")]
     public static void LoadSceneMainMenu()
     {
-        SceneManager.LoadScene(1);
+        LoadingScreen.Singleton.LoadScene((int)SceneIndexes.MainMenu);
     }
 
     [MenuItem("DevTools/Load Scene/Facility")]
     public static void LoadSceneFacility()
     {
-        SceneManager.LoadScene(2);
+        LoadingScreen.Singleton.LoadScene((int)SceneIndexes.Facility);
     }
 }
