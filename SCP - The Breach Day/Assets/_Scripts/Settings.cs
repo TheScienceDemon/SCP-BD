@@ -216,6 +216,7 @@ public class Settings : MonoBehaviour
     public void SetShadowDistance(float shadowDistance)
     {
         QualitySettings.shadowDistance = shadowDistance;
+        shadowDistanceValueText.text = shadowDistance.ToString();
     }
 
     public void SetVSync(bool useVSync)
