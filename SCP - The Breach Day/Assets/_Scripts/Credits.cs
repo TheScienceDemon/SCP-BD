@@ -39,6 +39,14 @@ public class Credits : MonoBehaviour
             background.color = tempColor;
 
             textObj.position += Vector3.up * 1.5f;
+
+            if (textObj.position.y >= endPos.y)
+                areCreditsActive = false;
+        }
+        else
+        {
+            var tempColor = background.color;
+            tempColor.a = Mathf.Lerp(tempColor.a, 0f, Time.time * fadeSpeed);
         }
     }
 
