@@ -30,10 +30,18 @@ public class LightmapPrefabEditor : Editor
             {
                 obj.SetActive(false);
             }
+            foreach (var obj in item.lights)
+            {
+                obj.enabled = false;
+            }
         }
         foreach (var obj in prefab.scenes[scene].objects)
         {
             obj.SetActive(true);
+        }
+        foreach (var obj in prefab.scenes[scene].lights)
+        {
+            obj.enabled = true;
         }
         Lightmapping.bakeCompleted += OnBakeDone;
         Lightmapping.BakeAsync();
@@ -79,9 +87,26 @@ public class LightmapPrefabEditor : Editor
             {
                 obj.scenes[scene] = sceneData;
             }
+            prefab.scenes[scene].lightBakings = new List<BakeOutput>();
+            foreach (var light in prefab.scenes[scene].lights)
+            {
+                if (light.gameObject.activeInHierarchy)
+                {
+                    prefab.scenes[scene].lightBakings.Add(new BakeOutput()
+                    {
+                        isBaked = light.bakingOutput.isBaked,
+                        lightmapBakeType = light.bakingOutput.lightmapBakeType,
+                        mixedLightingMode = light.bakingOutput.mixedLightingMode,
+                        occlusionMaskChannel = light.bakingOutput.occlusionMaskChannel,
+                        probeOcclusionLightIndex = light.bakingOutput.probeOcclusionLightIndex
+                    });
+                }
+            }
             Undo.FlushUndoRecordObjects();
             EditorUtility.SetDirty(obj);
             AssetDatabase.SaveAssets();
         }
+        EditorUtility.SetDirty(prefab);
+        AssetDatabase.SaveAssets();
     }
 }

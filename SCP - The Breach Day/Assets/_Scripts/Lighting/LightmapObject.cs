@@ -9,7 +9,8 @@ public class LightmapObject : MonoBehaviour
     public void ShowScene(int index)
     {
         var scene = scenes[index];
-        var list = new List<LightmapData>(LightmapSettings.lightmaps);
+        var renderer = GetComponent<Renderer>();
+        /*var list = new List<LightmapData>(LightmapSettings.lightmaps);
         int listindex = list.FindIndex(p => p.lightmapColor == scene.color);
         if (listindex == -1)
         {
@@ -22,10 +23,18 @@ public class LightmapObject : MonoBehaviour
             list.Add(data);
             listindex = list.Count - 1;
         }
-        LightmapSettings.lightmaps = list.ToArray();
-        var renderer = GetComponent<Renderer>();
-        renderer.lightmapIndex = listindex;
+        LightmapSettings.lightmaps = list.ToArray();*/
+        renderer.lightmapIndex = 256;//listindex;
         renderer.lightmapScaleOffset = scene.offset;
+        foreach (var item in renderer.materials)
+        {
+            if (item != null)
+            {
+                item.shader = Shader.Find(item.shader.name);
+                item.SetTexture("unity_Lightmap", scene.color);
+                // item.SetTexture("unity_LightmapInd", scene.dir);
+            }
+        }
     }
 }
 

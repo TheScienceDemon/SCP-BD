@@ -5,6 +5,7 @@ using UnityEngine;
 public class LightmapPrefab : MonoBehaviour
 {
     public List<LightmapPrefabScene> scenes = new List<LightmapPrefabScene>();
+    // public List<Light> lights;
 
     void Start()
     {
@@ -19,6 +20,10 @@ public class LightmapPrefab : MonoBehaviour
             {
                 obj.SetActive(false);
             }
+            foreach (var obj in item.lights)
+            {
+                obj.enabled = false;
+            }
         }
         foreach (var obj in scenes[index].objects)
         {
@@ -28,6 +33,19 @@ public class LightmapPrefab : MonoBehaviour
         {
             obj.ShowScene(index);
         }
+        for (int i = 0; i < scenes[index].lights.Count; i++)
+        {
+            scenes[index].lights[i].enabled = false;
+            continue;
+            scenes[index].lights[i].bakingOutput = new LightBakingOutput()
+            {
+                isBaked = scenes[index].lightBakings[i].isBaked,
+                lightmapBakeType = scenes[index].lightBakings[i].lightmapBakeType,
+                mixedLightingMode = scenes[index].lightBakings[i].mixedLightingMode,
+                occlusionMaskChannel = scenes[index].lightBakings[i].occlusionMaskChannel,
+                probeOcclusionLightIndex = scenes[index].lightBakings[i].probeOcclusionLightIndex
+            };
+        }
     }
 }
 
@@ -35,4 +53,17 @@ public class LightmapPrefab : MonoBehaviour
 public class LightmapPrefabScene
 {
     public List<GameObject> objects;
+    public List<Light> lights;
+    public List<BakeOutput> lightBakings;
+}
+
+
+[System.Serializable]
+public class BakeOutput
+{
+    public int probeOcclusionLightIndex;
+    public int occlusionMaskChannel;
+    public LightmapBakeType lightmapBakeType;
+    public MixedLightingMode mixedLightingMode;
+    public bool isBaked;
 }
