@@ -36,6 +36,6 @@ public class Startup : MonoBehaviour
     IEnumerator Wait()
     {
         yield return new WaitForSeconds((float)videoPlayerGO.length);
-        SceneManager.LoadScene("MainMenu");
+        LoadingScreen.Singleton.LoadScene((int)SceneIndexes.MainMenu);
     }
 }

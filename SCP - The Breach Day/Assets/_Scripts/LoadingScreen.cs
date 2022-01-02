@@ -35,11 +35,12 @@ public class LoadingScreen : MonoBehaviour
         progressBarText.text = "0%";
         label.text = string.Empty;
 
-        var scene = SceneManager.GetSceneByBuildIndex(index);
+        string scenePath = SceneUtility.GetScenePathByBuildIndex(index);
+        string sceneName = System.IO.Path.GetFileNameWithoutExtension(scenePath);
         var asyncScene = SceneManager.LoadSceneAsync(index);
 
         canvasObj.SetActive(true);
-        label.text = $"Loading scene {scene.name} . . .";
+        label.text = $"Loading scene '{sceneName}' . . .";
 
         do
         {
@@ -47,7 +48,7 @@ public class LoadingScreen : MonoBehaviour
 
             progressBarSlider.value = progress;
             progressBarImage.fillAmount = progress;
-            progressBarText.text = $"{progress * 100f}%";
+            progressBarText.text = $"{progress * 100f:F0}%";
 
             yield return null;
         } while (!asyncScene.isDone);
