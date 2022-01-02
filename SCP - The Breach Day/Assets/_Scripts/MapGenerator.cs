@@ -11,15 +11,10 @@ public class MapGenerator : MonoBehaviour
 
     void OnDrawGizmos()
     {
+        Gizmos.color = new Color(255f, 255f, 255f, .5f);
         for (int i = 0; i < positions.Count; i++)
         {
-            if (positions[i].roomType == RoomTypes.room1) Gizmos.color = Color.blue;
-            else if (positions[i].roomType == RoomTypes.room2) Gizmos.color = Color.cyan;
-            else if (positions[i].roomType == RoomTypes.room2C) Gizmos.color = Color.green;
-            else if (positions[i].roomType == RoomTypes.room3) Gizmos.color = Color.magenta;
-            else if (positions[i].roomType == RoomTypes.room4) Gizmos.color = Color.red;
-
-            Gizmos.DrawWireCube(positions[i].spawnPoint.position, gizmoSize);
+            Gizmos.DrawCube(positions[i].spawnPoint.position, gizmoSize);
         }
     }
 
