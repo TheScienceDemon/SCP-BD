@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: MainMenu_Settings_de
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: de
+  m_SharedData: {fileID: 11400000, guid: 752db99735a2b6b47b686bb3267d3cea, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 47461761024
+    m_Localized: Einstellungen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2255196585984
+    m_Localized: "Zur\xFCck"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2865132273664
+    m_Localized: Grafik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2892500107264
+    m_Localized: Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2922552295424
+    m_Localized: Steuerung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2965535522816
+    m_Localized: Anderes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15137250541568
+    m_Localized: "Auf\xF6sung:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15165742448640
+    m_Localized: 'Vollbildmodus:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15208281079808
+    m_Localized: 'Ambient Occlusion:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15265973731328
+    m_Localized: "Bewegungssch\xE4rfe:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15290258751488
+    m_Localized: 'Vignette:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15084242927616
+    m_Localized: 'V-Sync:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15064361926656
+    m_Localized: 'Schatten Distanz:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5169327702016
+    m_Localized: "Schatten Aufl\xF6sung:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5127397244928
+    m_Localized: 'Schatten:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5059004923904
+    m_Localized: 'Anti Aliasing:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4860069085184
+    m_Localized: 'Anisotrope Texturen:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4679890173952
+    m_Localized: "Textur Qualit\xE4t:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20884839530496
+    m_Localized: 'Musik:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20898517155840
+    m_Localized: 'Sound:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20919648059392
+    m_Localized: 'Sprache:'
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 1
