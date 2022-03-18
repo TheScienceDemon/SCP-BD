@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-String-Tables-Magyar - Hungarian
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-String-Tables-Magyar - Hungarian
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 3f0b02f8de10b97498341475a9d5b414
+  m_SerializeEntries:
+  - m_GUID: f473274db5f0083459e9ac3d893134e5
+    m_Address: Settings_Audio_hu
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-hu
+    - Preload
+  - m_GUID: 8ab68f1e2eb05964b95970175e733c2a
+    m_Address: Menu_hu
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-hu
+    - Preload
+  - m_GUID: a64b47a16c896f6499ecdb2ea28eb83a
+    m_Address: Common_hu
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-hu
+    - Preload
+  - m_GUID: 6b057db0cef0cf54e99195c99de8a52d
+    m_Address: Settings_Controls_hu
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-hu
+    - Preload
+  - m_GUID: 1a943e910fc1a524293ad8533c95ff94
+    m_Address: Settings_Graphics_hu
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-hu
+    - Preload
+  - m_GUID: 7c18283a391a8a14abc868979eb2095a
+    m_Address: Settings_Other_hu
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-hu
+    - Preload
+  - m_GUID: ad3a51a52c608d14da2bca25b4259f8b
+    m_Address: Settings_Categories_hu
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-hu
+    - Preload
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 45ed44eaa7945574a9063a89eece0ee2, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 854d60c5f49faa74bb87e68201dcf233, type: 2}
+    - {fileID: 11400000, guid: ca5697d359823b041b4d22b0754bbd6c, type: 2}

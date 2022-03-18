@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: "Localization-String-Tables-P\u0443\u0441\u0441\u043A\u0438\u0439 - Russian"
+  m_EditorClassIdentifier: 
+  m_GroupName: "Localization-String-Tables-P\u0443\u0441\u0441\u043A\u0438\u0439
+    - Russian"
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 2bffebd73651811499f9d93ff937198a
+  m_SerializeEntries:
+  - m_GUID: ce433e5cbfaf3ea41b71c0ff1d56e44b
+    m_Address: Settings_Audio_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    - Preload
+  - m_GUID: ff4979be668d432478887f17b92e0f0b
+    m_Address: Menu_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    - Preload
+  - m_GUID: cdc439cec062c3b4fbda8efbf152fae6
+    m_Address: Common_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    - Preload
+  - m_GUID: 33bec1a53ab6747458c14bca03f96c69
+    m_Address: Settings_Controls_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    - Preload
+  - m_GUID: d8c5c390078e3cf428ddbc72bcd2887c
+    m_Address: Settings_Graphics_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    - Preload
+  - m_GUID: 60522d09d723a1c4a8e0df1468d2ea8c
+    m_Address: Settings_Other_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    - Preload
+  - m_GUID: 14796aa7ec19165499c3c9758061fae7
+    m_Address: Settings_Categories_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    - Preload
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 45ed44eaa7945574a9063a89eece0ee2, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: fa8fb3c9a97935047917a937b61a2234, type: 2}
+    - {fileID: 11400000, guid: d509c2e9a09ff1845bb5dc4ce6375945, type: 2}

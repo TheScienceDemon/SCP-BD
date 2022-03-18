@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System;
 using UnityEngine;
 
@@ -7,15 +5,14 @@ public class PlayerScreenshot : MonoBehaviour
 {
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F2))
-        {
-            string applicationDataPath =
-                Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        if (!Input.GetKeyDown(SaveDataManager.GetKey(ActionName.TakeScreenshot)))
+        { return; }
 
-            CheckDirectories.CheckForScreenshotDirectory();
-            ScreenCapture.CaptureScreenshot(
-                $"{applicationDataPath}/SCP - The Breach Day/Screenshots/" +
-                "SCP-BD " + DateTime.Now.ToString("dd-MM-yyy HH-mm-ss") + ".png");
-        }
+        CheckDirectories.CheckForScreenshotDirectory();
+        string screenshotString =
+            $"{SaveDataManager.GameDirectory}Screenshots/" +
+            $"SCP-BD {DateTime.Now:yyyy-MM-dd HH-mm-ss}.png";
+        ScreenCapture.CaptureScreenshot(screenshotString);
+        Debug.Log($"Took new screenshot: {System.IO.Path.GetFileName(screenshotString)}");
     }
 }

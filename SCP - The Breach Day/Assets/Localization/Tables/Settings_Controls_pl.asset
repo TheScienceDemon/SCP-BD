@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Settings_Controls_pl
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pl
+  m_SharedData: {fileID: 11400000, guid: 975ec98f751e6f04eb25004277d7eb18, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 8219095040
+    m_Localized: Zresteju
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14003040256
+    m_Localized: "Id\u017A do przodu:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17454952448
+    m_Localized: "Id\u017A w lewo:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22504894464
+    m_Localized: "Id\u017A do ty\u0142u:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 293251411968
+    m_Localized: "Id\u017A w prawo:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 315040821248
+    m_Localized: 'Bieg:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 481927983104
+    m_Localized: 'Skok:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 494192128000
+    m_Localized: 'Interakcja:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 508213686272
+    m_Localized: "Zr\xF3b zrzut ekranu:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 539985539072
+    m_Localized: 'Menu pauzy:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 559589715968
+    m_Localized: 'Menu debugowania:'
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 1

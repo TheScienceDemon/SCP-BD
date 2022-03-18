@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Menu_pl
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pl
+  m_SharedData: {fileID: 11400000, guid: cfdb58b42e81678418029c9dcb7afdb8, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 9801105408
+    m_Localized: Tryb dla pojedynczego gracza
+    m_Metadata:
+      m_Items: []
+  - m_Id: 472302813184
+    m_Localized: Tryb Wielu Graczy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 596357742592
+    m_Localized: Ustawienia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 695162961920
+    m_Localized: Autorzy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 771021144064
+    m_Localized: "Wyj\u015Bcie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10232989663719424
+    m_Localized: Na podstawie
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 1

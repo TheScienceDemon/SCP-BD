@@ -21,8 +21,28 @@ MonoBehaviour:
     m_Address: Assets/Localization/Tables/MainMenu_Main Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
-  - m_GUID: 752db99735a2b6b47b686bb3267d3cea
-    m_Address: Assets/Localization/Tables/MainMenu_Settings Shared Data.asset
+  - m_GUID: 45cf92ba39e65c34fa6a866a26a92008
+    m_Address: Assets/Localization/Tables/Settings_Graphics Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: a9b1cbe9655d52d4a9845f98995b1402
+    m_Address: Assets/Localization/Tables/Settings_Categories Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 7a9a60264a3dcb145b62ddb168c83329
+    m_Address: Assets/Localization/Tables/Settings_Audio Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 975ec98f751e6f04eb25004277d7eb18
+    m_Address: Assets/Localization/Tables/Settings_Controls Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 665458467d4aa134a9a0f99345c243a2
+    m_Address: Assets/Localization/Tables/Settings_Other Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 2f1e47b94df11004eb64a93e45dba30f
+    m_Address: Assets/Localization/Tables/Common Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
   m_ReadOnly: 1

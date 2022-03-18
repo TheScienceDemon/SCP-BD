@@ -14,6 +14,8 @@ public class LoadingScreen : MonoBehaviour
     [SerializeField] TMP_Text progressBarText;
     [SerializeField] TMP_Text label;
 
+    public AsyncOperation asyncScene;
+
     // Awake is called before Start
     void Awake()
     {
@@ -26,21 +28,23 @@ public class LoadingScreen : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public void LoadScene(int index) => StartCoroutine(LoadSceneEnumerator(index));
+    public void LoadScene(int index) =>
+        StartCoroutine(LoadSceneEnumerator(index));
 
-    IEnumerator LoadSceneEnumerator(int index)
+    IEnumerator LoadSceneEnumerator(int sceneIndex)
     {
         progressBarSlider.value = 0f;
         progressBarImage.fillAmount = 0f;
         progressBarText.text = "0%";
         label.text = string.Empty;
 
-        string scenePath = SceneUtility.GetScenePathByBuildIndex(index);
-        string sceneName = System.IO.Path.GetFileNameWithoutExtension(scenePath);
-        var asyncScene = SceneManager.LoadSceneAsync(index);
+        Debug.Log(sceneIndex);
+        string scenePath = SceneUtility.GetScenePathByBuildIndex(sceneIndex);
+        string sceneName = System.IO.Path.GetFileName(scenePath);
+        asyncScene = SceneManager.LoadSceneAsync(sceneIndex);
 
         canvasObj.SetActive(true);
-        label.text = $"Loading scene '{sceneName}' . . .";
+        label.text = $"Loading scene . . . [ {sceneName} ]";
 
         do
         {

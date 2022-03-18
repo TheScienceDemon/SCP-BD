@@ -7,20 +7,24 @@ public class MapGenerator : MonoBehaviour
 
     [SerializeField] List<Room> rooms = new List<Room>();
     [SerializeField] List<RoomPosition> positions = new List<RoomPosition>();
-    [SerializeField] Vector3 gizmoSize;
+    [SerializeField] Vector3 gizmoSize = new Vector3(20.5f, 7f, 20.5f);
+
+    [SerializeField] Color gizmoColor = new Color(255f, 255f, 255f);
 
     void OnDrawGizmos()
     {
-        Gizmos.color = new Color(255f, 255f, 255f, .5f);
+        Gizmos.color = gizmoColor;
         for (int i = 0; i < positions.Count; i++)
         {
-            Gizmos.DrawCube(positions[i].spawnPoint.position, gizmoSize);
-        }
-    }
+            Transform trans = positions[i].spawnPoint;
+            Vector3 center = new Vector3(
+                trans.position.x,
+                trans.position.y + (gizmoSize.y / 2f),
+                trans.position.z);
 
-    void IncrementRoomInstanceCount(int roomPositionID)
-    {
-        rooms[roomPositionID].currentInstances++;
+            if (trans != null)
+                Gizmos.DrawWireCube(center, gizmoSize);
+        }
     }
 
     public void GenerateMap(int seed)
@@ -57,7 +61,7 @@ public class MapGenerator : MonoBehaviour
             if (roomTypes.Count > 0)
             {
                 Room roomToGenerate = roomTypes[Random.Range(0, roomTypes.Count)];
-                IncrementRoomInstanceCount(roomToGenerate.roomId);
+                rooms[roomToGenerate.roomId].currentInstances++;
                 GameObject generatedRoom = Instantiate(roomToGenerate.roomPrefab, gameObject.transform);
                 generatedRoom.transform.localPosition = roomToGenerate.roomOffset.position + point.localPosition;
                 generatedRoom.transform.localRotation = Quaternion.Euler(roomToGenerate.roomOffset.rotation +
@@ -66,16 +70,7 @@ public class MapGenerator : MonoBehaviour
             }
             point.gameObject.SetActive(false);
         }
-        Debug.Log($"[{gameObject.name}] Map generation complete");
-    }
-
-    public enum RoomTypes
-    {
-        room1,
-        room2,
-        room2C,
-        room3,
-        room4
+        Debug.Log($"[{gameObject.name}] Map generation complete!");
     }
     
     [System.Serializable]

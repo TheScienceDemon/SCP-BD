@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Settings_Graphics_hu
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: hu
+  m_SharedData: {fileID: 11400000, guid: 45cf92ba39e65c34fa6a866a26a92008, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 2013826215936
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1979277733888
+    m_Localized: "K\xF6rnyezeti Elz\xE1r\xF3d\xE1s:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1944402096128
+    m_Localized: "Teljes K\xE9perny\u0151:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1896884826112
+    m_Localized: "Felbont\xE1s:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1868522942464
+    m_Localized: 'V-Sync:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1835295666176
+    m_Localized: "\xC1rny\xE9k T\xE1vols\xE1g:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1779813412864
+    m_Localized: "\xC1rny\xE9k Felbont\xE1s:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1743641735168
+    m_Localized: "\xC1rny\xE9kok:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1677984100352
+    m_Localized: "Antianal\xEDzis:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6360115015680
+    m_Localized: "Elmosod\xE1s:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1644144455680
+    m_Localized: "Anizotropikus Text\xFAra:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1436648042496
+    m_Localized: "Text\xFAra Min\u0151s\xE9g:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7625218820763648
+    m_Localized: 'Vignette:'
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 1

@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Settings_Graphics Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Settings_Graphics
+  m_TableCollectionNameGuidString: 45cf92ba39e65c34fa6a866a26a92008
+  m_Entries:
+  - m_Id: 1436648042496
+    m_Key: TextureQuality
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1644144455680
+    m_Key: AnisotropicTextures
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1677984100352
+    m_Key: AntiAliasing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1743641735168
+    m_Key: Shadows
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1779813412864
+    m_Key: ShadowResolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1835295666176
+    m_Key: ShadowDistance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1868522942464
+    m_Key: VSync
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1896884826112
+    m_Key: Resolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1944402096128
+    m_Key: FullscreenMode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1979277733888
+    m_Key: AmbientOcclusion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2013826215936
+    m_Key: Bloom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6360115015680
+    m_Key: MotionBlur
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7625218820763648
+    m_Key: Vignette
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    id: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1644154768761

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -7,19 +5,23 @@ public class GameManager : MonoBehaviour
     public static GameManager Singleton { get; private set; }
 
     [Header("Map Generation")]
-    [SerializeField] MapGenerationManager mapGenManager;
+    public MapGenerationManager mapGenManager;
     public int mapSeed;
 
     [Header("Codes")]
     public int maintenanceDoorCode;
     public int maynardCode;
 
+    [Header("Gameplay")]
+    public Difficultys difficulty;
+    public FacilityZones playerZone;
+
     void Awake()
     {
         if (Singleton == null)
             Singleton = this;
         else
-            Destroy(gameObject);
+            GetComponent<GameManager>().enabled = false;
     }
 
     void Start() => mapGenManager.StartMapGen();

@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-String-Tables-Polski - Polish
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-String-Tables-Polski - Polish
+  m_Data:
+    m_SerializedData: []
+  m_GUID: b43b1819e5fabcf4abac216536e264c6
+  m_SerializeEntries:
+  - m_GUID: d2cd734b210a5bf4198d969cbbde9cb1
+    m_Address: Common_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    - Preload
+  - m_GUID: bd7761534d60a0146bf27f953fdc9a60
+    m_Address: Menu_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    - Preload
+  - m_GUID: d8f883d68cf0364498e7a07caba0b922
+    m_Address: Settings_Audio_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    - Preload
+  - m_GUID: c1a4e898adfa84f4fa806fdb4f87cfbf
+    m_Address: Settings_Categories_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    - Preload
+  - m_GUID: 37791b63165a49f4fa0aeb14d41609a5
+    m_Address: Settings_Controls_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    - Preload
+  - m_GUID: a9d2571c923f99a468075b119a353f5c
+    m_Address: Settings_Graphics_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    - Preload
+  - m_GUID: 426c74a9b80b3594dbba3fa4665b02d0
+    m_Address: Settings_Other_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    - Preload
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 45ed44eaa7945574a9063a89eece0ee2, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: cb6b71dbb4c43e644b1b0cad269ce69a, type: 2}
+    - {fileID: 11400000, guid: f5458c2ffe4316a4e9b0ea0336222f17, type: 2}

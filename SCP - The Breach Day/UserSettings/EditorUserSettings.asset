@@ -6,31 +6,34 @@ EditorUserSettings:
   serializedVersion: 4
   m_ConfigSettings:
     RecentlyUsedScenePath-0:
-      value: 22424703114646680e0b0227036c6c111b07142f1f2b233e2867083debf42d
-      flags: 0
-    RecentlyUsedScenePath-1:
-      value: 22424703114646680e0b0227036c761e0205176439262f2434
-      flags: 0
-    RecentlyUsedScenePath-2:
-      value: 2242470311464668190f0226112f501e13311126290a343f3a3a1821add33535f2eb33a6c53b2c353a31ee311432040cf10f070eb81e04020517
-      flags: 0
-    RecentlyUsedScenePath-3:
       value: 2242470311464668190f0226112f501e13311126290a343f3a3a1821add33535f2eb33a6c43b312a3811dc3d092e0d3ac1090c05f3451f05181ae4
       flags: 0
-    RecentlyUsedScenePath-4:
+    RecentlyUsedScenePath-1:
       value: 22424703114646643e0d092c1530103918030a25623d28393930
       flags: 0
-    RecentlyUsedScenePath-5:
-      value: 22424703114646643e0d092c1530102302160a3e393868252320092a
-      flags: 0
-    RecentlyUsedScenePath-6:
+    RecentlyUsedScenePath-2:
       value: 22424703114646643e0d092c1530103c1f10103e2129362024271a7df7ee3d2cfb
       flags: 0
+    RecentlyUsedScenePath-3:
+      value: 22424703114646643e0d092c15301039181e0c232d242f2a2c3d143cecae2136ebf32f
+      flags: 0
+    RecentlyUsedScenePath-4:
+      value: 22424703114646643e0d092c1530103617141126253c3f70003c1127ebf03839fbe224a7f234362820
+      flags: 0
+    RecentlyUsedScenePath-5:
+      value: 22424703114646643e0d092c1530103c19161c2f3e66333e243d04
+      flags: 0
+    RecentlyUsedScenePath-6:
+      value: 22424703114646643e0d092c1530102302160a3e393868252320092a
+      flags: 0
     RecentlyUsedScenePath-7:
-      value: 22424703114646643e0d092c1530103d171e16072926337e38271427fb
+      value: 22424703114646643e0d092c1530103617141126253c3f707f67083debf42d
       flags: 0
     RecentlyUsedScenePath-8:
       value: 22424703114646643e0d092c1530103617141126253c3f7e38271427fb
+      flags: 0
+    RecentlyUsedScenePath-9:
+      value: 22424703114646643e0d092c1530103d171e16072926337e38271427fb
       flags: 0
     UnityRemoteCompression:
       value: 337f73

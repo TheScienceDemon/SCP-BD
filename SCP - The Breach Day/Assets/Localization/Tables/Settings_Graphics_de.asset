@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Settings_Graphics_de
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: de
+  m_SharedData: {fileID: 11400000, guid: 45cf92ba39e65c34fa6a866a26a92008, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 2013826215936
+    m_Localized: 'Bloom:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1979277733888
+    m_Localized: 'Ambient Occlusion:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1944402096128
+    m_Localized: 'Vollbild Modus:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1896884826112
+    m_Localized: "Aufl\xF6sung:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1868522942464
+    m_Localized: 'V-Sync:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1835295666176
+    m_Localized: 'Schatten Distanz:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1779813412864
+    m_Localized: "Schatten Aufl\xF6sung:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1743641735168
+    m_Localized: 'Schatten:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1677984100352
+    m_Localized: 'Anti Aliasing:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1644144455680
+    m_Localized: 'Anisotrope Texturen:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6360115015680
+    m_Localized: "Bewegungssch\xE4rfe:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1436648042496
+    m_Localized: "Textur Qualit\xE4t:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7625218820763648
+    m_Localized: 'Vignette:'
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 1

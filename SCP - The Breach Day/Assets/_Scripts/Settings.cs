@@ -1,17 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Localization.Settings;
-using UnityEngine.UI;
 using TMPro;
-using UnityEngine.Rendering.PostProcessing;
+using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Localization.Settings;
+using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.UI;
 
 #pragma warning disable IDE0044
 public class Settings : MonoBehaviour
 {
     [Header("Graphics")]
-    [SerializeField] TMP_Dropdown textureResolutionDropdown;
+    [SerializeField] TMP_Dropdown textureQualityDropdown;
     [SerializeField] Toggle anisotropicTexturesToggle;
     [SerializeField] TMP_Dropdown antiAliasingDropdown;
     [SerializeField] TMP_Dropdown shadowsDropdown;
@@ -23,16 +23,18 @@ public class Settings : MonoBehaviour
     [SerializeField] TMP_Dropdown fullscreenModeDropdown;
     [SerializeField] PostProcessProfile postProcessProfile;
     AmbientOcclusion ao;
+    Bloom b;
     MotionBlur mb;
     Vignette v;
     [SerializeField] Toggle ambientOcclusionToggle;
+    [SerializeField] Toggle bloomToggle;
     [SerializeField] Toggle motionBlurToggle;
     [SerializeField] Toggle vignetteToggle;
 
-    [Space]
-
     [Header("Audio")]
     [SerializeField] AudioMixer mainMixer;
+    [SerializeField] Slider masterVolumeSlider;
+    [SerializeField] TMP_Text masterVolumeValueText;
     [SerializeField] Slider musicSlider;
     [SerializeField] TMP_Text musicSliderValueText;
     [SerializeField] Slider soundSlider;
@@ -40,18 +42,15 @@ public class Settings : MonoBehaviour
 
     [Header("Other")]
     [SerializeField] TMP_Dropdown localizationDropdown;
+    [SerializeField] Toggle startupToggle;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        RefreshValues();
-    }
+    void Start() => RefreshSettings();
 
-    void RefreshValues()
+    void RefreshSettings()
     {
-        // Graphics
-        textureResolutionDropdown.value = QualitySettings.masterTextureLimit;
-        textureResolutionDropdown.RefreshShownValue();
+        #region Graphics
+        textureQualityDropdown.value = QualitySettings.masterTextureLimit;
+        textureQualityDropdown.RefreshShownValue();
 
         bool AnisotropicToBool(AnisotropicFiltering af)
         {
@@ -140,27 +139,52 @@ public class Settings : MonoBehaviour
         fullscreenModeDropdown.RefreshShownValue();
 
         ao = postProcessProfile.GetSetting<AmbientOcclusion>();
+        b = postProcessProfile.GetSetting<Bloom>();
         mb = postProcessProfile.GetSetting<MotionBlur>();
         v = postProcessProfile.GetSetting<Vignette>();
         ambientOcclusionToggle.isOn = ao.active;
+        bloomToggle.isOn = b.active;
         motionBlurToggle.isOn = mb.active;
         vignetteToggle.isOn = v.active;
+        #endregion
 
-        // Audio
-        if (PlayerPrefs.HasKey("MusicSliderValue"))
-            musicSlider.value = PlayerPrefs.GetFloat("MusicSliderValue");
+        #region Audio
+        if (PlayerPrefs.HasKey(PlayerPrefsItems.MasterVolumeSliderValue))
+            masterVolumeSlider.value = PlayerPrefs.GetFloat(
+                PlayerPrefsItems.MasterVolumeSliderValue);
 
-        musicSliderValueText.text = (musicSlider.value * 100).ToString("F0") + "%";
+        mainMixer.SetFloat("MasterGroup", Mathf.Log10(masterVolumeSlider.value) * 20);
+        masterVolumeValueText.text = $"{masterVolumeSlider.value * 100:F0}%";
+
+        if (PlayerPrefs.HasKey(PlayerPrefsItems.MusicSliderValue))
+            musicSlider.value = PlayerPrefs.GetFloat(
+                PlayerPrefsItems.MusicSliderValue);
+
         mainMixer.SetFloat("MusicGroup", Mathf.Log10(musicSlider.value) * 20);
+        musicSliderValueText.text = $"{musicSlider.value * 100:F0}%";
 
-        if (PlayerPrefs.HasKey("SoundSliderValue"))
-            soundSlider.value = PlayerPrefs.GetFloat("SoundSliderValue");
+        if (PlayerPrefs.HasKey(PlayerPrefsItems.SoundSliderValue))
+            soundSlider.value = PlayerPrefs.GetFloat(
+                    PlayerPrefsItems.SoundSliderValue);
 
         mainMixer.SetFloat("SoundGroup", Mathf.Log10(soundSlider.value) * 20);
-        soundSliderValueText.text = (soundSlider.value * 100).ToString("F0") + "%";
+        soundSliderValueText.text = $"{soundSlider.value * 100:F0}%";
+        #endregion
 
-        // Other
+        #region Controls
+        foreach (KeybindChanger changer in FindObjectsOfType<KeybindChanger>())
+        {
+            changer.Init();
+        }
+        #endregion
+
+        #region Other
         StartCoroutine(GenerateLocaleDropdownOptions());
+
+        if (PlayerPrefs.HasKey(PlayerPrefsItems.PlayStartup))
+            startupToggle.isOn = Helpers.IntToBool(PlayerPrefs.GetInt(
+                PlayerPrefsItems.PlayStartup));
+        #endregion
     }
 
     #region Graphics
@@ -246,6 +270,11 @@ public class Settings : MonoBehaviour
         ao.active = useAO;
     }
 
+    public void SetBloom(bool useB)
+    {
+        b.active = useB;
+    }
+
     public void SetMotionBlur(bool useMB)
     {
         mb.active = useMB;
@@ -258,19 +287,27 @@ public class Settings : MonoBehaviour
     #endregion
 
     #region Audio
+    public void SetMasterVolume(float masterVolume)
+    {
+        mainMixer.SetFloat("MasterGroup", Mathf.Log10(masterVolume) * 20);
+        masterVolumeValueText.text = $"{masterVolumeSlider.value * 100:F0}%";
+        PlayerPrefs.SetFloat(PlayerPrefsItems.MasterVolumeSliderValue, masterVolume);
+        PlayerPrefs.Save();
+    }
+
     public void SetVolumeMusic(float music)
     {
         mainMixer.SetFloat("MusicGroup", Mathf.Log10(music) * 20);
-        musicSliderValueText.text = (musicSlider.value * 100).ToString("F0") + "%";
-        PlayerPrefs.SetFloat("MusicSliderValue", music);
+        musicSliderValueText.text = $"{musicSlider.value * 100:F0}%";
+        PlayerPrefs.SetFloat(PlayerPrefsItems.MusicSliderValue, music);
         PlayerPrefs.Save();
     }
 
     public void SetVolumeSound(float sound)
     {
         mainMixer.SetFloat("SoundGroup", Mathf.Log10(sound) * 20);
-        soundSliderValueText.text = (soundSlider.value * 100).ToString("F0") + "%";
-        PlayerPrefs.SetFloat("SoundSliderValue", sound);
+        soundSliderValueText.text = $"{soundSlider.value * 100:F0}%";
+        PlayerPrefs.SetFloat(PlayerPrefsItems.SoundSliderValue, sound);
         PlayerPrefs.Save();
     }
     #endregion
@@ -301,7 +338,17 @@ public class Settings : MonoBehaviour
 
     public void SetLanguage(int languageIndex)
     {
-        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[languageIndex];
+        LocalizationSettings.SelectedLocale =
+            LocalizationSettings.AvailableLocales.Locales[languageIndex];
+    }
+
+    public void SetStartup (bool useStartup)
+    {
+        PlayerPrefs.SetInt(
+            PlayerPrefsItems.PlayStartup,
+            Helpers.BoolToInt(useStartup));
+
+        PlayerPrefs.Save();
     }
     #endregion
 }

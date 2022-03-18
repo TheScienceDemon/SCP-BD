@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: "Localization-String-Tables-Fran\xE7ais - French"
+  m_EditorClassIdentifier: 
+  m_GroupName: "Localization-String-Tables-Fran\xE7ais - French"
+  m_Data:
+    m_SerializedData: []
+  m_GUID: fdd048cdbe5fce84f9da10cf3bf2a8ca
+  m_SerializeEntries:
+  - m_GUID: 48dd592fceefc264386b54f0d6a3c392
+    m_Address: Settings_Audio_fr
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-fr
+    - Preload
+  - m_GUID: 764d41d7a23ec8747b60939e1ecba530
+    m_Address: Menu_fr
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-fr
+    - Preload
+  - m_GUID: d6bdc4926cf7f6142becbda0bc0310b8
+    m_Address: Common_fr
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-fr
+    - Preload
+  - m_GUID: d1ad646fcc5925148ad375f1e2c8cdfc
+    m_Address: Settings_Controls_fr
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-fr
+    - Preload
+  - m_GUID: f4281ce05fdc860418a98b3385838e0e
+    m_Address: Settings_Graphics_fr
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-fr
+    - Preload
+  - m_GUID: 886fb0b875fefc34ca763297a55981bf
+    m_Address: Settings_Other_fr
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-fr
+    - Preload
+  - m_GUID: 322bcd731760edc4a903fc8fa5984221
+    m_Address: Settings_Categories_fr
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-fr
+    - Preload
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 45ed44eaa7945574a9063a89eece0ee2, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: ae157790bc72be441bb16da3c40a77d6, type: 2}
+    - {fileID: 11400000, guid: f02a139bf6309f746bf8175664dbe3df, type: 2}

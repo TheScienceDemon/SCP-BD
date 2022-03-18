@@ -1,29 +1,47 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using Mirror;
+using UnityEngine;
 
 public class MainMenuScript : MonoBehaviour
 {
     [SerializeField] AudioSource musicSource;
-    [SerializeField] [Range(0f, 1f)] float playRareMusicPercentage;
+    [SerializeField] [Range(0, 100)] int playRareMusicPercentage;
     [SerializeField] AudioClip normalMusicClip;
     [SerializeField] AudioClip rareMusicClip;
     [SerializeField] TMP_Text infoText;
+
+    [Header("Mirror Scene things")]
+    [SerializeField] [Scene] string singleplayerScene;
+    [SerializeField] [Scene] string multiplayerScene;
+
+    NetworkManager networkManager;
+
     void Start()
     {
-        float f = Random.Range(0f, 1f);
-        if (f >= playRareMusicPercentage)
-        {
-            musicSource.clip = normalMusicClip;
-            musicSource.Play();
-        } else
-        {
-            musicSource.clip = rareMusicClip;
-            musicSource.Play();
-        }
+        networkManager = NetworkManager.singleton;
 
-        infoText.text = "SCP BD " + Application.version + "\n" + "Running on Unity " + Application.unityVersion;
+        int i = Random.Range(0, 100);
+        musicSource.clip = i <= playRareMusicPercentage
+            ? rareMusicClip : normalMusicClip;
+
+        musicSource.Play();
+
+        infoText.text =
+            $"SCP - BD {Application.version}\n" +
+            $"Running on Unity {Application.unityVersion}";
+    }
+
+    #region Main
+    public void PlaySingleplayer()
+    {
+        networkManager.onlineScene = singleplayerScene;
+        networkManager.StartHost();
+    }
+
+    public void PlayMultiplayer()
+    {
+        networkManager.onlineScene = multiplayerScene;
+        networkManager.StartHost();
     }
 
     public void ExitGame()
@@ -33,4 +51,17 @@ public class MainMenuScript : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
     }
+    #endregion
+
+    #region Settings
+    public void ResetKeybinds()
+    {
+        SaveDataManager.Singleton.ResetKeybinds();
+
+        foreach (KeybindChanger changer in FindObjectsOfType<KeybindChanger>())
+        {
+            changer.Init();
+        }
+    }
+    #endregion
 }

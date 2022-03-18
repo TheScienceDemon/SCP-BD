@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class UrlOpener : MonoBehaviour
 {
-    [SerializeField] string url;
-
-    public void OpenUrl()
+    public void OpenUrl(string urlToOpen)
     {
-        Application.OpenURL(url);
+        Application.OpenURL(urlToOpen);
     }
 }

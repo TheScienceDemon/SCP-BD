@@ -18,13 +18,43 @@ MonoBehaviour:
   m_GUID: c1813f09485738b48b58e20ff54902ed
   m_SerializeEntries:
   - m_GUID: ab22b87d5dc050848883ec94c429ae51
-    m_Address: MainMenu_Main_en
+    m_Address: Menu_en
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
     - Preload
-  - m_GUID: 09384011ab800e44ba4e0b87294ad271
-    m_Address: MainMenu_Settings_en
+  - m_GUID: 65bb4b86945f8ea4a80ba229bf1525d1
+    m_Address: Settings_Graphics_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Preload
+  - m_GUID: 446e41ef7ff28da409188b577289233f
+    m_Address: Settings_Categories_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Preload
+  - m_GUID: a0fc1547918a1f44a92bcfc0a097d082
+    m_Address: Settings_Audio_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Preload
+  - m_GUID: aad394d08b2810e409f9864a2283c8aa
+    m_Address: Settings_Controls_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Preload
+  - m_GUID: aac8b116f6f84cb4d9adbbe7f9013826
+    m_Address: Settings_Other_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Preload
+  - m_GUID: 4684709ea03ea0941b3291d63243ea10
+    m_Address: Common_en
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en

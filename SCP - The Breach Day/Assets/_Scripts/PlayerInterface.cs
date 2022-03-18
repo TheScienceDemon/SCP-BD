@@ -1,37 +1,50 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerInterface : MonoBehaviour
 {
+    public static PlayerInterface Singleton { get; private set; }
+
     [SerializeField] PlayerStats playerStats;
-    [SerializeField] Slider healthSlider;
+    public Slider healthSlider;
+    public Slider staminaSlider;
+    public GameObject wholePauseMenuObj;
 
-    float lerpedHealth;
+    [HideInInspector] public float lerpedHealth;
+    [HideInInspector] public float lerpedStamina;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        SetupHealth(playerStats.maxHealth);
+        if (Singleton == null)
+            Singleton = this;
+        else
+            Destroy(gameObject);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        lerpedHealth = Mathf.Lerp(lerpedHealth, playerStats.currentHealth, Time.deltaTime * 3f);
+        if (lerpedStamina >= (playerStats.maxStamina - .5f))
+        {
+            if (staminaSlider.gameObject.activeSelf)
+                staminaSlider.gameObject.SetActive(false);
+        }
+        else
+        {
+            if (!staminaSlider.gameObject.activeSelf)
+                staminaSlider.gameObject.SetActive(true);
+        }
+
+        lerpedHealth = Mathf.Lerp(
+            lerpedHealth,
+            playerStats.currentHealth,
+            Time.deltaTime * 3f);
+
+        lerpedStamina = Mathf.Lerp(
+            lerpedStamina,
+            playerStats.currentStamina,
+            Time.deltaTime * 6f);
+
         healthSlider.value = lerpedHealth;
-    }
-
-    void SetupHealth(int newMaxHealth)
-    {
-        lerpedHealth = newMaxHealth;
-        healthSlider.maxValue = newMaxHealth;
-        SetHealth(newMaxHealth);
-    }
-
-    public void SetHealth(int newHealth)
-    {
-        playerStats.currentHealth = newHealth;
+        staminaSlider.value = lerpedStamina;
     }
 }

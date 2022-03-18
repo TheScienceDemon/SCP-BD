@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
@@ -12,7 +11,7 @@ public class Door : MonoBehaviour
     public AccessTypes[] accessTypes;
     AccessTypes[] accessBeforeLock;
     [SerializeField] bool isOpen;
-    bool isLocked = false;
+    public bool isLocked = false;
     public bool isInteractable = true;
     [SerializeField] float cooldownTime;
     [SerializeField] Renderer[] doorButtons;
@@ -29,8 +28,12 @@ public class Door : MonoBehaviour
 
         foreach (var accessType in accessTypes)
             if (accessType == AccessTypes.NoEntry)
+            {
+                isLocked = true;
                 foreach (var button in doorButtons)
-                    button.materials = new Material[2] { buttonError, buttonError};
+                    button.materials = new Material[2] { buttonError, buttonError };
+            }
+                
     }
 
     public void ChangeDoorLockState()
@@ -47,8 +50,10 @@ public class Door : MonoBehaviour
 
         foreach (var button in doorButtons)
         {
-            button.material = buttonError;
+            button.materials = new Material[2] { buttonError, buttonError };
         }
+
+        isInteractable = false;
     }
 
     public void UnlockDoor()
@@ -61,6 +66,8 @@ public class Door : MonoBehaviour
         {
             button.material = buttonNormal;
         }
+
+        isInteractable = true;
     }
 
     public void ChangeDoorState()

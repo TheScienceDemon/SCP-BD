@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
+  m_Name: Settings_Controls
+  m_EditorClassIdentifier: 
+  m_SharedTableData: {fileID: 11400000, guid: 975ec98f751e6f04eb25004277d7eb18, type: 2}
+  m_Tables:
+  - {fileID: 11400000, guid: aad394d08b2810e409f9864a2283c8aa, type: 2}
+  - {fileID: 11400000, guid: 448230153b0320f459c244721917ea86, type: 2}
+  - {fileID: 11400000, guid: f2d22b72592b69440a97f11f02e9f57f, type: 2}
+  - {fileID: 11400000, guid: 33bec1a53ab6747458c14bca03f96c69, type: 2}
+  - {fileID: 11400000, guid: d1ad646fcc5925148ad375f1e2c8cdfc, type: 2}
+  - {fileID: 11400000, guid: 96e841b1f5ecb674eac80e2e4efedc78, type: 2}
+  - {fileID: 11400000, guid: 6b057db0cef0cf54e99195c99de8a52d, type: 2}
+  - {fileID: 11400000, guid: 37791b63165a49f4fa0aeb14d41609a5, type: 2}
+  m_Extensions: []
+  m_Group: String Table
+  references:
+    version: 1

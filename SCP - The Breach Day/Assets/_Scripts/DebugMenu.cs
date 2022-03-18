@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
+#pragma warning disable IDE0044
 public class DebugMenu : MonoBehaviour
 {
     public static DebugMenu Singleton { get; private set; }
@@ -13,6 +12,10 @@ public class DebugMenu : MonoBehaviour
     [SerializeField] TMP_Text frameRate;
     [SerializeField] TMP_Text date;
     [SerializeField] TMP_Text time;
+    [SerializeField] TMP_Text cpu;
+    [SerializeField] TMP_Text gpu;
+    [SerializeField] TMP_Text ram;
+    [SerializeField] TMP_Text os;
 
     float deltaTime;
 
@@ -27,25 +30,29 @@ public class DebugMenu : MonoBehaviour
             Destroy(gameObject);
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         gameVersion.text += Application.version;
         unityVersion.text += Application.unityVersion;
+        cpu.text += SystemInfo.processorType;
+        gpu.text += SystemInfo.graphicsDeviceName;
+        os.text += SystemInfo.operatingSystem;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F3))
-            canvas.SetActive(!canvas.activeInHierarchy);
+        if (Input.GetKeyDown(SaveDataManager.GetKey(ActionName.OpenDebugMenu)))
+            canvas.SetActive(!canvas.activeSelf);
 
         deltaTime += (Time.deltaTime - deltaTime) * 0.01f;
         float fps = 1f / deltaTime;
-        frameRate.text = "FPS: " + Mathf.Ceil(fps).ToString();
 
-        date.text = "<size=42>Date:</size> " + System.DateTime.Now.ToString("dd MMMM yyyy");
+        frameRate.text = $"FPS: {Mathf.Ceil(fps)}";
 
-        time.text = "Time: " + System.DateTime.Now.ToString("HH:mm:ss");
+        date.text = $"Date: {System.DateTime.Now:dd MMMM yyyy}";
+
+        time.text = $"Time: {System.DateTime.Now:HH:mm:ss}";
+
+        ram.text = $"Ram usage: {System.GC.GetTotalMemory(false)}";
     }
 }

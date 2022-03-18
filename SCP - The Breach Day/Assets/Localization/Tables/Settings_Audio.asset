@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
+  m_Name: Settings_Audio
+  m_EditorClassIdentifier: 
+  m_SharedTableData: {fileID: 11400000, guid: 7a9a60264a3dcb145b62ddb168c83329, type: 2}
+  m_Tables:
+  - {fileID: 11400000, guid: a0fc1547918a1f44a92bcfc0a097d082, type: 2}
+  - {fileID: 11400000, guid: 1205a67df18a62945968c60cf49fdef7, type: 2}
+  - {fileID: 11400000, guid: 9c34d1e3e0b3f204eb390ce705fb2081, type: 2}
+  - {fileID: 11400000, guid: ce433e5cbfaf3ea41b71c0ff1d56e44b, type: 2}
+  - {fileID: 11400000, guid: 48dd592fceefc264386b54f0d6a3c392, type: 2}
+  - {fileID: 11400000, guid: 045ba62ee5618c3499fc7aced3981e30, type: 2}
+  - {fileID: 11400000, guid: f473274db5f0083459e9ac3d893134e5, type: 2}
+  - {fileID: 11400000, guid: d8f883d68cf0364498e7a07caba0b922, type: 2}
+  m_Extensions: []
+  m_Group: String Table
+  references:
+    version: 1
