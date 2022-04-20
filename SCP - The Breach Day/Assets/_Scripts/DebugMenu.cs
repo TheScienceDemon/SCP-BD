@@ -8,39 +8,33 @@ public class DebugMenu : MonoBehaviour
 
     [SerializeField] GameObject canvas;
     [SerializeField] TMP_Text gameVersion;
+    [SerializeField] TMP_Text buildGUID;
     [SerializeField] TMP_Text unityVersion;
     [SerializeField] TMP_Text frameRate;
+    [SerializeField] TMP_Text ramUsage;
     [SerializeField] TMP_Text date;
     [SerializeField] TMP_Text time;
-    [SerializeField] TMP_Text cpu;
-    [SerializeField] TMP_Text gpu;
-    [SerializeField] TMP_Text ram;
-    [SerializeField] TMP_Text os;
 
     float deltaTime;
 
-    void Awake()
-    {
-        if (Singleton == null)
-        {
+    void Awake() {
+        if (Singleton == null) {
             Singleton = this;
             DontDestroyOnLoad(gameObject);
-        }
-        else
+        } else {
             Destroy(gameObject);
+        }
     }
 
-    void Start()
-    {
+    void Start() {
         gameVersion.text += Application.version;
+        buildGUID.text += string.IsNullOrEmpty(Application.buildGUID)
+            ? "In Editor"
+            : Application.buildGUID;
         unityVersion.text += Application.unityVersion;
-        cpu.text += SystemInfo.processorType;
-        gpu.text += SystemInfo.graphicsDeviceName;
-        os.text += SystemInfo.operatingSystem;
     }
 
-    void Update()
-    {
+    void Update() {
         if (Input.GetKeyDown(SaveDataManager.GetKey(ActionName.OpenDebugMenu)))
             canvas.SetActive(!canvas.activeSelf);
 
@@ -53,6 +47,6 @@ public class DebugMenu : MonoBehaviour
 
         time.text = $"Time: {System.DateTime.Now:HH:mm:ss}";
 
-        ram.text = $"Ram usage: {System.GC.GetTotalMemory(false)}";
+        ramUsage.text = $"Ram usage: {System.GC.GetTotalMemory(false)}";
     }
 }

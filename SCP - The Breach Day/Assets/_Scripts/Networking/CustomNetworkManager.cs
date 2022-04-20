@@ -32,7 +32,7 @@ public class CustomNetworkManager : NetworkManager
         LoadingScreen.Singleton.LoadScene(
             SceneUtility.GetBuildIndexByScenePath(newSceneName));
 
-        loadingSceneAsync = LoadingScreen.Singleton.asyncScene;
+        loadingSceneAsync = LoadingScreen.Singleton.AsyncScene;
 
         // ServerChangeScene can be called when stopping the server
         // when this happens the server is not active so does not need to tell clients about the change

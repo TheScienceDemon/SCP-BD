@@ -2,6 +2,7 @@
 using UnityEditor.Experimental.SceneManagement;
 #endif
 using UnityEngine;
+using Mirror;
 
 public class DoorSpawnpoint : MonoBehaviour
 {

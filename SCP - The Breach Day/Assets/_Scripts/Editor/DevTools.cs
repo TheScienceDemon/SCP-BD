@@ -10,23 +10,21 @@ public class DevTools : EditorWindow
 
     void OnGUI()
     {
-        if (EditorApplication.isPlaying)
-        {
+        if (EditorApplication.isPlaying) {
             GUILayout.Label("Runtime Mode");
             SceneLoading();
             ClearDiscordPresence();
-        }
-        else
-        {
+            ShutdownSteam();
+        } else {
             GUILayout.Label("Editor Mode");
             EditorSceneLoading();
             ClearPlayerPrefs();
             ShowRoamingDirectory();
+            ShutdownSteam();
         }
     }
 
-    void SceneLoading()
-    {
+    void SceneLoading() {
         EditorGUILayout.BeginHorizontal();
 
         GUILayout.Label("Load Scene:");
@@ -49,8 +47,7 @@ public class DevTools : EditorWindow
         EditorGUILayout.EndHorizontal();
     }
 
-    void ClearDiscordPresence()
-    {
+    void ClearDiscordPresence() {
         if (!GUILayout.Button("Clear Discord Presence")) { return; }
 
         /*
@@ -59,49 +56,43 @@ public class DevTools : EditorWindow
             */
 
         // Code above would crash Unity, that's why this:
-        DiscordManager.Singleton.presence.ClearPresence();
+        DiscordManager.Singleton.presenceModule.ClearPresence();
     }
 
-    void EditorSceneLoading()
-    {
+    void EditorSceneLoading() {
         EditorGUILayout.BeginHorizontal();
 
         GUILayout.Label("Load Scene:");
 
-        if (GUILayout.Button("Loader"))
-        {
+        if (GUILayout.Button("Loader")) {
             if (!EditorSceneManager.GetActiveScene().isDirty)
                 EditorSceneManager.OpenScene(SceneUtility.GetScenePathByBuildIndex((int)SceneIndexes.Loader));
             else
                 EditorUtility.DisplayDialog("Hey watch out!", "Current scene needs to be saved before loading into another!", "Oh ok");
         }
 
-        if (GUILayout.Button("Startup"))
-        {
+        if (GUILayout.Button("Startup")) {
             if (!EditorSceneManager.GetActiveScene().isDirty)
                 EditorSceneManager.OpenScene(SceneUtility.GetScenePathByBuildIndex((int)SceneIndexes.Startup));
             else
                 EditorUtility.DisplayDialog("Hey watch out!", "Current scene needs to be saved before loading into another!", "Oh ok");
         }
 
-        if (GUILayout.Button("MainMenu"))
-        {
+        if (GUILayout.Button("MainMenu")) {
             if (!EditorSceneManager.GetActiveScene().isDirty)
                 EditorSceneManager.OpenScene(SceneUtility.GetScenePathByBuildIndex((int)SceneIndexes.MainMenu));
             else
                 EditorUtility.DisplayDialog("Hey watch out!", "Current scene needs to be saved before loading into another!", "Oh ok");
         }
 
-        if (GUILayout.Button("Facility"))
-        {
+        if (GUILayout.Button("Facility")) {
             if (!EditorSceneManager.GetActiveScene().isDirty)
                 EditorSceneManager.OpenScene(SceneUtility.GetScenePathByBuildIndex((int)SceneIndexes.Facility));
             else
                 EditorUtility.DisplayDialog("Hey watch out!", "Current scene needs to be saved before loading into another!", "Oh ok");
         }
 
-        if (GUILayout.Button("Facility 2"))
-        {
+        if (GUILayout.Button("Facility 2")) {
             if (!EditorSceneManager.GetActiveScene().isDirty)
                 EditorSceneManager.OpenScene(SceneUtility.GetScenePathByBuildIndex((int)SceneIndexes.Facility_MP));
             else
@@ -111,15 +102,13 @@ public class DevTools : EditorWindow
         EditorGUILayout.EndHorizontal();
     }
 
-    void ClearPlayerPrefs()
-    {
+    void ClearPlayerPrefs() {
         if (!GUILayout.Button("Clear Player Prefs")) { return; }
         
         PlayerPrefs.DeleteAll();
     }
 
-    void ShowRoamingDirectory()
-    {
+    void ShowRoamingDirectory() {
         if (!GUILayout.Button("Open Roaming Directory")) { return; }
 
         string gameDirectory =
@@ -127,5 +116,12 @@ public class DevTools : EditorWindow
              "/SCP - The Breach Day";
         gameDirectory = gameDirectory.Replace(@"/", @"\");   // explorer doesn't like front slashes
         System.Diagnostics.Process.Start("explorer.exe", "/select," + gameDirectory);
+    }
+
+    void ShutdownSteam() {
+        if (!GUILayout.Button("Repair Steam")) { return; }
+
+        Steamworks.SteamAPI.Shutdown();
+        Steamworks.SteamAPI.Init();
     }
 }

@@ -1,6 +1,7 @@
 using TMPro;
 using Mirror;
 using UnityEngine;
+using Steamworks;
 
 public class MainMenuScript : MonoBehaviour
 {
@@ -16,8 +17,7 @@ public class MainMenuScript : MonoBehaviour
 
     NetworkManager networkManager;
 
-    void Start()
-    {
+    void Start() {
         networkManager = NetworkManager.singleton;
 
         int i = Random.Range(0, 100);
@@ -38,10 +38,13 @@ public class MainMenuScript : MonoBehaviour
         networkManager.StartHost();
     }
 
-    public void PlayMultiplayer()
-    {
+    public void PlayMultiplayer() {
+        FindObjectOfType<SteamLobby>().HostGame();
+    }
+
+    public void PlayMultiplayer(string lobbyID) {
         networkManager.onlineScene = multiplayerScene;
-        networkManager.StartHost();
+        SteamMatchmaking.JoinLobby(new CSteamID(ulong.Parse(lobbyID)));
     }
 
     public void ExitGame()

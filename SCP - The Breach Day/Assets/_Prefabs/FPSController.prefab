@@ -14,11 +14,12 @@ GameObject:
   - component: {fileID: 8200000}
   - component: {fileID: 5300681962027742044}
   - component: {fileID: 4781264486212291250}
-  - component: {fileID: 11400000}
+  - component: {fileID: 2362267634051362165}
+  - component: {fileID: 5323775874483890478}
+  - component: {fileID: 1800626466463790004}
   - component: {fileID: 8903821202322825332}
-  - component: {fileID: 1598074107157522516}
   - component: {fileID: 8431319982866371553}
-  - component: {fileID: 8725217087214198861}
+  - component: {fileID: 6275279163052696765}
   m_Layer: 0
   m_Name: FPSController
   m_TagString: Untagged
@@ -222,7 +223,7 @@ MonoBehaviour:
   showGizmos: 0
   showOverlay: 0
   overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
---- !u!114 &11400000
+--- !u!114 &2362267634051362165
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -231,9 +232,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05ec5cf00ca181d45a42ba1870e148c3, type: 3}
+  m_Script: {fileID: 11500000, guid: f47fa6df65d8be14b9e011bf412ec0f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5323775874483890478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 429c49b02f8a8bd4bbadd4e9f4dd1604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   m_IsWalking: 0
   m_WalkSpeed: 4.5
   m_RunSpeed: 8
@@ -259,25 +274,7 @@ MonoBehaviour:
     TimeToDecrease: 1
     IncreaseCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 2
-        outSlope: 2
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -295,17 +292,17 @@ MonoBehaviour:
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+        inWeight: 0
+        outWeight: 0
       - serializedVersion: 3
         time: 0.5
-        value: 0.75
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+        inWeight: 0
+        outWeight: 0
       - serializedVersion: 3
         time: 1
         value: 0
@@ -313,17 +310,17 @@ MonoBehaviour:
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+        inWeight: 0
+        outWeight: 0
       - serializedVersion: 3
         time: 1.5
-        value: -0.75
+        value: -1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+        inWeight: 0
+        outWeight: 0
       - serializedVersion: 3
         time: 2
         value: 0
@@ -331,27 +328,48 @@ MonoBehaviour:
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    VerticaltoHorizontalRatio: 1.75
+    VerticaltoHorizontalRatio: 1
   m_JumpBob:
     BobDuration: 0.2
     BobAmount: 0.1
   m_StepInterval: 8
   m_FootstepSounds:
   - {fileID: 8300000, guid: 1397e1abea3232f4981cbdc242d1ebe1, type: 3}
-  - {fileID: 8300000, guid: 678a960622b25a54688c9170162f1686, type: 3}
+  - {fileID: 8300000, guid: c5c62e124ee0c884b8658478cdd6e961, type: 3}
   - {fileID: 8300000, guid: db53951fd2675a64da7e5b80941a7bdf, type: 3}
   - {fileID: 8300000, guid: be013cb444d1c4043a35020a0b0d788d, type: 3}
-  - {fileID: 8300000, guid: c5c62e124ee0c884b8658478cdd6e961, type: 3}
   - {fileID: 8300000, guid: b656ea9a6de4e5a4ab0d6fc9029df1fd, type: 3}
-  - {fileID: 8300000, guid: cb420b13f1acfe04dbd05094e9f0c652, type: 3}
   - {fileID: 8300000, guid: d01ea421486a5254bbb72700b639e4ba, type: 3}
-  m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
+  - {fileID: 8300000, guid: 678a960622b25a54688c9170162f1686, type: 3}
+  - {fileID: 8300000, guid: cb420b13f1acfe04dbd05094e9f0c652, type: 3}
+  m_JumpSound: {fileID: 0}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
+--- !u!114 &1800626466463790004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c7664ed7516864181644579b30093a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  maxHealth: 100
+  currentHealth: 0
+  deathSound: {fileID: 8300000, guid: ead76cc1a4b60a947b067dda5e964aee, type: 3}
+  maxStamina: 100
+  currentStamina: 0
+  staminaDrainSpeed: 17.5
+  accessTypes: 00000000
 --- !u!114 &8903821202322825332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,30 +384,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  playerStats: {fileID: 1598074107157522516}
   interactDist: 4
   playerCam: {fileID: 400002}
---- !u!114 &1598074107157522516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 467d43868d701064390eb95683df99da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  maxHealth: 100
-  currentHealth: 0
-  deathSound: {fileID: 8300000, guid: ead76cc1a4b60a947b067dda5e964aee, type: 3}
-  maxStamina: 100
-  currentStamina: 0
-  staminaDrainSpeed: 17.5
-  accessTypes: 00000000
 --- !u!114 &8431319982866371553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,7 +398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e17191022bddd94ab261523152d888a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8725217087214198861
+--- !u!114 &6275279163052696765
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -416,6 +412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
+  playerName: 
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 0

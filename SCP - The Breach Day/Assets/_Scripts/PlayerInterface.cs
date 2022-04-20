@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
+using Mirror;
 
-public class PlayerInterface : MonoBehaviour
+public class PlayerInterface : NetworkBehaviour
 {
     public static PlayerInterface Singleton { get; private set; }
 
-    [SerializeField] PlayerStats playerStats;
+    PlayerStats playerStats;
     public Slider healthSlider;
     public Slider staminaSlider;
     public GameObject wholePauseMenuObj;
@@ -23,6 +24,10 @@ public class PlayerInterface : MonoBehaviour
 
     void Update()
     {
+        if (playerStats == null) {
+            playerStats = FindObjectOfType<PlayerStats>();
+        }
+
         if (lerpedStamina >= (playerStats.maxStamina - .5f))
         {
             if (staminaSlider.gameObject.activeSelf)

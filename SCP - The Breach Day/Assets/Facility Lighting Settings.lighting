@@ -29,7 +29,7 @@ LightingSettings:
   m_MixedBakeMode: 1
   m_LightmapsBakeMode: 1
   m_FilterMode: 1
-  m_LightmapParameters: {fileID: 111300000, guid: cc8d30ce58c135f45a5ff19115f19544, type: 2}
+  m_LightmapParameters: {fileID: 111300000, guid: c7d1448f468b74e4a955305eb1794bc1, type: 2}
   m_ExportTrainingData: 0
   m_TrainingDataDestination: TrainingData
   m_RealtimeResolution: 2

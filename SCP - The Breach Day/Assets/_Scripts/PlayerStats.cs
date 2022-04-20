@@ -1,10 +1,11 @@
 using UnityEngine;
+using Mirror;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerStats : NetworkBehaviour
 {
     [Header("Health & Stamina")]
     public int maxHealth;
-    public int currentHealth;
+    [SyncVar] public int currentHealth;
     [SerializeField] AudioClip deathSound;
     bool playerDead = false;
 
@@ -43,18 +44,19 @@ public class PlayerStats : MonoBehaviour
         PlayerInterface.Singleton.lerpedHealth = newMaxHealth;
         PlayerInterface.Singleton.healthSlider.maxValue = newMaxHealth;
 
-        SetHealth(newMaxHealth);
+        CmdSetHealth(newMaxHealth);
     }
 
-    public void SetHealth(int newHealth) => currentHealth = newHealth;
+    [Command]
+    public void CmdSetHealth(int newHealth) => currentHealth = newHealth;
 
-    public void DamageHealth(int damage) => SetHealth(currentHealth - damage);
+    public void DamageHealth(int damage) => CmdSetHealth(currentHealth - damage);
 
     public void KillPlayer()
     {
         playerDead = true;
         GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
-        
+
         AudioSource source = GetComponent<AudioSource>();
         source.clip = deathSound;
         source.Play();

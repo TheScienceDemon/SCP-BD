@@ -1,18 +1,20 @@
+using Mirror;
 using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(AudioSource))]
-public class Door : MonoBehaviour
+public class Door : NetworkBehaviour
 {
     Animator anim;
     AudioSource source;
 
     public AccessTypes[] accessTypes;
-    AccessTypes[] accessBeforeLock;
-    [SerializeField] bool isOpen;
-    public bool isLocked = false;
-    public bool isInteractable = true;
+
+    [SyncVar] public bool isOpen;
+    [SyncVar] public bool isLocked = false;
+    [SyncVar] public bool isInteractable = true;
+
     [SerializeField] float cooldownTime;
     [SerializeField] Renderer[] doorButtons;
     [SerializeField] Material buttonNormal;
@@ -20,33 +22,31 @@ public class Door : MonoBehaviour
     [SerializeField] AudioClip[] openDoorClips;
     [SerializeField] AudioClip[] closeDoorClips;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    [ServerCallback]
+    void Start() {
         anim = GetComponent<Animator>();
         source = GetComponent<AudioSource>();
 
         foreach (var accessType in accessTypes)
             if (accessType == AccessTypes.NoEntry)
             {
-                isLocked = true;
+                CmdLockDoor();
+
                 foreach (var button in doorButtons)
                     button.materials = new Material[2] { buttonError, buttonError };
             }
                 
     }
 
-    public void ChangeDoorLockState()
-    {
-        if (!isLocked) LockDoor();
-        else UnlockDoor();
+    [Command(requiresAuthority = false)]
+    public void CmdChangeDoorLockState() {
+        if (!isLocked) CmdLockDoor();
+        else CmdUnlockDoor();
     }
 
-    public void LockDoor()
-    {
+    [Command]
+    public void CmdLockDoor() {
         isLocked = true;
-        accessBeforeLock = accessTypes;
-        accessTypes = new AccessTypes[1] { AccessTypes.NoEntry };
 
         foreach (var button in doorButtons)
         {
@@ -56,11 +56,9 @@ public class Door : MonoBehaviour
         isInteractable = false;
     }
 
-    public void UnlockDoor()
-    {
+    [ClientRpc]
+    public void CmdUnlockDoor() {
         isLocked = false;
-        accessTypes = accessBeforeLock;
-        accessBeforeLock = null;
 
         foreach (var button in doorButtons)
         {
@@ -70,14 +68,12 @@ public class Door : MonoBehaviour
         isInteractable = true;
     }
 
-    public void ChangeDoorState()
-    {
+    public void ChangeDoorState() {
         if (!isOpen) StartCoroutine(OpenDoor());
         else StartCoroutine(CloseDoor());
     }
 
-    public IEnumerator OpenDoor()
-    {
+    public IEnumerator OpenDoor() {
         isInteractable = false;
         anim.SetBool("isOpen", true);
         int i = Random.Range(0, openDoorClips.Length);
@@ -88,8 +84,7 @@ public class Door : MonoBehaviour
         isInteractable = true;
     }
 
-    public IEnumerator CloseDoor()
-    {
+    public IEnumerator CloseDoor() {
         isInteractable = false;
         anim.SetBool("isOpen", false);
         int i = Random.Range(0, closeDoorClips.Length);

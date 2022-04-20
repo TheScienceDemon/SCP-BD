@@ -1,40 +1,33 @@
 using UnityEngine;
+using Mirror;
 
-public class PlayerInteract : MonoBehaviour
+public class PlayerInteract : NetworkBehaviour
 {
-    [SerializeField] PlayerStats playerStats;    
+    PlayerStats playerStats;
 
     [SerializeField] float interactDist;
     [SerializeField] Transform playerCam;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(SaveDataManager.GetKey(ActionName.Interact)))
+    void Start() => playerStats = GetComponent<PlayerStats>();
+
+    void Update() {
+        if (!Input.GetKeyDown(SaveDataManager.GetKey(ActionName.Interact))) { return; }
+        
+        if (Physics.Raycast(
+            playerCam.position,
+            playerCam.forward,
+            out RaycastHit hit,
+            interactDist))
         {
-            if (Physics.Raycast(playerCam.position, playerCam.forward, out RaycastHit hit, interactDist))
-                if (hit.transform.CompareTag("Door"))
-                {
-                    Door door = hit.transform.GetComponentInParent<Door>();
+            if (hit.transform.CompareTag("Door")) {
+                Door door = hit.transform.GetComponentInParent<Door>();
 
-                    InteractDoor(door);
-                }
+                CmdInteractDoor(door);
+            }
         }
-        else if (Input.GetKeyDown(SaveDataManager.GetKey(ActionName.TogglePauseMenu)))
-        {
-            GameObject pauseMenuObj = PlayerInterface.Singleton.wholePauseMenuObj;
-            PauseMenu pauseMenuScript = PlayerInterface.Singleton.gameObject.GetComponent<PauseMenu>();
-
-            if (!pauseMenuObj.activeSelf)
-                pauseMenuScript.EnablePauseMenu();
-            else
-                pauseMenuScript.DisablePauseMenu();
-        }
-
     }
-
-    void InteractDoor(Door door)
-    {
+    [Command]
+    void CmdInteractDoor(Door door) {
         bool hasInteracted = false;
 
         if (door.isInteractable && !door.isLocked)

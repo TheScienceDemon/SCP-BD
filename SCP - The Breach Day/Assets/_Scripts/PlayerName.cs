@@ -1,17 +1,13 @@
 using Mirror;
 
-public class PlayerNameMP : NetworkBehaviour
+public class PlayerName : NetworkBehaviour
 {
     [SyncVar] public string playerName;
 
     void Start() => CmdSetName();
 
     [Command]
-    void CmdSetName() => RpcSetName();
-
-    [ClientRpc]
-    void RpcSetName()
-    {
+    void CmdSetName() {
         string newName = $"Player '{Steamworks.SteamFriends.GetPersonaName()}'";
 
         playerName = newName;

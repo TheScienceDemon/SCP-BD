@@ -1,7 +1,6 @@
 public static class Helpers
 {
-    public static bool IntToBool(int i)
-    {
+    public static bool IntToBool(int i) {
         return i switch
         {
             0 => false,
@@ -10,8 +9,7 @@ public static class Helpers
         };
     }
 
-    public static int BoolToInt(bool b)
-    {
+    public static int BoolToInt(bool b) {
         return b ? 1 : 0;
     }
 }

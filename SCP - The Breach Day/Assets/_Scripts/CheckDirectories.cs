@@ -3,26 +3,23 @@ using UnityEngine;
 
 public static class CheckDirectories
 {
-    static string GameDirectory { get {
+    public static string GameDirectory { get {
             return SaveDataManager.GameDirectory; } }
 
-    public static void CheckForAllDirectories()
-    {
+    public static void CheckForAllDirectories() {
         CheckForGameDirectory();
         CheckForSavedDataDirectory();
         CheckForScreenshotDirectory();
     }
 
-    public static void CheckForGameDirectory()
-    {
+    public static void CheckForGameDirectory() {
         if (Directory.Exists(GameDirectory)) { return; }
 
         Directory.CreateDirectory(GameDirectory);
         Debug.Log($"Created Game Directory: {GameDirectory}");
     }
 
-    public static void CheckForSavedDataDirectory()
-    {
+    public static void CheckForSavedDataDirectory() {
         if (Directory.Exists($"{GameDirectory}Saved Data")) { return; }
 
         CheckForGameDirectory();
@@ -30,8 +27,7 @@ public static class CheckDirectories
         Debug.Log($"Created Saved Data Directory: {GameDirectory}Screenshots");
     }
 
-    public static void CheckForScreenshotDirectory()
-    {
+    public static void CheckForScreenshotDirectory() {
         if (Directory.Exists($"{GameDirectory}Screenshots")) { return; }
 
         CheckForGameDirectory();

@@ -1,38 +1,40 @@
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
-using Steamworks;
 
 public class PauseMenu : MonoBehaviour
 {
     GameObject pauseMenuObj;
 
+    void Start() => pauseMenuObj = PlayerInterface.Singleton.wholePauseMenuObj;
 
-    void Start() =>
-        pauseMenuObj = PlayerInterface.Singleton.wholePauseMenuObj;
+    void Update() {
+        if (!Input.GetKeyDown(SaveDataManager.GetKey(ActionName.TogglePauseMenu))) { return; }
 
-    public void EnablePauseMenu()
-    {
+        if (!pauseMenuObj.activeSelf) {
+            EnablePauseMenu();
+        } else {
+            DisablePauseMenu();
+        }
+    }
+
+    public void EnablePauseMenu() {
         FindObjectOfType<FirstPersonController>().enabled = false;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        CursorManager.pauseMenu = true;
         pauseMenuObj.SetActive(true);
     }
 
-    public void DisablePauseMenu()
-    {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+    public void DisablePauseMenu() {
         FindObjectOfType<FirstPersonController>().enabled = true;
+        CursorManager.pauseMenu = false;
+        print(CursorManager.pauseMenu);
         pauseMenuObj.SetActive(false);
     }
 
-    public void ShowAchievements()
-    {
-        SteamFriends.ActivateGameOverlay("Achievements");
+    public void ShowAchievements() {
+        Steamworks.SteamFriends.ActivateGameOverlay("Achievements");
     }
 
-    public void QuitToMainMenu()
-    {
-        LoadingScreen.Singleton.LoadScene((int)SceneIndexes.MainMenu);
+    public void QuitToMainMenu() {
+        Mirror.NetworkManager.singleton.StopHost();
     }
 }
